@@ -719,13 +719,13 @@ namespace POIS1
         private void help_Click(object sender, EventArgs e)
         {
             Saveinput saveinput = new Saveinput();
-            MessageBox.Show(saveinput.help);
+            MessageBox.Show(saveinput.help1);
         }
 
         private void hlplbl_Click(object sender, EventArgs e)
         {
             Saveinput saveinput = new Saveinput();
-            MessageBox.Show(saveinput.help);
+            MessageBox.Show(saveinput.help1);
         }
 
         private void logoutlbl_Click(object sender, EventArgs e)
@@ -888,44 +888,44 @@ namespace POIS1
 
         private void POnumbertb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
+            //SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
 
-            string q = "select  PurchaseOrderId from  LogPurchaseOrder where PurchaseOrderNumber = '" + POnumbercb.Text + "'";
+            //string q = "select  PurchaseOrderId from  LogPurchaseOrder where PurchaseOrderNumber = '" + POnumbercb.Text + "'";
 
-            SqlCommand command = new SqlCommand(q, connection);
-            //DataTable dataTable = new DataTable();
+            //SqlCommand command = new SqlCommand(q, connection);
+            ////DataTable dataTable = new DataTable();
 
-            try
-            {
-                connection.Open();
-                SqlDataReader sqlData = command.ExecuteReader();
+            //try
+            //{
+            //    connection.Open();
+            //    SqlDataReader sqlData = command.ExecuteReader();
 
-                while (sqlData.Read())
-                {
+            //    while (sqlData.Read())
+            //    {
 
-                    POnum = sqlData[0].ToString();
+            //        POnum = sqlData[0].ToString();
 
-                    //string LogPurchase = sqlData.GetString(5);
-                    //POnumbercb.Items.Add(LogPurchase);
+            //        //string LogPurchase = sqlData.GetString(5);
+            //        //POnumbercb.Items.Add(LogPurchase);
 
-                    //Vendorcb.Text = sqlData.GetString(1);
-                    ////string VendorNumber = sqlData.GetString(3);
-                    //VendorID = sqlData[0].ToString();
+            //        //Vendorcb.Text = sqlData.GetString(1);
+            //        ////string VendorNumber = sqlData.GetString(3);
+            //        //VendorID = sqlData[0].ToString();
 
-                    //ItemName1.Text = VendorID;
+            //        //ItemName1.Text = VendorID;
 
-                    //VndrAddrescb.Text = VendorAddress;
-                    //VndrNumbercb.Text = VendorNumber;
+            //        //VndrAddrescb.Text = VendorAddress;
+            //        //VndrNumbercb.Text = VendorNumber;
 
 
 
-                }
-            }
-            catch (Exception ex)
-            {
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
                 
-            }
-            connection.Close();
+            //}
+            //connection.Close();
         }
 
         private void ItemName1_TextChanged(object sender, EventArgs e)

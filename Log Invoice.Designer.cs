@@ -254,6 +254,7 @@ namespace POIS1
             // Costtb
             // 
             this.Costtb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Costtb.Enabled = false;
             this.Costtb.Location = new System.Drawing.Point(1105, 344);
             this.Costtb.Name = "Costtb";
             this.Costtb.Size = new System.Drawing.Size(120, 22);
@@ -299,6 +300,7 @@ namespace POIS1
             // Quantitytb
             // 
             this.Quantitytb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Quantitytb.Enabled = false;
             this.Quantitytb.Location = new System.Drawing.Point(1105, 288);
             this.Quantitytb.Name = "Quantitytb";
             this.Quantitytb.Size = new System.Drawing.Size(259, 22);
@@ -308,6 +310,7 @@ namespace POIS1
             // Itemdesctb
             // 
             this.Itemdesctb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Itemdesctb.Enabled = false;
             this.Itemdesctb.Location = new System.Drawing.Point(1105, 234);
             this.Itemdesctb.Name = "Itemdesctb";
             this.Itemdesctb.Size = new System.Drawing.Size(259, 22);
@@ -496,6 +499,7 @@ namespace POIS1
             // totaltb
             // 
             this.totaltb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.totaltb.Enabled = false;
             this.totaltb.Location = new System.Drawing.Point(1087, 668);
             this.totaltb.Name = "totaltb";
             this.totaltb.Size = new System.Drawing.Size(232, 22);
@@ -693,14 +697,14 @@ namespace POIS1
             // logInvoicesToolStripMenuItem
             // 
             this.logInvoicesToolStripMenuItem.Name = "logInvoicesToolStripMenuItem";
-            this.logInvoicesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.logInvoicesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.logInvoicesToolStripMenuItem.Text = "Log Invoices";
             this.logInvoicesToolStripMenuItem.Click += new System.EventHandler(this.logInvoicesToolStripMenuItem_Click);
             // 
             // viewInvoicesToolStripMenuItem1
             // 
             this.viewInvoicesToolStripMenuItem1.Name = "viewInvoicesToolStripMenuItem1";
-            this.viewInvoicesToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.viewInvoicesToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
             this.viewInvoicesToolStripMenuItem1.Text = "View Invoices";
             this.viewInvoicesToolStripMenuItem1.Click += new System.EventHandler(this.viewInvoicesToolStripMenuItem1_Click);
             // 
@@ -738,7 +742,7 @@ namespace POIS1
             // viewReportsToolStripMenuItem1
             // 
             this.viewReportsToolStripMenuItem1.Name = "viewReportsToolStripMenuItem1";
-            this.viewReportsToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.viewReportsToolStripMenuItem1.Size = new System.Drawing.Size(179, 26);
             this.viewReportsToolStripMenuItem1.Text = "View Reports";
             this.viewReportsToolStripMenuItem1.Click += new System.EventHandler(this.viewReportsToolStripMenuItem1_Click);
             // 
@@ -753,7 +757,7 @@ namespace POIS1
             // changeThemeToolStripMenuItem
             // 
             this.changeThemeToolStripMenuItem.Name = "changeThemeToolStripMenuItem";
-            this.changeThemeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.changeThemeToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.changeThemeToolStripMenuItem.Text = "Change Theme";
             // 
             // logoutToolStripMenuItem
@@ -918,6 +922,7 @@ namespace POIS1
             // 
             // VndrAddrescb
             // 
+            this.VndrAddrescb.Enabled = false;
             this.VndrAddrescb.FormattingEnabled = true;
             this.VndrAddrescb.Location = new System.Drawing.Point(305, 307);
             this.VndrAddrescb.Name = "VndrAddrescb";
@@ -926,6 +931,7 @@ namespace POIS1
             // 
             // VndrNumbercb
             // 
+            this.VndrNumbercb.Enabled = false;
             this.VndrNumbercb.FormattingEnabled = true;
             this.VndrNumbercb.Location = new System.Drawing.Point(305, 397);
             this.VndrNumbercb.Name = "VndrNumbercb";

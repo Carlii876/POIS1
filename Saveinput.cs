@@ -11,7 +11,8 @@ namespace POIS1
     {
         bool isValid = true;
 
-        public readonly string help = "Please contact administrator for any inquiry";
+        public readonly string help1 = "Select an Item to auto generate from Purchase Order";
+        public readonly string help = "Select an Item or Vendor details to auto generate options";
         private string Currency;
         private string VendorName;
         private string VendorAddress;
