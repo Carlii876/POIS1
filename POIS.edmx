@@ -1,0 +1,643 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="POISModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="CurrencyId" />
+          </Key>
+          <Property Name="CurrencyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Currency" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="InvoiceItem">
+          <Key>
+            <PropertyRef Name="InvoiceItemID" />
+          </Key>
+          <Property Name="InvoiceItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Invoice_id" Type="int" Nullable="false" />
+          <Property Name="Item_id" Type="int" Nullable="false" />
+          <Property Name="Item_Provided" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Invoices">
+          <Key>
+            <PropertyRef Name="Invoice_id" />
+          </Key>
+          <Property Name="Invoice_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PurchaseOrderID" Type="int" Nullable="false" />
+          <Property Name="ApprovalDate" Type="datetime" Nullable="false" />
+          <Property Name="DateForPayment" Type="datetime" />
+          <Property Name="Vendors_id" Type="int" />
+          <Property Name="Invoice_description" Type="nvarchar" MaxLength="100" />
+          <Property Name="total" Type="int" Nullable="false" />
+          <Property Name="Status_Id" Type="int" />
+          <Property Name="InvoiceNumber" Type="int" />
+          <Property Name="PurchaseOrderNumber" Type="int" />
+        </EntityType>
+        <EntityType Name="InvoiceStatus">
+          <Key>
+            <PropertyRef Name="Status_Id" />
+          </Key>
+          <Property Name="Status_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Status_type" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Items">
+          <Key>
+            <PropertyRef Name="Item_id" />
+          </Key>
+          <Property Name="Item_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Item_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Item_Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="10" />
+          <Property Name="Item_Cost" Type="float" />
+        </EntityType>
+        <EntityType Name="LogPurchaseOrder">
+          <Key>
+            <PropertyRef Name="PurchaseOrderId" />
+          </Key>
+          <Property Name="PurchaseOrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Vendor_id" Type="int" />
+          <Property Name="Items_id" Type="int" />
+          <Property Name="Item_amount" Type="int" />
+          <Property Name="Status_Id" Type="int" />
+          <Property Name="PurchaseOrderNumber" Type="int" />
+          <Property Name="Approval_Date" Type="datetime" />
+          <Property Name="CurrencyId" Type="int" />
+          <Property Name="Total" Type="float" />
+        </EntityType>
+        <EntityType Name="PurchaseOrderStatus">
+          <Key>
+            <PropertyRef Name="Status_Id" />
+          </Key>
+          <Property Name="Status_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Status_type" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Vendors">
+          <Key>
+            <PropertyRef Name="Vendors_id" />
+          </Key>
+          <Property Name="Vendors_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Vendorname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VendorAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VendorNumber" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_InvoiceItem_Invoices">
+          <End Role="Invoices" Type="Self.Invoices" Multiplicity="1" />
+          <End Role="InvoiceItem" Type="Self.InvoiceItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Invoices">
+              <PropertyRef Name="Invoice_id" />
+            </Principal>
+            <Dependent Role="InvoiceItem">
+              <PropertyRef Name="Invoice_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvoiceItem_Items">
+          <End Role="Items" Type="Self.Items" Multiplicity="1" />
+          <End Role="InvoiceItem" Type="Self.InvoiceItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Items">
+              <PropertyRef Name="Item_id" />
+            </Principal>
+            <Dependent Role="InvoiceItem">
+              <PropertyRef Name="Item_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invoices_InvoicesStatus">
+          <End Role="InvoiceStatus" Type="Self.InvoiceStatus" Multiplicity="0..1" />
+          <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InvoiceStatus">
+              <PropertyRef Name="Status_Id" />
+            </Principal>
+            <Dependent Role="Invoices">
+              <PropertyRef Name="Status_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invoices_LogPurchaseOrder">
+          <End Role="LogPurchaseOrder" Type="Self.LogPurchaseOrder" Multiplicity="1" />
+          <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LogPurchaseOrder">
+              <PropertyRef Name="PurchaseOrderId" />
+            </Principal>
+            <Dependent Role="Invoices">
+              <PropertyRef Name="PurchaseOrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invoices_Vendors">
+          <End Role="Vendors" Type="Self.Vendors" Multiplicity="0..1" />
+          <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vendors">
+              <PropertyRef Name="Vendors_id" />
+            </Principal>
+            <Dependent Role="Invoices">
+              <PropertyRef Name="Vendors_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LogPurchaseOrder_Currency">
+          <End Role="Currency" Type="Self.Currency" Multiplicity="0..1" />
+          <End Role="LogPurchaseOrder" Type="Self.LogPurchaseOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="CurrencyId" />
+            </Principal>
+            <Dependent Role="LogPurchaseOrder">
+              <PropertyRef Name="CurrencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LogPurchaseOrder_Items">
+          <End Role="Items" Type="Self.Items" Multiplicity="0..1" />
+          <End Role="LogPurchaseOrder" Type="Self.LogPurchaseOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Items">
+              <PropertyRef Name="Item_id" />
+            </Principal>
+            <Dependent Role="LogPurchaseOrder">
+              <PropertyRef Name="Items_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LogPurchaseOrder_PurchaseOrderStatus">
+          <End Role="PurchaseOrderStatus" Type="Self.PurchaseOrderStatus" Multiplicity="0..1" />
+          <End Role="LogPurchaseOrder" Type="Self.LogPurchaseOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PurchaseOrderStatus">
+              <PropertyRef Name="Status_Id" />
+            </Principal>
+            <Dependent Role="LogPurchaseOrder">
+              <PropertyRef Name="Status_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LogPurchaseOrder_Vendors">
+          <End Role="Vendors" Type="Self.Vendors" Multiplicity="0..1" />
+          <End Role="LogPurchaseOrder" Type="Self.LogPurchaseOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vendors">
+              <PropertyRef Name="Vendors_id" />
+            </Principal>
+            <Dependent Role="LogPurchaseOrder">
+              <PropertyRef Name="Vendor_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="POISModelStoreContainer">
+          <EntitySet Name="Currency" EntityType="Self.Currency" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InvoiceItem" EntityType="Self.InvoiceItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Invoices" EntityType="Self.Invoices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InvoiceStatus" EntityType="Self.InvoiceStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogPurchaseOrder" EntityType="Self.LogPurchaseOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PurchaseOrderStatus" EntityType="Self.PurchaseOrderStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vendors" EntityType="Self.Vendors" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_InvoiceItem_Invoices" Association="Self.FK_InvoiceItem_Invoices">
+            <End Role="Invoices" EntitySet="Invoices" />
+            <End Role="InvoiceItem" EntitySet="InvoiceItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvoiceItem_Items" Association="Self.FK_InvoiceItem_Items">
+            <End Role="Items" EntitySet="Items" />
+            <End Role="InvoiceItem" EntitySet="InvoiceItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoices_InvoicesStatus" Association="Self.FK_Invoices_InvoicesStatus">
+            <End Role="InvoiceStatus" EntitySet="InvoiceStatus" />
+            <End Role="Invoices" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoices_LogPurchaseOrder" Association="Self.FK_Invoices_LogPurchaseOrder">
+            <End Role="LogPurchaseOrder" EntitySet="LogPurchaseOrder" />
+            <End Role="Invoices" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoices_Vendors" Association="Self.FK_Invoices_Vendors">
+            <End Role="Vendors" EntitySet="Vendors" />
+            <End Role="Invoices" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LogPurchaseOrder_Currency" Association="Self.FK_LogPurchaseOrder_Currency">
+            <End Role="Currency" EntitySet="Currency" />
+            <End Role="LogPurchaseOrder" EntitySet="LogPurchaseOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LogPurchaseOrder_Items" Association="Self.FK_LogPurchaseOrder_Items">
+            <End Role="Items" EntitySet="Items" />
+            <End Role="LogPurchaseOrder" EntitySet="LogPurchaseOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LogPurchaseOrder_PurchaseOrderStatus" Association="Self.FK_LogPurchaseOrder_PurchaseOrderStatus">
+            <End Role="PurchaseOrderStatus" EntitySet="PurchaseOrderStatus" />
+            <End Role="LogPurchaseOrder" EntitySet="LogPurchaseOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LogPurchaseOrder_Vendors" Association="Self.FK_LogPurchaseOrder_Vendors">
+            <End Role="Vendors" EntitySet="Vendors" />
+            <End Role="LogPurchaseOrder" EntitySet="LogPurchaseOrder" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="POISModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="CurrencyId" />
+          </Key>
+          <Property Name="CurrencyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Currency1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="LogPurchaseOrders" Relationship="Self.FK_LogPurchaseOrder_Currency" FromRole="Currency" ToRole="LogPurchaseOrder" />
+        </EntityType>
+        <EntityType Name="InvoiceItem">
+          <Key>
+            <PropertyRef Name="InvoiceItemID" />
+          </Key>
+          <Property Name="InvoiceItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Invoice_id" Type="Int32" Nullable="false" />
+          <Property Name="Item_id" Type="Int32" Nullable="false" />
+          <Property Name="Item_Provided" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Invoice" Relationship="Self.FK_InvoiceItem_Invoices" FromRole="InvoiceItem" ToRole="Invoices" />
+          <NavigationProperty Name="Item" Relationship="Self.FK_InvoiceItem_Items" FromRole="InvoiceItem" ToRole="Items" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="Invoice_id" />
+          </Key>
+          <Property Name="Invoice_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PurchaseOrderID" Type="Int32" Nullable="false" />
+          <Property Name="ApprovalDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateForPayment" Type="DateTime" Precision="3" />
+          <Property Name="Vendors_id" Type="Int32" />
+          <Property Name="Invoice_description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="total" Type="Int32" Nullable="false" />
+          <Property Name="Status_Id" Type="Int32" />
+          <Property Name="InvoiceNumber" Type="Int32" />
+          <Property Name="PurchaseOrderNumber" Type="Int32" />
+          <NavigationProperty Name="InvoiceItems" Relationship="Self.FK_InvoiceItem_Invoices" FromRole="Invoices" ToRole="InvoiceItem" />
+          <NavigationProperty Name="InvoiceStatu" Relationship="Self.FK_Invoices_InvoicesStatus" FromRole="Invoices" ToRole="InvoiceStatus" />
+          <NavigationProperty Name="LogPurchaseOrder" Relationship="Self.FK_Invoices_LogPurchaseOrder" FromRole="Invoices" ToRole="LogPurchaseOrder" />
+          <NavigationProperty Name="Vendor" Relationship="Self.FK_Invoices_Vendors" FromRole="Invoices" ToRole="Vendors" />
+        </EntityType>
+        <EntityType Name="InvoiceStatu">
+          <Key>
+            <PropertyRef Name="Status_Id" />
+          </Key>
+          <Property Name="Status_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Status_type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Invoices" Relationship="Self.FK_Invoices_InvoicesStatus" FromRole="InvoiceStatus" ToRole="Invoices" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="Item_id" />
+          </Key>
+          <Property Name="Item_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Item_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Item_Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Currency" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Item_Cost" Type="Double" />
+          <NavigationProperty Name="InvoiceItems" Relationship="Self.FK_InvoiceItem_Items" FromRole="Items" ToRole="InvoiceItem" />
+          <NavigationProperty Name="LogPurchaseOrders" Relationship="Self.FK_LogPurchaseOrder_Items" FromRole="Items" ToRole="LogPurchaseOrder" />
+        </EntityType>
+        <EntityType Name="LogPurchaseOrder">
+          <Key>
+            <PropertyRef Name="PurchaseOrderId" />
+          </Key>
+          <Property Name="PurchaseOrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vendor_id" Type="Int32" />
+          <Property Name="Items_id" Type="Int32" />
+          <Property Name="Item_amount" Type="Int32" />
+          <Property Name="Status_Id" Type="Int32" />
+          <Property Name="PurchaseOrderNumber" Type="Int32" />
+          <Property Name="Approval_Date" Type="DateTime" Precision="3" />
+          <Property Name="CurrencyId" Type="Int32" />
+          <Property Name="Total" Type="Double" />
+          <NavigationProperty Name="Currency" Relationship="Self.FK_LogPurchaseOrder_Currency" FromRole="LogPurchaseOrder" ToRole="Currency" />
+          <NavigationProperty Name="Invoices" Relationship="Self.FK_Invoices_LogPurchaseOrder" FromRole="LogPurchaseOrder" ToRole="Invoices" />
+          <NavigationProperty Name="Item" Relationship="Self.FK_LogPurchaseOrder_Items" FromRole="LogPurchaseOrder" ToRole="Items" />
+          <NavigationProperty Name="PurchaseOrderStatu" Relationship="Self.FK_LogPurchaseOrder_PurchaseOrderStatus" FromRole="LogPurchaseOrder" ToRole="PurchaseOrderStatus" />
+          <NavigationProperty Name="Vendor" Relationship="Self.FK_LogPurchaseOrder_Vendors" FromRole="LogPurchaseOrder" ToRole="Vendors" />
+        </EntityType>
+        <EntityType Name="PurchaseOrderStatu">
+          <Key>
+            <PropertyRef Name="Status_Id" />
+          </Key>
+          <Property Name="Status_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Status_type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="LogPurchaseOrders" Relationship="Self.FK_LogPurchaseOrder_PurchaseOrderStatus" FromRole="PurchaseOrderStatus" ToRole="LogPurchaseOrder" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Vendor">
+          <Key>
+            <PropertyRef Name="Vendors_id" />
+          </Key>
+          <Property Name="Vendors_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vendorname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VendorAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VendorNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Invoices" Relationship="Self.FK_Invoices_Vendors" FromRole="Vendors" ToRole="Invoices" />
+          <NavigationProperty Name="LogPurchaseOrders" Relationship="Self.FK_LogPurchaseOrder_Vendors" FromRole="Vendors" ToRole="LogPurchaseOrder" />
+        </EntityType>
+        <Association Name="FK_LogPurchaseOrder_Currency">
+          <End Role="Currency" Type="Self.Currency" Multiplicity="0..1" />
+          <End Role="LogPurchaseOrder" Type="Self.LogPurchaseOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="CurrencyId" />
+            </Principal>
+            <Dependent Role="LogPurchaseOrder">
+              <PropertyRef Name="CurrencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvoiceItem_Invoices">
+          <End Role="Invoices" Type="Self.Invoice" Multiplicity="1" />
+          <End Role="InvoiceItem" Type="Self.InvoiceItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Invoices">
+              <PropertyRef Name="Invoice_id" />
+            </Principal>
+            <Dependent Role="InvoiceItem">
+              <PropertyRef Name="Invoice_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvoiceItem_Items">
+          <End Role="Items" Type="Self.Item" Multiplicity="1" />
+          <End Role="InvoiceItem" Type="Self.InvoiceItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Items">
+              <PropertyRef Name="Item_id" />
+            </Principal>
+            <Dependent Role="InvoiceItem">
+              <PropertyRef Name="Item_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invoices_InvoicesStatus">
+          <End Role="InvoiceStatus" Type="Self.InvoiceStatu" Multiplicity="0..1" />
+          <End Role="Invoices" Type="Self.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InvoiceStatus">
+              <PropertyRef Name="Status_Id" />
+            </Principal>
+            <Dependent Role="Invoices">
+              <PropertyRef Name="Status_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invoices_LogPurchaseOrder">
+          <End Role="LogPurchaseOrder" Type="Self.LogPurchaseOrder" Multiplicity="1" />
+          <End Role="Invoices" Type="Self.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LogPurchaseOrder">
+              <PropertyRef Name="PurchaseOrderId" />
+            </Principal>
+            <Dependent Role="Invoices">
+              <PropertyRef Name="PurchaseOrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invoices_Vendors">
+          <End Role="Vendors" Type="Self.Vendor" Multiplicity="0..1" />
+          <End Role="Invoices" Type="Self.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vendors">
+              <PropertyRef Name="Vendors_id" />
+            </Principal>
+            <Dependent Role="Invoices">
+              <PropertyRef Name="Vendors_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LogPurchaseOrder_Items">
+          <End Role="Items" Type="Self.Item" Multiplicity="0..1" />
+          <End Role="LogPurchaseOrder" Type="Self.LogPurchaseOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Items">
+              <PropertyRef Name="Item_id" />
+            </Principal>
+            <Dependent Role="LogPurchaseOrder">
+              <PropertyRef Name="Items_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LogPurchaseOrder_PurchaseOrderStatus">
+          <End Role="PurchaseOrderStatus" Type="Self.PurchaseOrderStatu" Multiplicity="0..1" />
+          <End Role="LogPurchaseOrder" Type="Self.LogPurchaseOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PurchaseOrderStatus">
+              <PropertyRef Name="Status_Id" />
+            </Principal>
+            <Dependent Role="LogPurchaseOrder">
+              <PropertyRef Name="Status_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LogPurchaseOrder_Vendors">
+          <End Role="Vendors" Type="Self.Vendor" Multiplicity="0..1" />
+          <End Role="LogPurchaseOrder" Type="Self.LogPurchaseOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vendors">
+              <PropertyRef Name="Vendors_id" />
+            </Principal>
+            <Dependent Role="LogPurchaseOrder">
+              <PropertyRef Name="Vendor_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="POISEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Currencies" EntityType="Self.Currency" />
+          <EntitySet Name="InvoiceItems" EntityType="Self.InvoiceItem" />
+          <EntitySet Name="Invoices" EntityType="Self.Invoice" />
+          <EntitySet Name="InvoiceStatus" EntityType="Self.InvoiceStatu" />
+          <EntitySet Name="Items" EntityType="Self.Item" />
+          <EntitySet Name="LogPurchaseOrders" EntityType="Self.LogPurchaseOrder" />
+          <EntitySet Name="PurchaseOrderStatus" EntityType="Self.PurchaseOrderStatu" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Vendors" EntityType="Self.Vendor" />
+          <AssociationSet Name="FK_LogPurchaseOrder_Currency" Association="Self.FK_LogPurchaseOrder_Currency">
+            <End Role="Currency" EntitySet="Currencies" />
+            <End Role="LogPurchaseOrder" EntitySet="LogPurchaseOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvoiceItem_Invoices" Association="Self.FK_InvoiceItem_Invoices">
+            <End Role="Invoices" EntitySet="Invoices" />
+            <End Role="InvoiceItem" EntitySet="InvoiceItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvoiceItem_Items" Association="Self.FK_InvoiceItem_Items">
+            <End Role="Items" EntitySet="Items" />
+            <End Role="InvoiceItem" EntitySet="InvoiceItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoices_InvoicesStatus" Association="Self.FK_Invoices_InvoicesStatus">
+            <End Role="InvoiceStatus" EntitySet="InvoiceStatus" />
+            <End Role="Invoices" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoices_LogPurchaseOrder" Association="Self.FK_Invoices_LogPurchaseOrder">
+            <End Role="LogPurchaseOrder" EntitySet="LogPurchaseOrders" />
+            <End Role="Invoices" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoices_Vendors" Association="Self.FK_Invoices_Vendors">
+            <End Role="Vendors" EntitySet="Vendors" />
+            <End Role="Invoices" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LogPurchaseOrder_Items" Association="Self.FK_LogPurchaseOrder_Items">
+            <End Role="Items" EntitySet="Items" />
+            <End Role="LogPurchaseOrder" EntitySet="LogPurchaseOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LogPurchaseOrder_PurchaseOrderStatus" Association="Self.FK_LogPurchaseOrder_PurchaseOrderStatus">
+            <End Role="PurchaseOrderStatus" EntitySet="PurchaseOrderStatus" />
+            <End Role="LogPurchaseOrder" EntitySet="LogPurchaseOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LogPurchaseOrder_Vendors" Association="Self.FK_LogPurchaseOrder_Vendors">
+            <End Role="Vendors" EntitySet="Vendors" />
+            <End Role="LogPurchaseOrder" EntitySet="LogPurchaseOrders" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="POISModelStoreContainer" CdmEntityContainer="POISEntities">
+          <EntitySetMapping Name="Currencies">
+            <EntityTypeMapping TypeName="POISModel.Currency">
+              <MappingFragment StoreEntitySet="Currency">
+                <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+                <ScalarProperty Name="Currency1" ColumnName="Currency" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvoiceItems">
+            <EntityTypeMapping TypeName="POISModel.InvoiceItem">
+              <MappingFragment StoreEntitySet="InvoiceItem">
+                <ScalarProperty Name="InvoiceItemID" ColumnName="InvoiceItemID" />
+                <ScalarProperty Name="Invoice_id" ColumnName="Invoice_id" />
+                <ScalarProperty Name="Item_id" ColumnName="Item_id" />
+                <ScalarProperty Name="Item_Provided" ColumnName="Item_Provided" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invoices">
+            <EntityTypeMapping TypeName="POISModel.Invoice">
+              <MappingFragment StoreEntitySet="Invoices">
+                <ScalarProperty Name="Invoice_id" ColumnName="Invoice_id" />
+                <ScalarProperty Name="PurchaseOrderID" ColumnName="PurchaseOrderID" />
+                <ScalarProperty Name="ApprovalDate" ColumnName="ApprovalDate" />
+                <ScalarProperty Name="DateForPayment" ColumnName="DateForPayment" />
+                <ScalarProperty Name="Vendors_id" ColumnName="Vendors_id" />
+                <ScalarProperty Name="Invoice_description" ColumnName="Invoice_description" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="Status_Id" ColumnName="Status_Id" />
+                <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+                <ScalarProperty Name="PurchaseOrderNumber" ColumnName="PurchaseOrderNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvoiceStatus">
+            <EntityTypeMapping TypeName="POISModel.InvoiceStatu">
+              <MappingFragment StoreEntitySet="InvoiceStatus">
+                <ScalarProperty Name="Status_Id" ColumnName="Status_Id" />
+                <ScalarProperty Name="Status_type" ColumnName="Status_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="POISModel.Item">
+              <MappingFragment StoreEntitySet="Items">
+                <ScalarProperty Name="Item_id" ColumnName="Item_id" />
+                <ScalarProperty Name="Item_Name" ColumnName="Item_Name" />
+                <ScalarProperty Name="Item_Description" ColumnName="Item_Description" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Item_Cost" ColumnName="Item_Cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogPurchaseOrders">
+            <EntityTypeMapping TypeName="POISModel.LogPurchaseOrder">
+              <MappingFragment StoreEntitySet="LogPurchaseOrder">
+                <ScalarProperty Name="PurchaseOrderId" ColumnName="PurchaseOrderId" />
+                <ScalarProperty Name="Vendor_id" ColumnName="Vendor_id" />
+                <ScalarProperty Name="Items_id" ColumnName="Items_id" />
+                <ScalarProperty Name="Item_amount" ColumnName="Item_amount" />
+                <ScalarProperty Name="Status_Id" ColumnName="Status_Id" />
+                <ScalarProperty Name="PurchaseOrderNumber" ColumnName="PurchaseOrderNumber" />
+                <ScalarProperty Name="Approval_Date" ColumnName="Approval_Date" />
+                <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PurchaseOrderStatus">
+            <EntityTypeMapping TypeName="POISModel.PurchaseOrderStatu">
+              <MappingFragment StoreEntitySet="PurchaseOrderStatus">
+                <ScalarProperty Name="Status_Id" ColumnName="Status_Id" />
+                <ScalarProperty Name="Status_type" ColumnName="Status_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="POISModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vendors">
+            <EntityTypeMapping TypeName="POISModel.Vendor">
+              <MappingFragment StoreEntitySet="Vendors">
+                <ScalarProperty Name="Vendors_id" ColumnName="Vendors_id" />
+                <ScalarProperty Name="Vendorname" ColumnName="Vendorname" />
+                <ScalarProperty Name="VendorAddress" ColumnName="VendorAddress" />
+                <ScalarProperty Name="VendorNumber" ColumnName="VendorNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

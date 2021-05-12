@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EE05CB10-6E10-460D-A653-CEB4585FF2A7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>POIS1</RootNamespace>
+    <AssemblyName>POIS1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calculation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculation.Designer.cs">
+      <DependentUpon>Calculation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Currency.cs">
+      <DependentUpon>POIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home Page.Designer.cs">
+      <DependentUpon>Home Page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice.cs">
+      <DependentUpon>POIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceItem.cs">
+      <DependentUpon>POIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceStatu.cs">
+      <DependentUpon>POIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Item.cs">
+      <DependentUpon>POIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Log Invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Log Invoice.Designer.cs">
+      <DependentUpon>Log Invoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Log Purchase Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Log Purchase Order.Designer.cs">
+      <DependentUpon>Log Purchase Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POIS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POIS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POIS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POIS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POIS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseOrder.cs">
+      <DependentUpon>POIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseOrderStatu.cs">
+      <DependentUpon>POIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>POIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vendor.cs">
+      <DependentUpon>POIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View Invoices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View Invoices.Designer.cs">
+      <DependentUpon>View Invoices.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Calculation.resx">
+      <DependentUpon>Calculation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page.resx">
+      <DependentUpon>Home Page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log Invoice.resx">
+      <DependentUpon>Log Invoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log Purchase Order.resx">
+      <DependentUpon>Log Purchase Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View Invoices.resx">
+      <DependentUpon>View Invoices.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <EntityDeploy Include="POIS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>POIS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="POIS.edmx.diagram">
+      <DependentUpon>POIS.edmx</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HEART NSTA Trust - Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\POIS logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-icon-png-pnglogocom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rb8a3bd2e5a36aaf1d25a99b06a4a0f0b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\POIS%28white%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\POIS%28Final%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home1600.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\457-4574987_white-house-icon-png-clipart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Re55438fce4d11fa39acb44baa5d55763.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Files.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R9f19d1b8999f99d57da187fee752b0ee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R5b442441defbdc85231d35d7a7f7619c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4f166bed1ca99a922f7e303753cd706a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back-icon-clipart-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\90640_back_512x512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-2-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Undo_Back_Left_Arrow_Previous-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Undo_Back_Left_Arrow_Previous-5121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\POIS logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_272299.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\floppy-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save-5121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="POIS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>POIS.edmx</DependentUpon>
+      <LastGenOutput>POIS.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="POIS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>POIS.edmx</DependentUpon>
+      <LastGenOutput>POIS.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

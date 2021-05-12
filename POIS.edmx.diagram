@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="218152e9fb1a4095814c30da377826f7" Name="Diagram1">
+        <EntityTypeShape EntityType="POISModel.Currency" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="POISModel.InvoiceItem" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="POISModel.Invoice" Width="1.5" PointX="8.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="POISModel.InvoiceStatu" Width="1.5" PointX="6" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="POISModel.Item" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="POISModel.LogPurchaseOrder" Width="1.5" PointX="6" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="POISModel.PurchaseOrderStatu" Width="1.5" PointX="3.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="POISModel.sysdiagram" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="POISModel.Vendor" Width="1.5" PointX="3.75" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="POISModel.FK_LogPurchaseOrder_Currency" ManuallyRouted="false" />
+        <AssociationConnector Association="POISModel.FK_InvoiceItem_Invoices" ManuallyRouted="false" />
+        <AssociationConnector Association="POISModel.FK_InvoiceItem_Items" ManuallyRouted="false" />
+        <AssociationConnector Association="POISModel.FK_Invoices_InvoicesStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="POISModel.FK_Invoices_LogPurchaseOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="POISModel.FK_Invoices_Vendors" ManuallyRouted="false" />
+        <AssociationConnector Association="POISModel.FK_LogPurchaseOrder_Items" ManuallyRouted="false" />
+        <AssociationConnector Association="POISModel.FK_LogPurchaseOrder_PurchaseOrderStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="POISModel.FK_LogPurchaseOrder_Vendors" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
