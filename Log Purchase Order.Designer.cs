@@ -907,14 +907,14 @@ namespace POIS1
             // logInvoicesToolStripMenuItem
             // 
             this.logInvoicesToolStripMenuItem.Name = "logInvoicesToolStripMenuItem";
-            this.logInvoicesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.logInvoicesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.logInvoicesToolStripMenuItem.Text = "Log Invoices";
             this.logInvoicesToolStripMenuItem.Click += new System.EventHandler(this.logInvoicesToolStripMenuItem_Click);
             // 
             // viewInvoicesToolStripMenuItem1
             // 
             this.viewInvoicesToolStripMenuItem1.Name = "viewInvoicesToolStripMenuItem1";
-            this.viewInvoicesToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.viewInvoicesToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
             this.viewInvoicesToolStripMenuItem1.Text = "View Invoices";
             this.viewInvoicesToolStripMenuItem1.Click += new System.EventHandler(this.viewInvoicesToolStripMenuItem1_Click);
             // 
@@ -952,7 +952,7 @@ namespace POIS1
             // viewReportsToolStripMenuItem1
             // 
             this.viewReportsToolStripMenuItem1.Name = "viewReportsToolStripMenuItem1";
-            this.viewReportsToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.viewReportsToolStripMenuItem1.Size = new System.Drawing.Size(179, 26);
             this.viewReportsToolStripMenuItem1.Text = "View Reports";
             this.viewReportsToolStripMenuItem1.Click += new System.EventHandler(this.viewReportsToolStripMenuItem1_Click);
             // 
@@ -967,7 +967,7 @@ namespace POIS1
             // changeThemeToolStripMenuItem
             // 
             this.changeThemeToolStripMenuItem.Name = "changeThemeToolStripMenuItem";
-            this.changeThemeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.changeThemeToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.changeThemeToolStripMenuItem.Text = "Change Theme";
             this.changeThemeToolStripMenuItem.Click += new System.EventHandler(this.changeThemeToolStripMenuItem_Click);
             // 
@@ -1053,7 +1053,7 @@ namespace POIS1
             this.ItemsAdddetailsbtn.TabIndex = 116;
             this.ItemsAdddetailsbtn.Text = "Add Details";
             this.ItemsAdddetailsbtn.UseVisualStyleBackColor = false;
-            this.ItemsAdddetailsbtn.Click += new System.EventHandler(this.Adddetailsbtn_Click);
+            this.ItemsAdddetailsbtn.Click += new System.EventHandler(this.ItemsAdddetailsbtn_Click);
             // 
             // VendorAdddetailsbtn
             // 

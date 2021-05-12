@@ -11,6 +11,7 @@ namespace POIS1
     {
 
         string VendorID;
+        string VendorName;
         string status_id;
         string ItemsId;
         string CurrencyId;
@@ -57,7 +58,7 @@ namespace POIS1
 
 
 
-            ItemsAdddetailsbtn.Visible = false;
+            
             settingspanel.Visible = false;
 
             LogInvbtn.ForeColor = Color.White;
@@ -943,7 +944,7 @@ namespace POIS1
 
         private void Currencycb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ItemsAdddetailsbtn.Visible = true;
+           
             SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
             string q = "select * from Currency";
             string ICurrency = "insert into Items (Currency) values  ('" + Currencycb + "')";
@@ -1019,7 +1020,7 @@ namespace POIS1
                     if ((MessageBox.Show("Do you want to add Item Details?", "Item Details", MessageBoxButtons.YesNo)) == DialogResult.Yes)
                     {
 
-                        ItemsAdddetailsbtn.Visible = false;
+                       
 
                         SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
                         connection.Open();
@@ -1070,8 +1071,7 @@ namespace POIS1
 
         private void Vendoradd_detailsbtn(object sender, EventArgs e)
         {
-            try
-            {
+           
                 SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
                 connection.Open();
 
@@ -1082,56 +1082,150 @@ namespace POIS1
                     MessageBox.Show("Vendor Details is Missing");
                 }
 
+                string s = "select * from Vendors where Vendorname = '" + Vendorcb.Text + "'";
+                SqlCommand command4 = new SqlCommand(s, connection);
+
+                SqlDataReader sqlData1 = command4.ExecuteReader();
+            while (sqlData1.Read())
+            {
+                VendorID = sqlData1[0].ToString();
+                VendorName = sqlData1.GetString(1);
+
+                //Cost1 = sqlData.GetDouble(4);
+                //Itemdesctb.Text = ItemsId;
+                //ItemName1.Text = status_id;
+            }
 
 
+            if (Vendorcb.Text == VendorName)
+            {
+                MessageBox.Show("Vendor details already exist");
+            }
 
 
-
-                else
+            else
+            {
+                if ((MessageBox.Show("Do you want to add Vendor Details?", "Vendor Details", MessageBoxButtons.YesNo)) == DialogResult.Yes)
                 {
-                    if ((MessageBox.Show("Do you want to add Vendor Details?", "Vendor Details", MessageBoxButtons.YesNo)) == DialogResult.Yes)
+
+
+
+
+
+
+                    string q = "insert into Vendors (Vendorname,VendorAddress,VendorNumber) values  ('" + Vendorcb.Text + "', '" + VndrAddrescb.Text + "','" + VndrNumbercb.Text + "')";
+                    string I = "select Vendor_Id from Vendors where Vendorname = '" + Vendorcb.Text + "'";
+
+                    SqlCommand command = new SqlCommand(q, connection);
+                    SqlCommand command3 = new SqlCommand(I, connection);
+
+                    command.ExecuteNonQuery();
+                    SqlDataReader sqlData = command3.ExecuteReader();
+
+
+                    while (sqlData.Read())
+                    {
+                        VendorID = sqlData[0].ToString();
+
+                        //Cost1 = sqlData.GetDouble(4);
+                        //Itemdesctb.Text = ItemsId;
+                        //ItemName1.Text = status_id;
+                    }
+
+
+
+                }
+            }
+
+                connection.Close();
+            
+
+
+           
+        }
+
+        private void ItemsAdddetailsbtn_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
+            connection.Open();
+            bool isValid = false;
+            if (ItemName1.Text == "" || Itemdesctb.Text == "" || Quantity1.Text == "" || string.IsNullOrWhiteSpace(Costtb.Text) || Currencycb.Text == "")
+            {
+                isValid = false;
+                MessageBox.Show("Item Details is Missing");
+            }
+
+            string s = "select * from Items where Item_Name = '" + ItemName1.Text + "'";
+            SqlCommand command4 = new SqlCommand(s, connection);
+
+            SqlDataReader sqlData1 = command4.ExecuteReader();
+            while (sqlData1.Read())
+            {
+                
+                Itemname = sqlData1.GetString(1);
+
+                //Cost1 = sqlData.GetDouble(4);
+                //Itemdesctb.Text = ItemsId;
+                //ItemName1.Text = status_id;
+            }
+
+
+            if (ItemName1.Text == Itemname)
+            {
+                MessageBox.Show("Item Details already exist");
+            }
+
+
+
+
+            else
+            {
+                try
+                {
+
+
+                    if ((MessageBox.Show("Do you want to add Item Details?", "Item Details", MessageBoxButtons.YesNo)) == DialogResult.Yes)
                     {
 
+                        
 
-
-
-
-
-                        string q = "insert into Vendors (Vendorname,VendorAddress,VendorNumber) values  ('" + Vendorcb.Text + "', '" + VndrAddrescb.Text + "','" + VndrNumbercb.Text + "')";
-                        string I = "select Vendor_Id from Vendor where Vendorname = '" + Vendorcb.Text + "'";
+                       
+                        string q = "insert into Items (Item_Name,Item_Description,Currency,Item_Cost) values  ('" + ItemName1.Text + "', '" + Itemdesctb.Text + "','" + Currencycb.Text + "','" + Costtb.Text + "')";
+                        string I = "select Item_id from Items where Item_Name = '" + ItemName1.Text + "'";
 
                         SqlCommand command = new SqlCommand(q, connection);
-                        SqlCommand command3 = new SqlCommand(I, connection);
+                        SqlCommand command1 = new SqlCommand(I, connection);
 
+                        //DataTable dataTable = new DataTable();
                         command.ExecuteNonQuery();
-                        SqlDataReader sqlData = command3.ExecuteReader();
+
+
+
+                        SqlDataReader sqlData = command1.ExecuteReader();
+
 
 
                         while (sqlData.Read())
                         {
-                            VendorID = sqlData[0].ToString();
+                            ItemsId = sqlData[0].ToString();
+
 
                             //Cost1 = sqlData.GetDouble(4);
                             //Itemdesctb.Text = ItemsId;
                             //ItemName1.Text = status_id;
                         }
 
-
-
+                        connection.Close();
                     }
                 }
 
-                connection.Close();
-            }
+                catch (Exception)
+                {
 
-
-            catch (Exception)
-            {
-
+                    throw;
+                }
             }
         }
-
-
 
 
 
@@ -1245,6 +1339,8 @@ namespace POIS1
             ViewReport viewreport = new ViewReport();
             viewreport.Show();
         }
+
+        
     }
 }
 

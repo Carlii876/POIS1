@@ -55,6 +55,7 @@ namespace POIS1
                 usernameerror.Text = "Please Enter a Username";
 
             }
+            
             else
             {
                 usernameerror.Text = "";
