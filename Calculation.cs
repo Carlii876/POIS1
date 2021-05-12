@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+
 
 namespace POIS1
 {
     public partial class Calculation : Form
     {
-        double Sub;
+
         double disval;
-        string Subtotal;
-        double Sub2;
+
         public Calculation()
         {
             InitializeComponent();
@@ -34,19 +34,20 @@ namespace POIS1
 
         private void Calculation_Load(object sender, EventArgs e)
         {
-            
+
             Itemscombobox();
+            addcurrency();
             settingpanel1.Visible = false;
 
             LogPObtn.ForeColor = Color.White;
             LogInvbtn.ForeColor = Color.White;
-            Reportbtn.ForeColor = Color.White;
+            
             Homebtn.ForeColor = Color.White;
             Calculationbtn.ForeColor = Color.Black;
 
             LogPObtn.BackColor = Color.FromArgb(0, 117, 190);
             LogInvbtn.BackColor = Color.FromArgb(0, 117, 190);
-            Reportbtn.BackColor = Color.FromArgb(0, 117, 190);
+            
             Homebtn.BackColor = Color.FromArgb(0, 117, 190);
             Calculationbtn.BackColor = Color.White;
             homeicon.BackColor = Color.FromArgb(0, 117, 190);
@@ -54,8 +55,42 @@ namespace POIS1
             Homebtn.FlatStyle = FlatStyle.Flat;
             LogPObtn.FlatStyle = FlatStyle.Flat;
             LogInvbtn.FlatStyle = FlatStyle.Flat;
-            Reportbtn.FlatStyle = FlatStyle.Flat;
+            
         }
+
+        public void addcurrency()
+        {
+            SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
+
+            string q = "select * from Currency";
+            SqlCommand command = new SqlCommand(q, connection);
+            //SqlDataReader datareader = command.ExecuteReader();
+            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+
+            try
+            {
+                connection.Open();
+                SqlDataReader sqlData = command.ExecuteReader();
+
+                while (sqlData.Read())
+                {
+                    string Currency = sqlData.GetString(1);
+
+                    collection.Add(sqlData.GetString(1));
+                    Currencycb.Items.Add(Currency);
+
+                }
+            }
+            catch
+            {
+
+            }
+            connection.Close();
+
+
+        }
+
+
         public void Itemscombobox()
         {
             SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
@@ -83,7 +118,7 @@ namespace POIS1
             }
             connection.Close();
         }
-            private void Homebtn_Click(object sender, EventArgs e)
+        private void Homebtn_Click(object sender, EventArgs e)
         {
             Home_Page home_Page = new Home_Page();
             this.Hide();
@@ -113,7 +148,8 @@ namespace POIS1
 
         private void logoutlbl_Click(object sender, EventArgs e)
         {
-            if ((MessageBox.Show("Are you sure you want to log out?", "Log Out", MessageBoxButtons.YesNo)) == DialogResult.Yes)
+            WelcomeNExit welcomeNExit = new WelcomeNExit();
+            if ((MessageBox.Show(Convert.ToString(welcomeNExit), "Log Out", MessageBoxButtons.YesNo)) == DialogResult.Yes)
             {
                 this.Hide();
 
@@ -133,17 +169,19 @@ namespace POIS1
 
                 login.Show();
             }
-            
+
         }
 
         private void hlplbl_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Please contact administrator for any inquiry");
+            Saveinput saveinput = new Saveinput();
+            MessageBox.Show(saveinput.help);
         }
 
         private void help_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Please contact administrator for any inquiry");
+            Saveinput saveinput = new Saveinput();
+            MessageBox.Show(saveinput.help);
         }
 
         private void settings_Click(object sender, EventArgs e)
@@ -162,14 +200,14 @@ namespace POIS1
 
                 Selectcurrencylbl.BackColor = Color.White;
                 Currencylbl.BackColor = Color.White;
-                Itemdetailslbl.BackColor = Color.White; 
-                ItemNamelbl.BackColor = Color.White; 
-                Quatitylbl.BackColor = Color.White; 
-                Costlbl.BackColor = Color.White; 
+                Itemdetailslbl.BackColor = Color.White;
+                ItemNamelbl.BackColor = Color.White;
+                Quatitylbl.BackColor = Color.White;
+                Costlbl.BackColor = Color.White;
                 Taxlbl.BackColor = Color.White;
                 Totallbl.BackColor = Color.White;
-                Discountvaluelbl.BackColor = Color.White; 
-                Discountpercentlbl.BackColor = Color.White; 
+                Discountvaluelbl.BackColor = Color.White;
+                Discountpercentlbl.BackColor = Color.White;
                 poislogo.BackColor = Color.White;
                 toppanel.BackColor = Color.FromArgb(0, 117, 214);
             }
@@ -192,12 +230,7 @@ namespace POIS1
             }
         }
 
-        private void Reportbtn_Click(object sender, EventArgs e)
-        {
-            Report report = new Report();
-            this.Hide();
-            report.Show();
-        }
+        
 
         private void changeThemeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -256,7 +289,7 @@ namespace POIS1
             while (sqlData.Read())
             {
 
-                
+
                 string currenc = sqlData.GetString(3);
                 double Icost = sqlData.GetDouble(4);
 
@@ -266,7 +299,7 @@ namespace POIS1
 
 
 
-                
+
             }
             connection.Close();
         }
@@ -329,55 +362,36 @@ namespace POIS1
 
         private void taxtb_TextChanged(object sender, EventArgs e)
         {
-            double disc;
-            double discountP;
-            double discountV;
-            double total;
-            double discountp;
-            double tax;
-            double subtotal;
+            Calculate calculate = new Calculate();
+            try
+            {
+                taxtb.Text = calculate.Tax(Convert.ToDouble(taxtb.Text)).ToString();
+            }
+            catch (Exception)
+            {
 
 
-            total = Convert.ToDouble(totaltb.Text);
-            tax = Convert.ToDouble(taxtb.Text);
+            }
 
 
-
-            Subtotal = Math.Abs((total)+tax * total).ToString();
-            Sub = Convert.ToDouble(Subtotal);
 
         }
 
         private void calculatebtn_Click(object sender, EventArgs e)
         {
-            int quantity;
-            double gct;
-            double total;
-            double cost;
-            double discountP;
-            double discountV;
-            double num;
-            double num2;
-            double disc;
-            double disc2;
+            Calculate calculate = new Calculate();
 
-            total = Convert.ToDouble(totaltb.Text);
-            gct = Convert.ToDouble(taxtb.Text);
-            quantity = Convert.ToInt32(quantitytb.Text);
-
-            cost = Convert.ToDouble(costtb.Text);
-
-            discountP = Convert.ToDouble(dispercentagetb.Text);
-            discountV = Convert.ToDouble(disvaluetb.Text);
-
-            Sub2 = Math.Abs(Sub - disval);
-
-            Subtotaltb.Text = Convert.ToString(Sub2);
-            
+            try
+            {
+                Subtotaltb.Text = calculate.CalculateTotal(Convert.ToDouble(totaltb.Text), Convert.ToDouble(taxtb.Text), Convert.ToDouble(disvaluetb.Text)).ToString();
+            }
+            catch (Exception)
+            {
 
 
+            }
 
-            
+
         }
 
         private void dispercentagetb_TextChanged(object sender, EventArgs e)
@@ -405,7 +419,7 @@ namespace POIS1
                 disvaluetb.Text = Math.Abs(discountp * total).ToString();
                 disval = Convert.ToDouble(disvaluetb.Text);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -427,15 +441,64 @@ namespace POIS1
 
         private void viewInvoicesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var view_invoices = new View_Invoices();
-            view_invoices.Show();
+            bool isOpen = false;
+
+
+            FormCollection fc = Application.OpenForms;
+            View_Invoices view_Invoices = new View_Invoices();
+
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.Text == "View_Invoices")
+                {
+                    isOpen = true;
+                    form.Focus();
+
+                    break;
+                }
+            }
+            if (isOpen == false)
+            {
+
+                
+
+                view_Invoices.Show();
+                
+            }
+
+
+
 
         }
 
         private void viewPurchaseOrderToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var ViewpurchaseOrder = new View_Purchase_Order();
-            ViewpurchaseOrder.Show();
+            bool isOpen = false;
+
+
+            FormCollection fc = Application.OpenForms;
+            View_Purchase_Order view_Invoices = new View_Purchase_Order();
+
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.Text == "View_Purchase_Order")
+                {
+                    isOpen = true;
+                    form.Focus();
+
+                    break;
+                }
+            }
+            if (isOpen == false)
+            {
+
+
+
+                view_Invoices.Show();
+
+            }
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -449,6 +512,47 @@ namespace POIS1
                 login.Show();
             }
         }
+
+        private void Currencycb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+            SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
+            string q = "select * from Currency = '" + Currencycb.Text + "'";
+
+
+            SqlCommand command = new SqlCommand(q, connection);
+
+
+            //DataTable dataTable = new DataTable();
+
+            try
+            {
+                connection.Open();
+                SqlDataReader sqlData = command.ExecuteReader();
+
+                while (sqlData.Read())
+                {
+                    string currency = sqlData.GetString(1);
+
+
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void viewReportsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ViewReport viewreport = new ViewReport();
+            viewreport.Show();
+        }
     }
-    
 }
+
+

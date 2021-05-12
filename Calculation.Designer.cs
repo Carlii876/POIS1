@@ -29,14 +29,11 @@ namespace POIS1
         /// </summary>
         private void InitializeComponent()
         {
-            this.poislogo = new System.Windows.Forms.PictureBox();
             this.settingspanel = new System.Windows.Forms.Panel();
             this.maximisebtn = new System.Windows.Forms.Button();
             this.themebtn = new System.Windows.Forms.Button();
             this.minimisebtn = new System.Windows.Forms.Button();
             this.settingpanel1 = new System.Windows.Forms.Panel();
-            this.Maximizebtn = new System.Windows.Forms.Button();
-            this.Minimizebtn = new System.Windows.Forms.Button();
             this.changethemebtn = new System.Windows.Forms.Button();
             this.Selectcurrencylbl = new System.Windows.Forms.Label();
             this.Currencylbl = new System.Windows.Forms.Label();
@@ -68,27 +65,23 @@ namespace POIS1
             this.LogPObtn = new System.Windows.Forms.Button();
             this.LogInvbtn = new System.Windows.Forms.Button();
             this.Calculationbtn = new System.Windows.Forms.Button();
-            this.Reportbtn = new System.Windows.Forms.Button();
             this.ViewsMenue = new System.Windows.Forms.MenuStrip();
             this.viewInvoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logInvoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewInvoicesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteInvoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewPurchaseOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logPurchaseOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewPurchaseOrderToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.deletePurchaseOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewReportsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Currencycb = new System.Windows.Forms.ComboBox();
             this.ItemName1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Subtotaltb = new System.Windows.Forms.TextBox();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.poislogo)).BeginInit();
+            this.poislogo = new System.Windows.Forms.PictureBox();
             this.settingspanel.SuspendLayout();
             this.settingpanel1.SuspendLayout();
             this.toppanel.SuspendLayout();
@@ -99,19 +92,8 @@ namespace POIS1
             ((System.ComponentModel.ISupportInitialize)(this.poispB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeicon)).BeginInit();
             this.ViewsMenue.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.poislogo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // poislogo
-            // 
-            this.poislogo.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.poislogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.poislogo.Image = global::POIS1.Properties.Resources.POIS_Final_;
-            this.poislogo.Location = new System.Drawing.Point(0, 0);
-            this.poislogo.Name = "poislogo";
-            this.poislogo.Size = new System.Drawing.Size(1567, 792);
-            this.poislogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.poislogo.TabIndex = 21;
-            this.poislogo.TabStop = false;
             // 
             // settingspanel
             // 
@@ -166,38 +148,12 @@ namespace POIS1
             // 
             this.settingpanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.settingpanel1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.settingpanel1.Controls.Add(this.Maximizebtn);
-            this.settingpanel1.Controls.Add(this.Minimizebtn);
             this.settingpanel1.Controls.Add(this.changethemebtn);
             this.settingpanel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.settingpanel1.Location = new System.Drawing.Point(1443, 102);
             this.settingpanel1.Name = "settingpanel1";
-            this.settingpanel1.Size = new System.Drawing.Size(124, 109);
+            this.settingpanel1.Size = new System.Drawing.Size(124, 46);
             this.settingpanel1.TabIndex = 40;
-            // 
-            // Maximizebtn
-            // 
-            this.Maximizebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
-            this.Maximizebtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(170)))));
-            this.Maximizebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Maximizebtn.Location = new System.Drawing.Point(0, 72);
-            this.Maximizebtn.Name = "Maximizebtn";
-            this.Maximizebtn.Size = new System.Drawing.Size(124, 37);
-            this.Maximizebtn.TabIndex = 23;
-            this.Maximizebtn.Text = "Maximise";
-            this.Maximizebtn.UseVisualStyleBackColor = false;
-            // 
-            // Minimizebtn
-            // 
-            this.Minimizebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
-            this.Minimizebtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(170)))));
-            this.Minimizebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Minimizebtn.Location = new System.Drawing.Point(0, 36);
-            this.Minimizebtn.Name = "Minimizebtn";
-            this.Minimizebtn.Size = new System.Drawing.Size(124, 37);
-            this.Minimizebtn.TabIndex = 22;
-            this.Minimizebtn.Text = "Minimise";
-            this.Minimizebtn.UseVisualStyleBackColor = false;
             // 
             // changethemebtn
             // 
@@ -206,7 +162,7 @@ namespace POIS1
             this.changethemebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.changethemebtn.Location = new System.Drawing.Point(0, -9);
             this.changethemebtn.Name = "changethemebtn";
-            this.changethemebtn.Size = new System.Drawing.Size(124, 46);
+            this.changethemebtn.Size = new System.Drawing.Size(124, 55);
             this.changethemebtn.TabIndex = 20;
             this.changethemebtn.Text = "Change Theme";
             this.changethemebtn.UseVisualStyleBackColor = false;
@@ -393,7 +349,6 @@ namespace POIS1
             this.toppanel.Controls.Add(this.LogPObtn);
             this.toppanel.Controls.Add(this.LogInvbtn);
             this.toppanel.Controls.Add(this.Calculationbtn);
-            this.toppanel.Controls.Add(this.Reportbtn);
             this.toppanel.Controls.Add(this.ViewsMenue);
             this.toppanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.toppanel.Location = new System.Drawing.Point(0, 0);
@@ -554,20 +509,6 @@ namespace POIS1
             this.Calculationbtn.UseVisualStyleBackColor = false;
             this.Calculationbtn.Click += new System.EventHandler(this.Calculationbtn_Click);
             // 
-            // Reportbtn
-            // 
-            this.Reportbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
-            this.Reportbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Reportbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Reportbtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Reportbtn.Location = new System.Drawing.Point(808, 62);
-            this.Reportbtn.Name = "Reportbtn";
-            this.Reportbtn.Size = new System.Drawing.Size(140, 46);
-            this.Reportbtn.TabIndex = 5;
-            this.Reportbtn.Text = "Report";
-            this.Reportbtn.UseVisualStyleBackColor = false;
-            this.Reportbtn.Click += new System.EventHandler(this.Reportbtn_Click);
-            // 
             // ViewsMenue
             // 
             this.ViewsMenue.BackColor = System.Drawing.Color.Transparent;
@@ -588,8 +529,7 @@ namespace POIS1
             // 
             this.viewInvoicesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logInvoicesToolStripMenuItem,
-            this.viewInvoicesToolStripMenuItem1,
-            this.deleteInvoicesToolStripMenuItem});
+            this.viewInvoicesToolStripMenuItem1});
             this.viewInvoicesToolStripMenuItem.Name = "viewInvoicesToolStripMenuItem";
             this.viewInvoicesToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.viewInvoicesToolStripMenuItem.Text = "Invoices";
@@ -597,7 +537,7 @@ namespace POIS1
             // logInvoicesToolStripMenuItem
             // 
             this.logInvoicesToolStripMenuItem.Name = "logInvoicesToolStripMenuItem";
-            this.logInvoicesToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
+            this.logInvoicesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.logInvoicesToolStripMenuItem.Text = "Log Invoices";
             this.logInvoicesToolStripMenuItem.Click += new System.EventHandler(this.logInvoicesToolStripMenuItem_Click);
             // 
@@ -608,18 +548,11 @@ namespace POIS1
             this.viewInvoicesToolStripMenuItem1.Text = "View Invoices";
             this.viewInvoicesToolStripMenuItem1.Click += new System.EventHandler(this.viewInvoicesToolStripMenuItem1_Click);
             // 
-            // deleteInvoicesToolStripMenuItem
-            // 
-            this.deleteInvoicesToolStripMenuItem.Name = "deleteInvoicesToolStripMenuItem";
-            this.deleteInvoicesToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
-            this.deleteInvoicesToolStripMenuItem.Text = "Delete Invoices";
-            // 
             // viewPurchaseOrderToolStripMenuItem
             // 
             this.viewPurchaseOrderToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logPurchaseOrderToolStripMenuItem,
-            this.viewPurchaseOrderToolStripMenuItem1,
-            this.deletePurchaseOrderToolStripMenuItem});
+            this.viewPurchaseOrderToolStripMenuItem1});
             this.viewPurchaseOrderToolStripMenuItem.Name = "viewPurchaseOrderToolStripMenuItem";
             this.viewPurchaseOrderToolStripMenuItem.Size = new System.Drawing.Size(123, 24);
             this.viewPurchaseOrderToolStripMenuItem.Text = "Purchase Order";
@@ -627,43 +560,31 @@ namespace POIS1
             // logPurchaseOrderToolStripMenuItem
             // 
             this.logPurchaseOrderToolStripMenuItem.Name = "logPurchaseOrderToolStripMenuItem";
-            this.logPurchaseOrderToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.logPurchaseOrderToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
             this.logPurchaseOrderToolStripMenuItem.Text = "Log Purchase Order";
             this.logPurchaseOrderToolStripMenuItem.Click += new System.EventHandler(this.logPurchaseOrderToolStripMenuItem_Click);
             // 
             // viewPurchaseOrderToolStripMenuItem1
             // 
             this.viewPurchaseOrderToolStripMenuItem1.Name = "viewPurchaseOrderToolStripMenuItem1";
-            this.viewPurchaseOrderToolStripMenuItem1.Size = new System.Drawing.Size(240, 26);
+            this.viewPurchaseOrderToolStripMenuItem1.Size = new System.Drawing.Size(228, 26);
             this.viewPurchaseOrderToolStripMenuItem1.Text = "View Purchase Order";
             this.viewPurchaseOrderToolStripMenuItem1.Click += new System.EventHandler(this.viewPurchaseOrderToolStripMenuItem1_Click);
-            // 
-            // deletePurchaseOrderToolStripMenuItem
-            // 
-            this.deletePurchaseOrderToolStripMenuItem.Name = "deletePurchaseOrderToolStripMenuItem";
-            this.deletePurchaseOrderToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
-            this.deletePurchaseOrderToolStripMenuItem.Text = "Delete Purchase Order";
             // 
             // viewReportsToolStripMenuItem
             // 
             this.viewReportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addReportsToolStripMenuItem,
             this.viewReportsToolStripMenuItem1});
             this.viewReportsToolStripMenuItem.Name = "viewReportsToolStripMenuItem";
             this.viewReportsToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
             this.viewReportsToolStripMenuItem.Text = "Reports";
             // 
-            // addReportsToolStripMenuItem
-            // 
-            this.addReportsToolStripMenuItem.Name = "addReportsToolStripMenuItem";
-            this.addReportsToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-            this.addReportsToolStripMenuItem.Text = "Add Reports";
-            // 
             // viewReportsToolStripMenuItem1
             // 
             this.viewReportsToolStripMenuItem1.Name = "viewReportsToolStripMenuItem1";
-            this.viewReportsToolStripMenuItem1.Size = new System.Drawing.Size(179, 26);
+            this.viewReportsToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.viewReportsToolStripMenuItem1.Text = "View Reports";
+            this.viewReportsToolStripMenuItem1.Click += new System.EventHandler(this.viewReportsToolStripMenuItem1_Click);
             // 
             // settingsToolStripMenuItem
             // 
@@ -680,6 +601,13 @@ namespace POIS1
             this.changeThemeToolStripMenuItem.Text = "Change Theme";
             this.changeThemeToolStripMenuItem.Click += new System.EventHandler(this.changeThemeToolStripMenuItem_Click);
             // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
             // Currencycb
             // 
             this.Currencycb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -689,6 +617,7 @@ namespace POIS1
             this.Currencycb.Name = "Currencycb";
             this.Currencycb.Size = new System.Drawing.Size(205, 30);
             this.Currencycb.TabIndex = 43;
+            this.Currencycb.SelectedIndexChanged += new System.EventHandler(this.Currencycb_SelectedIndexChanged);
             // 
             // ItemName1
             // 
@@ -719,12 +648,17 @@ namespace POIS1
             this.Subtotaltb.Size = new System.Drawing.Size(205, 28);
             this.Subtotaltb.TabIndex = 88;
             // 
-            // logoutToolStripMenuItem
+            // poislogo
             // 
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
-            this.logoutToolStripMenuItem.Text = "Logout";
-            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            this.poislogo.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.poislogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.poislogo.Image = global::POIS1.Properties.Resources.POIS_Final_;
+            this.poislogo.Location = new System.Drawing.Point(0, 0);
+            this.poislogo.Name = "poislogo";
+            this.poislogo.Size = new System.Drawing.Size(1567, 792);
+            this.poislogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.poislogo.TabIndex = 21;
+            this.poislogo.TabStop = false;
             // 
             // Calculation
             // 
@@ -761,7 +695,6 @@ namespace POIS1
             this.Text = "Calculation";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Calculation_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.poislogo)).EndInit();
             this.settingspanel.ResumeLayout(false);
             this.settingpanel1.ResumeLayout(false);
             this.toppanel.ResumeLayout(false);
@@ -775,6 +708,7 @@ namespace POIS1
             ((System.ComponentModel.ISupportInitialize)(this.homeicon)).EndInit();
             this.ViewsMenue.ResumeLayout(false);
             this.ViewsMenue.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.poislogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -787,8 +721,6 @@ namespace POIS1
         private System.Windows.Forms.Button themebtn;
         private System.Windows.Forms.Button minimisebtn;
         private System.Windows.Forms.Panel settingpanel1;
-        private System.Windows.Forms.Button Maximizebtn;
-        private System.Windows.Forms.Button Minimizebtn;
         private System.Windows.Forms.Button changethemebtn;
         private System.Windows.Forms.Label Selectcurrencylbl;
         private System.Windows.Forms.Label Currencylbl;
@@ -820,18 +752,14 @@ namespace POIS1
         private System.Windows.Forms.Button LogPObtn;
         private System.Windows.Forms.Button LogInvbtn;
         private System.Windows.Forms.Button Calculationbtn;
-        private System.Windows.Forms.Button Reportbtn;
         private System.Windows.Forms.MenuStrip ViewsMenue;
         private System.Windows.Forms.ToolStripMenuItem viewInvoicesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logInvoicesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewInvoicesToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem deleteInvoicesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewPurchaseOrderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logPurchaseOrderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewPurchaseOrderToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem deletePurchaseOrderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewReportsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addReportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewReportsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeThemeToolStripMenuItem;

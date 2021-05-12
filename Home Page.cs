@@ -31,20 +31,20 @@ namespace POIS1
             LogPObtn.ForeColor = Color.White;
             LogInvbtn.ForeColor = Color.White;
             Calculationbtn.ForeColor = Color.White;
-            Reportbtn.ForeColor = Color.White;
+            
             Homebtn.ForeColor = Color.Black;
 
             LogPObtn.BackColor = Color.FromArgb(0, 117, 190);
             LogInvbtn.BackColor = Color.FromArgb(0, 117, 190);
             Calculationbtn.BackColor = Color.FromArgb(0, 117, 190);
-            Reportbtn.BackColor = Color.FromArgb(0, 117, 214);
+         
             Homebtn.BackColor = Color.White;
             homeicon.BackColor = Color.White;
             Homebtn.FlatStyle = FlatStyle.Standard;
             LogPObtn.FlatStyle = FlatStyle.Flat;
             LogInvbtn.FlatStyle = FlatStyle.Flat;
             Calculationbtn.FlatStyle = FlatStyle.Flat;
-            Reportbtn.FlatStyle = FlatStyle.Flat;
+            
 
 
         }
@@ -71,13 +71,7 @@ namespace POIS1
 
         }
 
-        private void Reportbtn_Click(object sender, EventArgs e)
-        {
-            Report report = new Report();
-            this.Hide();
-            report.Show();
-
-        }
+       
 
         private void Home_Page_Load(object sender, EventArgs e)
         {
@@ -92,20 +86,20 @@ namespace POIS1
             LogPObtn.ForeColor = Color.White;
             LogInvbtn.ForeColor = Color.White;
             Calculationbtn.ForeColor = Color.White;
-            Reportbtn.ForeColor = Color.White;
+            
             Homebtn.ForeColor = Color.Black;
 
             LogPObtn.BackColor = Color.FromArgb(0, 117, 190);
             LogInvbtn.BackColor = Color.FromArgb(0, 117, 190);
             Calculationbtn.BackColor = Color.FromArgb(0, 117, 190);
-            Reportbtn.BackColor = Color.FromArgb(0, 117, 190);
+           
             Homebtn.BackColor = Color.White;
             homeicon.BackColor = Color.White;
             Homebtn.FlatStyle = FlatStyle.Standard;
             LogPObtn.FlatStyle = FlatStyle.Flat;
             LogInvbtn.FlatStyle = FlatStyle.Flat;
             Calculationbtn.FlatStyle = FlatStyle.Flat;
-            Reportbtn.FlatStyle = FlatStyle.Flat;
+            
         }
 
         private void searchtb_MouseClick(object sender, MouseEventArgs e)
@@ -158,20 +152,20 @@ namespace POIS1
             LogPObtn.ForeColor = Color.White;
             LogInvbtn.ForeColor = Color.White;
             Calculationbtn.ForeColor = Color.White;
-            Reportbtn.ForeColor = Color.White;
+            
             Homebtn.ForeColor = Color.Black;
 
             LogPObtn.BackColor = Color.FromArgb(0, 117, 190);
             LogInvbtn.BackColor = Color.FromArgb(0, 117, 190);
             Calculationbtn.BackColor = Color.FromArgb(0, 117, 190);
-            Reportbtn.BackColor = Color.FromArgb(0, 117, 190);
+    
             Homebtn.BackColor = Color.White;
             homeicon.BackColor = Color.White;
             Homebtn.FlatStyle = FlatStyle.Standard;
             LogPObtn.FlatStyle = FlatStyle.Flat;
             LogInvbtn.FlatStyle = FlatStyle.Flat;
             Calculationbtn.FlatStyle = FlatStyle.Flat;
-            Reportbtn.FlatStyle = FlatStyle.Flat;
+           
         }
 
         private void Logoutlb_Click(object sender, EventArgs e)
@@ -240,11 +234,35 @@ namespace POIS1
         }
 
 
-        private void Viewinvoicesbt_Click(object sender, EventArgs e)
+        public void Viewinvoicesbt_Click(object sender, EventArgs e)
         {
+            bool isOpen = false;
+            
             var view_invoices = new View_Invoices();
-            view_invoices.Show();
+            FormCollection fc = Application.OpenForms;
+            //viewInvoicesToolStripMenuItem.PerformClick();
+            
 
+           foreach(Form form in Application.OpenForms)
+            {
+                if(form.Text == "View_Invoices")
+                {
+                    isOpen = true;
+                    form.Focus();
+                    
+                    break;
+                }
+            }
+           if(isOpen == false)
+            {
+                View_Invoices view_Invoices = new View_Invoices();
+                view_Invoices.MdiParent = this;
+               
+                view_invoices.Show();
+                ;
+            }
+           
+           
 
             //view_invoices.MdiParent = this;
 
@@ -259,11 +277,10 @@ namespace POIS1
 
         private void viewInvoicesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var view_invoices = new View_Invoices();
+            Viewinvoicesbt.PerformClick();
 
 
-            // view_invoices.MdiParent = this;
-            view_invoices.Show();
+
 
 
         }
@@ -284,38 +301,38 @@ namespace POIS1
             }
         }
 
-        private void searchtb_TextChanged(object sender, EventArgs e)
-        {
-            SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
-
-            string q = "select * from Vendors";
-            SqlCommand command = new SqlCommand(q, connection);
-            //SqlDataReader datareader = command.ExecuteReader();
-            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
-
-            try
-            {
-                connection.Open();
-                SqlDataReader sqlData = command.ExecuteReader();
-
-                while (sqlData.Read())
-                {
-                    collection.Add(sqlData.GetString(1));
-                }
-                searchtb.AutoCompleteCustomSource = collection;
-            }
-
-            catch (Exception ex)
-            {
-
-            }
-            connection.Close();
-        }
+       
 
         private void ViewPurchaserOrderbtn_Click(object sender, EventArgs e)
         {
-            var ViewpurchaseOrder = new View_Purchase_Order();
-            ViewpurchaseOrder.Show();
+            bool isOpen = false;
+
+
+            FormCollection fc = Application.OpenForms;
+            View_Purchase_Order view_Invoices = new View_Purchase_Order();
+
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.Text == "View_Purchase_Order")
+                {
+                    isOpen = true;
+                    form.Focus();
+
+                    break;
+                }
+            }
+            if (isOpen == false)
+            {
+
+
+                
+                view_Invoices.Show();
+                
+            }
+
+
+
         }
 
         private void logPurchaseOrderToolStripMenuItem_Click(object sender, EventArgs e)
@@ -327,8 +344,58 @@ namespace POIS1
 
         private void viewPurchaseOrderToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var ViewpurchaseOrder = new View_Purchase_Order();
-            ViewpurchaseOrder.Show();
+            ViewPurchaserOrderbtn.PerformClick();
+        }
+
+        private void viewReportsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ViewReport viewreport = new ViewReport();
+            viewreport.Show();
+        }
+
+        private void Searchbtn_Click(object sender, EventArgs e)
+        {
+            if (searchtb.Text == "Log Invoice" || searchtb.Text == "log invoice" || searchtb.Text == "Log invoice" || searchtb.Text== "log Invoice")
+            {
+                
+                Log_Invoice log_Invoice = new Log_Invoice();
+                this.Hide();
+                log_Invoice.Show();
+            }
+            else if(searchtb.Text == "Log Purchase Order" || searchtb.Text == "log purchase" || searchtb.Text == "log purchase order")
+            {
+                Log_Purchase_Order log_Purchase_Order = new Log_Purchase_Order();
+                this.Hide();
+                log_Purchase_Order.Show();
+            }
+            else if(searchtb.Text == "Calculation" || searchtb.Text =="calculation")
+            {
+                Calculation calculate = new Calculation();
+                this.Hide();
+                calculate.Show();
+            }
+            else if (searchtb.Text == "View Invoices"|| searchtb.Text == "view invoices"||searchtb.Text == "View invoice"||searchtb.Text =="view Invoice")
+            {
+                View_Invoices view_Invoices = new View_Invoices();
+                this.Hide();
+                view_Invoices.Show();
+            }
+            else if (searchtb.Text == "View Purchase Order"|| searchtb.Text == "view purchase order")
+            {
+                View_Purchase_Order view_Purchase = new View_Purchase_Order();
+                this.Hide();
+                view_Purchase.Show();
+            }
+           else if(searchtb.Text == "Report"|| searchtb.Text =="report")
+            {
+                ViewReport viewReport = new ViewReport();
+                this.Hide();
+                viewReport.Show();
+            }
+            if(searchtb.Text == "")
+            {
+                MessageBox.Show("Please Enter Name of Form");
+            }
         }
     }
 }

@@ -144,9 +144,9 @@ namespace POIS1
             this.PurchaseOrderLbl.ForeColor = System.Drawing.Color.White;
             this.PurchaseOrderLbl.Location = new System.Drawing.Point(23, 190);
             this.PurchaseOrderLbl.Name = "PurchaseOrderLbl";
-            this.PurchaseOrderLbl.Size = new System.Drawing.Size(416, 29);
+            this.PurchaseOrderLbl.Size = new System.Drawing.Size(419, 29);
             this.PurchaseOrderLbl.TabIndex = 1;
-            this.PurchaseOrderLbl.Text = "Purchase Order Information System";
+            this.PurchaseOrderLbl.Text = "Purchase Order and Invoice System";
             // 
             // Heartlogo
             // 

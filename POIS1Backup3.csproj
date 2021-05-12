@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculate.cs" />
     <Compile Include="Calculation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,9 +78,6 @@
       <DependentUpon>Home Page.cs</DependentUpon>
     </Compile>
     <Compile Include="Invoice.cs">
-      <DependentUpon>POIS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="InvoiceItem.cs">
       <DependentUpon>POIS.tt</DependentUpon>
     </Compile>
     <Compile Include="InvoiceStatu.cs">
@@ -128,12 +126,14 @@
     <Compile Include="PurchaseOrderStatu.cs">
       <DependentUpon>POIS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Report.cs">
+    <Compile Include="Saveinput.cs" />
+    <Compile Include="ViewReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Report.Designer.cs">
-      <DependentUpon>Report.cs</DependentUpon>
+    <Compile Include="ViewReport.Designer.cs">
+      <DependentUpon>ViewReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="WelcomeNExit.cs" />
     <Compile Include="sysdiagram.cs">
       <DependentUpon>POIS.tt</DependentUpon>
     </Compile>
@@ -177,14 +177,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Report.resx">
-      <DependentUpon>Report.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View Invoices.resx">
       <DependentUpon>View Invoices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View Purchase Order.resx">
       <DependentUpon>View Purchase Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewReport.resx">
+      <DependentUpon>ViewReport.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <EntityDeploy Include="POIS.edmx">

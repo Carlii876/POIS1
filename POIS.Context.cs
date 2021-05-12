@@ -7,26 +7,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+
 namespace POIS1
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Infrastructure;
-    
     public partial class POISEntities : DbContext
     {
         public POISEntities()
             : base("name=POISEntities")
         {
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
         public virtual DbSet<Currency> Currencies { get; set; }
-        public virtual DbSet<InvoiceItem> InvoiceItems { get; set; }
         public virtual DbSet<Invoice> Invoices { get; set; }
         public virtual DbSet<InvoiceStatu> InvoiceStatus { get; set; }
         public virtual DbSet<Item> Items { get; set; }

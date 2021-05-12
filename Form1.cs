@@ -59,6 +59,34 @@ namespace POIS1
             {
                 usernameerror.Text = "";
             }
+            if (Username != "Admin" || Password != "Password")
+            {
+                isValid = false;
+                MessageBox.Show("Incorrect Username or Password");
+
+            }
+            if(Username != "Admin")
+            {
+                usernameerror.Text = "Please Enter Correct Username";
+            }
+            else
+            {
+                usernameerror.Text = "";
+            }
+
+            if (Password != "Password")
+            {
+                Passworderror.Text = "Please Enter Correct Password";
+            }
+            else
+            {
+                usernameerror.Text = "";
+            }
+
+
+
+
+
             if (string.IsNullOrEmpty(Password) || passwordtb.Text == "Enter Password")
             {
                 isValid = false;
@@ -68,7 +96,7 @@ namespace POIS1
             {
                 Passworderror.Text = string.Empty;
             }
-            if (isValid)
+            if (Username == "Admin" && Password == "Password")
             {
                 Home_Page homepage = new Home_Page();
                 this.Hide();

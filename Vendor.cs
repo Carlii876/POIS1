@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+
 namespace POIS1
 {
-    using System;
-    using System.Collections.Generic;
-    
     public partial class Vendor
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,12 +20,12 @@ namespace POIS1
             this.Invoices = new HashSet<Invoice>();
             this.LogPurchaseOrders = new HashSet<LogPurchaseOrder>();
         }
-    
+
         public int Vendors_id { get; set; }
         public string Vendorname { get; set; }
         public string VendorAddress { get; set; }
         public string VendorNumber { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Invoice> Invoices { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

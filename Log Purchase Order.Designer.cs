@@ -82,14 +82,10 @@ namespace POIS1
             this.Vendorcb = new System.Windows.Forms.ComboBox();
             this.Quantity1 = new System.Windows.Forms.TextBox();
             this.Itemdesctb = new System.Windows.Forms.TextBox();
-            this.saveicon = new System.Windows.Forms.PictureBox();
-            this.poislogo = new System.Windows.Forms.PictureBox();
             this.purchaseONerror = new System.Windows.Forms.Label();
             this.POerror = new System.Windows.Forms.Label();
             this.settingspanel = new System.Windows.Forms.Panel();
-            this.maximisebtn = new System.Windows.Forms.Button();
             this.themebtn = new System.Windows.Forms.Button();
-            this.minimisebtn = new System.Windows.Forms.Button();
             this.toppanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.settingsicon = new System.Windows.Forms.PictureBox();
@@ -103,21 +99,18 @@ namespace POIS1
             this.LogPObtn = new System.Windows.Forms.Button();
             this.LogInvbtn = new System.Windows.Forms.Button();
             this.Calculationbtn = new System.Windows.Forms.Button();
-            this.Reportbtn = new System.Windows.Forms.Button();
             this.ViewsMenue = new System.Windows.Forms.MenuStrip();
             this.viewInvoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logInvoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewInvoicesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteInvoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewPurchaseOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logPurchaseOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewPurchaseOrderToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.deletePurchaseOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewReportsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Totalerrorlb = new System.Windows.Forms.Label();
             this.Currencyerrorlbl = new System.Windows.Forms.Label();
             this.POstatuserror = new System.Windows.Forms.Label();
@@ -128,9 +121,8 @@ namespace POIS1
             this.ItemsAdddetailsbtn = new System.Windows.Forms.Button();
             this.VendorAdddetailsbtn = new System.Windows.Forms.Button();
             this.ItemName1 = new System.Windows.Forms.ComboBox();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.saveicon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poislogo)).BeginInit();
+            this.saveicon = new System.Windows.Forms.PictureBox();
+            this.poislogo = new System.Windows.Forms.PictureBox();
             this.settingspanel.SuspendLayout();
             this.toppanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -140,6 +132,8 @@ namespace POIS1
             ((System.ComponentModel.ISupportInitialize)(this.poispB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeicon)).BeginInit();
             this.ViewsMenue.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.saveicon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poislogo)).BeginInit();
             this.SuspendLayout();
             // 
             // Searcbtn
@@ -181,7 +175,7 @@ namespace POIS1
             // VenderInformationlbl
             // 
             this.VenderInformationlbl.AutoSize = true;
-            this.VenderInformationlbl.BackColor = System.Drawing.Color.Transparent;
+            this.VenderInformationlbl.BackColor = System.Drawing.Color.LightSkyBlue;
             this.VenderInformationlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VenderInformationlbl.Location = new System.Drawing.Point(126, 143);
             this.VenderInformationlbl.Name = "VenderInformationlbl";
@@ -192,7 +186,7 @@ namespace POIS1
             // VenderNamelbl
             // 
             this.VenderNamelbl.AutoSize = true;
-            this.VenderNamelbl.BackColor = System.Drawing.Color.Transparent;
+            this.VenderNamelbl.BackColor = System.Drawing.Color.LightSkyBlue;
             this.VenderNamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VenderNamelbl.Location = new System.Drawing.Point(107, 218);
             this.VenderNamelbl.Name = "VenderNamelbl";
@@ -203,7 +197,7 @@ namespace POIS1
             // VendorNumberlbl
             // 
             this.VendorNumberlbl.AutoSize = true;
-            this.VendorNumberlbl.BackColor = System.Drawing.Color.Transparent;
+            this.VendorNumberlbl.BackColor = System.Drawing.Color.LightSkyBlue;
             this.VendorNumberlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VendorNumberlbl.Location = new System.Drawing.Point(110, 398);
             this.VendorNumberlbl.Name = "VendorNumberlbl";
@@ -214,7 +208,7 @@ namespace POIS1
             // VendorAddresslbl
             // 
             this.VendorAddresslbl.AutoSize = true;
-            this.VendorAddresslbl.BackColor = System.Drawing.Color.Transparent;
+            this.VendorAddresslbl.BackColor = System.Drawing.Color.LightSkyBlue;
             this.VendorAddresslbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VendorAddresslbl.Location = new System.Drawing.Point(107, 312);
             this.VendorAddresslbl.Name = "VendorAddresslbl";
@@ -298,7 +292,7 @@ namespace POIS1
             // 
             this.ItemNamelbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ItemNamelbl.AutoSize = true;
-            this.ItemNamelbl.BackColor = System.Drawing.Color.Transparent;
+            this.ItemNamelbl.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ItemNamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ItemNamelbl.Location = new System.Drawing.Point(798, 191);
             this.ItemNamelbl.Name = "ItemNamelbl";
@@ -310,7 +304,7 @@ namespace POIS1
             // 
             this.ItemDescriptionlbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ItemDescriptionlbl.AutoSize = true;
-            this.ItemDescriptionlbl.BackColor = System.Drawing.Color.Transparent;
+            this.ItemDescriptionlbl.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ItemDescriptionlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ItemDescriptionlbl.Location = new System.Drawing.Point(798, 236);
             this.ItemDescriptionlbl.Name = "ItemDescriptionlbl";
@@ -322,7 +316,7 @@ namespace POIS1
             // 
             this.Quatitylbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Quatitylbl.AutoSize = true;
-            this.Quatitylbl.BackColor = System.Drawing.Color.Transparent;
+            this.Quatitylbl.BackColor = System.Drawing.Color.LightSkyBlue;
             this.Quatitylbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Quatitylbl.Location = new System.Drawing.Point(798, 290);
             this.Quatitylbl.Name = "Quatitylbl";
@@ -343,7 +337,7 @@ namespace POIS1
             // 
             this.Costlbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Costlbl.AutoSize = true;
-            this.Costlbl.BackColor = System.Drawing.Color.Transparent;
+            this.Costlbl.BackColor = System.Drawing.Color.LightSkyBlue;
             this.Costlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Costlbl.Location = new System.Drawing.Point(798, 346);
             this.Costlbl.Name = "Costlbl";
@@ -355,7 +349,7 @@ namespace POIS1
             // 
             this.Currencylbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Currencylbl.AutoSize = true;
-            this.Currencylbl.BackColor = System.Drawing.Color.Transparent;
+            this.Currencylbl.BackColor = System.Drawing.Color.LightSkyBlue;
             this.Currencylbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Currencylbl.Location = new System.Drawing.Point(798, 401);
             this.Currencylbl.Name = "Currencylbl";
@@ -478,7 +472,6 @@ namespace POIS1
             this.Totaltb.Name = "Totaltb";
             this.Totaltb.Size = new System.Drawing.Size(232, 22);
             this.Totaltb.TabIndex = 53;
-            this.Totaltb.TextChanged += new System.EventHandler(this.Totaltb_TextChanged);
             // 
             // Clearbtn
             // 
@@ -672,32 +665,6 @@ namespace POIS1
             this.Itemdesctb.TabIndex = 79;
             this.Itemdesctb.TextChanged += new System.EventHandler(this.Itemdesctb_TextChanged);
             // 
-            // saveicon
-            // 
-            this.saveicon.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.saveicon.BackColor = System.Drawing.Color.Transparent;
-            this.saveicon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.saveicon.Image = global::POIS1.Properties.Resources.Save_512;
-            this.saveicon.Location = new System.Drawing.Point(718, 747);
-            this.saveicon.Name = "saveicon";
-            this.saveicon.Size = new System.Drawing.Size(49, 33);
-            this.saveicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.saveicon.TabIndex = 54;
-            this.saveicon.TabStop = false;
-            this.saveicon.Click += new System.EventHandler(this.saveicon_Click);
-            // 
-            // poislogo
-            // 
-            this.poislogo.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.poislogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.poislogo.Image = global::POIS1.Properties.Resources.POIS_Final_;
-            this.poislogo.Location = new System.Drawing.Point(0, 0);
-            this.poislogo.Name = "poislogo";
-            this.poislogo.Size = new System.Drawing.Size(1567, 792);
-            this.poislogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.poislogo.TabIndex = 18;
-            this.poislogo.TabStop = false;
-            // 
             // purchaseONerror
             // 
             this.purchaseONerror.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -721,27 +688,12 @@ namespace POIS1
             // 
             this.settingspanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.settingspanel.BackColor = System.Drawing.Color.Transparent;
-            this.settingspanel.Controls.Add(this.maximisebtn);
             this.settingspanel.Controls.Add(this.themebtn);
-            this.settingspanel.Controls.Add(this.minimisebtn);
             this.settingspanel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.settingspanel.Location = new System.Drawing.Point(1442, 101);
             this.settingspanel.Name = "settingspanel";
-            this.settingspanel.Size = new System.Drawing.Size(124, 109);
+            this.settingspanel.Size = new System.Drawing.Size(124, 46);
             this.settingspanel.TabIndex = 106;
-            // 
-            // maximisebtn
-            // 
-            this.maximisebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.maximisebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
-            this.maximisebtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(170)))));
-            this.maximisebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.maximisebtn.Location = new System.Drawing.Point(0, 72);
-            this.maximisebtn.Name = "maximisebtn";
-            this.maximisebtn.Size = new System.Drawing.Size(124, 37);
-            this.maximisebtn.TabIndex = 21;
-            this.maximisebtn.Text = "Maximise";
-            this.maximisebtn.UseVisualStyleBackColor = false;
             // 
             // themebtn
             // 
@@ -751,24 +703,11 @@ namespace POIS1
             this.themebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.themebtn.Location = new System.Drawing.Point(0, -2);
             this.themebtn.Name = "themebtn";
-            this.themebtn.Size = new System.Drawing.Size(124, 40);
+            this.themebtn.Size = new System.Drawing.Size(124, 45);
             this.themebtn.TabIndex = 19;
             this.themebtn.Text = "Change Theme";
             this.themebtn.UseVisualStyleBackColor = false;
             this.themebtn.Click += new System.EventHandler(this.themebtn_Click);
-            // 
-            // minimisebtn
-            // 
-            this.minimisebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimisebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
-            this.minimisebtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(170)))));
-            this.minimisebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimisebtn.Location = new System.Drawing.Point(0, 36);
-            this.minimisebtn.Name = "minimisebtn";
-            this.minimisebtn.Size = new System.Drawing.Size(124, 37);
-            this.minimisebtn.TabIndex = 20;
-            this.minimisebtn.Text = "Minimise";
-            this.minimisebtn.UseVisualStyleBackColor = false;
             // 
             // toppanel
             // 
@@ -780,7 +719,6 @@ namespace POIS1
             this.toppanel.Controls.Add(this.LogPObtn);
             this.toppanel.Controls.Add(this.LogInvbtn);
             this.toppanel.Controls.Add(this.Calculationbtn);
-            this.toppanel.Controls.Add(this.Reportbtn);
             this.toppanel.Controls.Add(this.ViewsMenue);
             this.toppanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.toppanel.Location = new System.Drawing.Point(0, 0);
@@ -941,20 +879,6 @@ namespace POIS1
             this.Calculationbtn.UseVisualStyleBackColor = false;
             this.Calculationbtn.Click += new System.EventHandler(this.Calculationbtn_Click);
             // 
-            // Reportbtn
-            // 
-            this.Reportbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
-            this.Reportbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Reportbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Reportbtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Reportbtn.Location = new System.Drawing.Point(808, 62);
-            this.Reportbtn.Name = "Reportbtn";
-            this.Reportbtn.Size = new System.Drawing.Size(140, 46);
-            this.Reportbtn.TabIndex = 5;
-            this.Reportbtn.Text = "Report";
-            this.Reportbtn.UseVisualStyleBackColor = false;
-            this.Reportbtn.Click += new System.EventHandler(this.Reportbtn_Click);
-            // 
             // ViewsMenue
             // 
             this.ViewsMenue.BackColor = System.Drawing.Color.Transparent;
@@ -975,8 +899,7 @@ namespace POIS1
             // 
             this.viewInvoicesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logInvoicesToolStripMenuItem,
-            this.viewInvoicesToolStripMenuItem1,
-            this.deleteInvoicesToolStripMenuItem});
+            this.viewInvoicesToolStripMenuItem1});
             this.viewInvoicesToolStripMenuItem.Name = "viewInvoicesToolStripMenuItem";
             this.viewInvoicesToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.viewInvoicesToolStripMenuItem.Text = "Invoices";
@@ -984,29 +907,22 @@ namespace POIS1
             // logInvoicesToolStripMenuItem
             // 
             this.logInvoicesToolStripMenuItem.Name = "logInvoicesToolStripMenuItem";
-            this.logInvoicesToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
+            this.logInvoicesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.logInvoicesToolStripMenuItem.Text = "Log Invoices";
             this.logInvoicesToolStripMenuItem.Click += new System.EventHandler(this.logInvoicesToolStripMenuItem_Click);
             // 
             // viewInvoicesToolStripMenuItem1
             // 
             this.viewInvoicesToolStripMenuItem1.Name = "viewInvoicesToolStripMenuItem1";
-            this.viewInvoicesToolStripMenuItem1.Size = new System.Drawing.Size(193, 26);
+            this.viewInvoicesToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.viewInvoicesToolStripMenuItem1.Text = "View Invoices";
             this.viewInvoicesToolStripMenuItem1.Click += new System.EventHandler(this.viewInvoicesToolStripMenuItem1_Click);
-            // 
-            // deleteInvoicesToolStripMenuItem
-            // 
-            this.deleteInvoicesToolStripMenuItem.Name = "deleteInvoicesToolStripMenuItem";
-            this.deleteInvoicesToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
-            this.deleteInvoicesToolStripMenuItem.Text = "Delete Invoices";
             // 
             // viewPurchaseOrderToolStripMenuItem
             // 
             this.viewPurchaseOrderToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logPurchaseOrderToolStripMenuItem,
-            this.viewPurchaseOrderToolStripMenuItem1,
-            this.deletePurchaseOrderToolStripMenuItem});
+            this.viewPurchaseOrderToolStripMenuItem1});
             this.viewPurchaseOrderToolStripMenuItem.Name = "viewPurchaseOrderToolStripMenuItem";
             this.viewPurchaseOrderToolStripMenuItem.Size = new System.Drawing.Size(123, 24);
             this.viewPurchaseOrderToolStripMenuItem.Text = "Purchase Order";
@@ -1014,43 +930,31 @@ namespace POIS1
             // logPurchaseOrderToolStripMenuItem
             // 
             this.logPurchaseOrderToolStripMenuItem.Name = "logPurchaseOrderToolStripMenuItem";
-            this.logPurchaseOrderToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.logPurchaseOrderToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
             this.logPurchaseOrderToolStripMenuItem.Text = "Log Purchase Order";
             this.logPurchaseOrderToolStripMenuItem.Click += new System.EventHandler(this.logPurchaseOrderToolStripMenuItem_Click);
             // 
             // viewPurchaseOrderToolStripMenuItem1
             // 
             this.viewPurchaseOrderToolStripMenuItem1.Name = "viewPurchaseOrderToolStripMenuItem1";
-            this.viewPurchaseOrderToolStripMenuItem1.Size = new System.Drawing.Size(240, 26);
+            this.viewPurchaseOrderToolStripMenuItem1.Size = new System.Drawing.Size(228, 26);
             this.viewPurchaseOrderToolStripMenuItem1.Text = "View Purchase Order";
             this.viewPurchaseOrderToolStripMenuItem1.Click += new System.EventHandler(this.viewPurchaseOrderToolStripMenuItem1_Click);
-            // 
-            // deletePurchaseOrderToolStripMenuItem
-            // 
-            this.deletePurchaseOrderToolStripMenuItem.Name = "deletePurchaseOrderToolStripMenuItem";
-            this.deletePurchaseOrderToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
-            this.deletePurchaseOrderToolStripMenuItem.Text = "Delete Purchase Order";
             // 
             // viewReportsToolStripMenuItem
             // 
             this.viewReportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addReportsToolStripMenuItem,
             this.viewReportsToolStripMenuItem1});
             this.viewReportsToolStripMenuItem.Name = "viewReportsToolStripMenuItem";
             this.viewReportsToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
             this.viewReportsToolStripMenuItem.Text = "Reports";
             // 
-            // addReportsToolStripMenuItem
-            // 
-            this.addReportsToolStripMenuItem.Name = "addReportsToolStripMenuItem";
-            this.addReportsToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-            this.addReportsToolStripMenuItem.Text = "Add Reports";
-            // 
             // viewReportsToolStripMenuItem1
             // 
             this.viewReportsToolStripMenuItem1.Name = "viewReportsToolStripMenuItem1";
-            this.viewReportsToolStripMenuItem1.Size = new System.Drawing.Size(179, 26);
+            this.viewReportsToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.viewReportsToolStripMenuItem1.Text = "View Reports";
+            this.viewReportsToolStripMenuItem1.Click += new System.EventHandler(this.viewReportsToolStripMenuItem1_Click);
             // 
             // settingsToolStripMenuItem
             // 
@@ -1063,9 +967,16 @@ namespace POIS1
             // changeThemeToolStripMenuItem
             // 
             this.changeThemeToolStripMenuItem.Name = "changeThemeToolStripMenuItem";
-            this.changeThemeToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.changeThemeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.changeThemeToolStripMenuItem.Text = "Change Theme";
             this.changeThemeToolStripMenuItem.Click += new System.EventHandler(this.changeThemeToolStripMenuItem_Click);
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // Totalerrorlb
             // 
@@ -1074,9 +985,8 @@ namespace POIS1
             this.Totalerrorlb.ForeColor = System.Drawing.Color.Red;
             this.Totalerrorlb.Location = new System.Drawing.Point(1084, 623);
             this.Totalerrorlb.Name = "Totalerrorlb";
-            this.Totalerrorlb.Size = new System.Drawing.Size(82, 17);
+            this.Totalerrorlb.Size = new System.Drawing.Size(0, 17);
             this.Totalerrorlb.TabIndex = 108;
-            this.Totalerrorlb.Text = "Totalerrorlb";
             // 
             // Currencyerrorlbl
             // 
@@ -1085,9 +995,8 @@ namespace POIS1
             this.Currencyerrorlbl.ForeColor = System.Drawing.Color.Red;
             this.Currencyerrorlbl.Location = new System.Drawing.Point(1085, 673);
             this.Currencyerrorlbl.Name = "Currencyerrorlbl";
-            this.Currencyerrorlbl.Size = new System.Drawing.Size(46, 17);
+            this.Currencyerrorlbl.Size = new System.Drawing.Size(0, 17);
             this.Currencyerrorlbl.TabIndex = 109;
-            this.Currencyerrorlbl.Text = "label1";
             // 
             // POstatuserror
             // 
@@ -1095,9 +1004,8 @@ namespace POIS1
             this.POstatuserror.ForeColor = System.Drawing.Color.Red;
             this.POstatuserror.Location = new System.Drawing.Point(386, 619);
             this.POstatuserror.Name = "POstatuserror";
-            this.POstatuserror.Size = new System.Drawing.Size(46, 17);
+            this.POstatuserror.Size = new System.Drawing.Size(0, 17);
             this.POstatuserror.TabIndex = 110;
-            this.POstatuserror.Text = "label1";
             // 
             // Approvaldateerror
             // 
@@ -1105,9 +1013,8 @@ namespace POIS1
             this.Approvaldateerror.ForeColor = System.Drawing.Color.Red;
             this.Approvaldateerror.Location = new System.Drawing.Point(386, 570);
             this.Approvaldateerror.Name = "Approvaldateerror";
-            this.Approvaldateerror.Size = new System.Drawing.Size(46, 17);
+            this.Approvaldateerror.Size = new System.Drawing.Size(0, 17);
             this.Approvaldateerror.TabIndex = 112;
-            this.Approvaldateerror.Text = "label3";
             // 
             // currencyerr
             // 
@@ -1116,9 +1023,8 @@ namespace POIS1
             this.currencyerr.ForeColor = System.Drawing.Color.Red;
             this.currencyerr.Location = new System.Drawing.Point(1045, 377);
             this.currencyerr.Name = "currencyerr";
-            this.currencyerr.Size = new System.Drawing.Size(46, 17);
+            this.currencyerr.Size = new System.Drawing.Size(0, 17);
             this.currencyerr.TabIndex = 113;
-            this.currencyerr.Text = "label1";
             // 
             // VndrAddrescb
             // 
@@ -1173,12 +1079,31 @@ namespace POIS1
             this.ItemName1.TabIndex = 118;
             this.ItemName1.SelectedIndexChanged += new System.EventHandler(this.ItemName1_SelectedIndexChanged);
             // 
-            // logoutToolStripMenuItem
+            // saveicon
             // 
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
-            this.logoutToolStripMenuItem.Text = "Logout";
-            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            this.saveicon.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.saveicon.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.saveicon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveicon.Image = global::POIS1.Properties.Resources.Save_512;
+            this.saveicon.Location = new System.Drawing.Point(718, 747);
+            this.saveicon.Name = "saveicon";
+            this.saveicon.Size = new System.Drawing.Size(49, 33);
+            this.saveicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.saveicon.TabIndex = 54;
+            this.saveicon.TabStop = false;
+            this.saveicon.Click += new System.EventHandler(this.saveicon_Click);
+            // 
+            // poislogo
+            // 
+            this.poislogo.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.poislogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.poislogo.Image = global::POIS1.Properties.Resources.POIS_Final_;
+            this.poislogo.Location = new System.Drawing.Point(0, 0);
+            this.poislogo.Name = "poislogo";
+            this.poislogo.Size = new System.Drawing.Size(1567, 792);
+            this.poislogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.poislogo.TabIndex = 18;
+            this.poislogo.TabStop = false;
             // 
             // Log_Purchase_Order
             // 
@@ -1255,14 +1180,11 @@ namespace POIS1
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.poislogo);
             this.Controls.Add(this.Searcbtn);
-            this.IsMdiContainer = true;
             this.Name = "Log_Purchase_Order";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log_Purchase_Order";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Log_Purchase_Order_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.saveicon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poislogo)).EndInit();
             this.settingspanel.ResumeLayout(false);
             this.toppanel.ResumeLayout(false);
             this.toppanel.PerformLayout();
@@ -1275,6 +1197,8 @@ namespace POIS1
             ((System.ComponentModel.ISupportInitialize)(this.homeicon)).EndInit();
             this.ViewsMenue.ResumeLayout(false);
             this.ViewsMenue.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.saveicon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poislogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1339,9 +1263,7 @@ namespace POIS1
         private System.Windows.Forms.Label purchaseONerror;
         private System.Windows.Forms.Label POerror;
         private System.Windows.Forms.Panel settingspanel;
-        private System.Windows.Forms.Button maximisebtn;
         private System.Windows.Forms.Button themebtn;
-        private System.Windows.Forms.Button minimisebtn;
         private System.Windows.Forms.Panel toppanel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox settingsicon;
@@ -1355,18 +1277,14 @@ namespace POIS1
         private System.Windows.Forms.Button LogPObtn;
         private System.Windows.Forms.Button LogInvbtn;
         private System.Windows.Forms.Button Calculationbtn;
-        private System.Windows.Forms.Button Reportbtn;
         private System.Windows.Forms.MenuStrip ViewsMenue;
         private System.Windows.Forms.ToolStripMenuItem viewInvoicesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logInvoicesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewInvoicesToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem deleteInvoicesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewPurchaseOrderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logPurchaseOrderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewPurchaseOrderToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem deletePurchaseOrderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewReportsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addReportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewReportsToolStripMenuItem1;
         private System.Windows.Forms.Label Totalerrorlb;
         private System.Windows.Forms.Label Currencyerrorlbl;

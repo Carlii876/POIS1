@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+
 namespace POIS1
 {
-    using System;
-    using System.Collections.Generic;
-    
     public partial class PurchaseOrderStatu
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,10 +19,10 @@ namespace POIS1
         {
             this.LogPurchaseOrders = new HashSet<LogPurchaseOrder>();
         }
-    
+
         public int Status_Id { get; set; }
         public string Status_type { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LogPurchaseOrder> LogPurchaseOrders { get; set; }
     }

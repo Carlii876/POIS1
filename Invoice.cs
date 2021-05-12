@@ -7,19 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+
 namespace POIS1
 {
-    using System;
-    using System.Collections.Generic;
-    
     public partial class Invoice
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Invoice()
-        {
-            this.InvoiceItems = new HashSet<InvoiceItem>();
-        }
-    
         public int Invoice_id { get; set; }
         public int PurchaseOrderID { get; set; }
         public System.DateTime ApprovalDate { get; set; }
@@ -30,9 +24,7 @@ namespace POIS1
         public Nullable<int> Status_Id { get; set; }
         public Nullable<int> InvoiceNumber { get; set; }
         public Nullable<int> PurchaseOrderNumber { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<InvoiceItem> InvoiceItems { get; set; }
+
         public virtual InvoiceStatu InvoiceStatu { get; set; }
         public virtual LogPurchaseOrder LogPurchaseOrder { get; set; }
         public virtual Vendor Vendor { get; set; }

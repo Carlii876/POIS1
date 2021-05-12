@@ -30,9 +30,9 @@ namespace POIS1
         private void InitializeComponent()
         {
             this.poislogo = new System.Windows.Forms.PictureBox();
-            this.LPOdataview = new System.Windows.Forms.DataGridView();
+            this.Invoicedataview = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.poislogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LPOdataview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Invoicedataview)).BeginInit();
             this.SuspendLayout();
             // 
             // poislogo
@@ -47,26 +47,27 @@ namespace POIS1
             this.poislogo.TabIndex = 5;
             this.poislogo.TabStop = false;
             // 
-            // LPOdataview
+            // Invoicedataview
             // 
-            this.LPOdataview.AllowUserToAddRows = false;
-            this.LPOdataview.AllowUserToDeleteRows = false;
-            this.LPOdataview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.LPOdataview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LPOdataview.Location = new System.Drawing.Point(0, 0);
-            this.LPOdataview.Name = "LPOdataview";
-            this.LPOdataview.ReadOnly = true;
-            this.LPOdataview.RowHeadersWidth = 51;
-            this.LPOdataview.RowTemplate.Height = 24;
-            this.LPOdataview.Size = new System.Drawing.Size(1014, 585);
-            this.LPOdataview.TabIndex = 87;
+            this.Invoicedataview.AllowUserToAddRows = false;
+            this.Invoicedataview.AllowUserToDeleteRows = false;
+            this.Invoicedataview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Invoicedataview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Invoicedataview.Location = new System.Drawing.Point(0, 0);
+            this.Invoicedataview.Name = "Invoicedataview";
+            this.Invoicedataview.ReadOnly = true;
+            this.Invoicedataview.RowHeadersWidth = 51;
+            this.Invoicedataview.RowTemplate.Height = 24;
+            this.Invoicedataview.Size = new System.Drawing.Size(1014, 585);
+            this.Invoicedataview.TabIndex = 87;
+            this.Invoicedataview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Invoicedataview_CellContentClick);
             // 
             // View_Invoices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 585);
-            this.Controls.Add(this.LPOdataview);
+            this.Controls.Add(this.Invoicedataview);
             this.Controls.Add(this.poislogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "View_Invoices";
@@ -74,7 +75,7 @@ namespace POIS1
             this.Text = "View_Invoices";
             this.Load += new System.EventHandler(this.View_Invoices_Load);
             ((System.ComponentModel.ISupportInitialize)(this.poislogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LPOdataview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Invoicedataview)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -82,6 +83,6 @@ namespace POIS1
         #endregion
 
         private System.Windows.Forms.PictureBox poislogo;
-        private System.Windows.Forms.DataGridView LPOdataview;
+        private System.Windows.Forms.DataGridView Invoicedataview;
     }
 }

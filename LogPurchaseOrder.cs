@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+
 namespace POIS1
 {
-    using System;
-    using System.Collections.Generic;
-    
     public partial class LogPurchaseOrder
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,7 +19,7 @@ namespace POIS1
         {
             this.Invoices = new HashSet<Invoice>();
         }
-    
+
         public int PurchaseOrderId { get; set; }
         public Nullable<int> Vendor_id { get; set; }
         public Nullable<int> Items_id { get; set; }
@@ -29,7 +29,7 @@ namespace POIS1
         public Nullable<System.DateTime> Approval_Date { get; set; }
         public Nullable<int> CurrencyId { get; set; }
         public Nullable<double> Total { get; set; }
-    
+
         public virtual Currency Currency { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Invoice> Invoices { get; set; }

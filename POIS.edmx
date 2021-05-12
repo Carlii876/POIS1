@@ -4,22 +4,13 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="POISModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="POISModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Currency">
           <Key>
             <PropertyRef Name="CurrencyId" />
           </Key>
           <Property Name="CurrencyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Currency" Type="nchar" MaxLength="10" />
-        </EntityType>
-        <EntityType Name="InvoiceItem">
-          <Key>
-            <PropertyRef Name="InvoiceItemID" />
-          </Key>
-          <Property Name="InvoiceItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Invoice_id" Type="int" Nullable="false" />
-          <Property Name="Item_id" Type="int" Nullable="false" />
-          <Property Name="Item_Provided" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Invoices">
           <Key>
@@ -93,30 +84,6 @@
           <Property Name="VendorAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="VendorNumber" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
-        <Association Name="FK_InvoiceItem_Invoices">
-          <End Role="Invoices" Type="Self.Invoices" Multiplicity="1" />
-          <End Role="InvoiceItem" Type="Self.InvoiceItem" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Invoices">
-              <PropertyRef Name="Invoice_id" />
-            </Principal>
-            <Dependent Role="InvoiceItem">
-              <PropertyRef Name="Invoice_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_InvoiceItem_Items">
-          <End Role="Items" Type="Self.Items" Multiplicity="1" />
-          <End Role="InvoiceItem" Type="Self.InvoiceItem" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Items">
-              <PropertyRef Name="Item_id" />
-            </Principal>
-            <Dependent Role="InvoiceItem">
-              <PropertyRef Name="Item_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Invoices_InvoicesStatus">
           <End Role="InvoiceStatus" Type="Self.InvoiceStatus" Multiplicity="0..1" />
           <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
@@ -203,7 +170,6 @@
         </Association>
         <EntityContainer Name="POISModelStoreContainer">
           <EntitySet Name="Currency" EntityType="Self.Currency" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="InvoiceItem" EntityType="Self.InvoiceItem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Invoices" EntityType="Self.Invoices" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="InvoiceStatus" EntityType="Self.InvoiceStatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
@@ -211,14 +177,6 @@
           <EntitySet Name="PurchaseOrderStatus" EntityType="Self.PurchaseOrderStatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vendors" EntityType="Self.Vendors" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_InvoiceItem_Invoices" Association="Self.FK_InvoiceItem_Invoices">
-            <End Role="Invoices" EntitySet="Invoices" />
-            <End Role="InvoiceItem" EntitySet="InvoiceItem" />
-          </AssociationSet>
-          <AssociationSet Name="FK_InvoiceItem_Items" Association="Self.FK_InvoiceItem_Items">
-            <End Role="Items" EntitySet="Items" />
-            <End Role="InvoiceItem" EntitySet="InvoiceItem" />
-          </AssociationSet>
           <AssociationSet Name="FK_Invoices_InvoicesStatus" Association="Self.FK_Invoices_InvoicesStatus">
             <End Role="InvoiceStatus" EntitySet="InvoiceStatus" />
             <End Role="Invoices" EntitySet="Invoices" />
@@ -248,8 +206,7 @@
             <End Role="LogPurchaseOrder" EntitySet="LogPurchaseOrder" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="POISModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -260,17 +217,6 @@
           <Property Name="CurrencyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Currency1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="LogPurchaseOrders" Relationship="Self.FK_LogPurchaseOrder_Currency" FromRole="Currency" ToRole="LogPurchaseOrder" />
-        </EntityType>
-        <EntityType Name="InvoiceItem">
-          <Key>
-            <PropertyRef Name="InvoiceItemID" />
-          </Key>
-          <Property Name="InvoiceItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Invoice_id" Type="Int32" Nullable="false" />
-          <Property Name="Item_id" Type="Int32" Nullable="false" />
-          <Property Name="Item_Provided" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Invoice" Relationship="Self.FK_InvoiceItem_Invoices" FromRole="InvoiceItem" ToRole="Invoices" />
-          <NavigationProperty Name="Item" Relationship="Self.FK_InvoiceItem_Items" FromRole="InvoiceItem" ToRole="Items" />
         </EntityType>
         <EntityType Name="Invoice">
           <Key>
@@ -286,7 +232,6 @@
           <Property Name="Status_Id" Type="Int32" />
           <Property Name="InvoiceNumber" Type="Int32" />
           <Property Name="PurchaseOrderNumber" Type="Int32" />
-          <NavigationProperty Name="InvoiceItems" Relationship="Self.FK_InvoiceItem_Invoices" FromRole="Invoices" ToRole="InvoiceItem" />
           <NavigationProperty Name="InvoiceStatu" Relationship="Self.FK_Invoices_InvoicesStatus" FromRole="Invoices" ToRole="InvoiceStatus" />
           <NavigationProperty Name="LogPurchaseOrder" Relationship="Self.FK_Invoices_LogPurchaseOrder" FromRole="Invoices" ToRole="LogPurchaseOrder" />
           <NavigationProperty Name="Vendor" Relationship="Self.FK_Invoices_Vendors" FromRole="Invoices" ToRole="Vendors" />
@@ -308,7 +253,6 @@
           <Property Name="Item_Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Currency" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Item_Cost" Type="Double" />
-          <NavigationProperty Name="InvoiceItems" Relationship="Self.FK_InvoiceItem_Items" FromRole="Items" ToRole="InvoiceItem" />
           <NavigationProperty Name="LogPurchaseOrders" Relationship="Self.FK_LogPurchaseOrder_Items" FromRole="Items" ToRole="LogPurchaseOrder" />
         </EntityType>
         <EntityType Name="LogPurchaseOrder">
@@ -368,30 +312,6 @@
             </Principal>
             <Dependent Role="LogPurchaseOrder">
               <PropertyRef Name="CurrencyId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_InvoiceItem_Invoices">
-          <End Role="Invoices" Type="Self.Invoice" Multiplicity="1" />
-          <End Role="InvoiceItem" Type="Self.InvoiceItem" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Invoices">
-              <PropertyRef Name="Invoice_id" />
-            </Principal>
-            <Dependent Role="InvoiceItem">
-              <PropertyRef Name="Invoice_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_InvoiceItem_Items">
-          <End Role="Items" Type="Self.Item" Multiplicity="1" />
-          <End Role="InvoiceItem" Type="Self.InvoiceItem" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Items">
-              <PropertyRef Name="Item_id" />
-            </Principal>
-            <Dependent Role="InvoiceItem">
-              <PropertyRef Name="Item_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -469,7 +389,6 @@
         </Association>
         <EntityContainer Name="POISEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Currencies" EntityType="Self.Currency" />
-          <EntitySet Name="InvoiceItems" EntityType="Self.InvoiceItem" />
           <EntitySet Name="Invoices" EntityType="Self.Invoice" />
           <EntitySet Name="InvoiceStatus" EntityType="Self.InvoiceStatu" />
           <EntitySet Name="Items" EntityType="Self.Item" />
@@ -480,14 +399,6 @@
           <AssociationSet Name="FK_LogPurchaseOrder_Currency" Association="Self.FK_LogPurchaseOrder_Currency">
             <End Role="Currency" EntitySet="Currencies" />
             <End Role="LogPurchaseOrder" EntitySet="LogPurchaseOrders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_InvoiceItem_Invoices" Association="Self.FK_InvoiceItem_Invoices">
-            <End Role="Invoices" EntitySet="Invoices" />
-            <End Role="InvoiceItem" EntitySet="InvoiceItems" />
-          </AssociationSet>
-          <AssociationSet Name="FK_InvoiceItem_Items" Association="Self.FK_InvoiceItem_Items">
-            <End Role="Items" EntitySet="Items" />
-            <End Role="InvoiceItem" EntitySet="InvoiceItems" />
           </AssociationSet>
           <AssociationSet Name="FK_Invoices_InvoicesStatus" Association="Self.FK_Invoices_InvoicesStatus">
             <End Role="InvoiceStatus" EntitySet="InvoiceStatus" />
@@ -525,16 +436,6 @@
               <MappingFragment StoreEntitySet="Currency">
                 <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
                 <ScalarProperty Name="Currency1" ColumnName="Currency" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="InvoiceItems">
-            <EntityTypeMapping TypeName="POISModel.InvoiceItem">
-              <MappingFragment StoreEntitySet="InvoiceItem">
-                <ScalarProperty Name="InvoiceItemID" ColumnName="InvoiceItemID" />
-                <ScalarProperty Name="Invoice_id" ColumnName="Invoice_id" />
-                <ScalarProperty Name="Item_id" ColumnName="Item_id" />
-                <ScalarProperty Name="Item_Provided" ColumnName="Item_Provided" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
