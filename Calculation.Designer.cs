@@ -35,8 +35,6 @@ namespace POIS1
             this.minimisebtn = new System.Windows.Forms.Button();
             this.settingpanel1 = new System.Windows.Forms.Panel();
             this.changethemebtn = new System.Windows.Forms.Button();
-            this.Selectcurrencylbl = new System.Windows.Forms.Label();
-            this.Currencylbl = new System.Windows.Forms.Label();
             this.Itemdetailslbl = new System.Windows.Forms.Label();
             this.Quatitylbl = new System.Windows.Forms.Label();
             this.Costlbl = new System.Windows.Forms.Label();
@@ -77,7 +75,6 @@ namespace POIS1
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Currencycb = new System.Windows.Forms.ComboBox();
             this.ItemName1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Subtotaltb = new System.Windows.Forms.TextBox();
@@ -167,26 +164,6 @@ namespace POIS1
             this.changethemebtn.Text = "Change Theme";
             this.changethemebtn.UseVisualStyleBackColor = false;
             this.changethemebtn.Click += new System.EventHandler(this.changethemebtn_Click);
-            // 
-            // Selectcurrencylbl
-            // 
-            this.Selectcurrencylbl.AutoSize = true;
-            this.Selectcurrencylbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Selectcurrencylbl.Location = new System.Drawing.Point(320, 109);
-            this.Selectcurrencylbl.Name = "Selectcurrencylbl";
-            this.Selectcurrencylbl.Size = new System.Drawing.Size(216, 32);
-            this.Selectcurrencylbl.TabIndex = 41;
-            this.Selectcurrencylbl.Text = "Select Currency";
-            // 
-            // Currencylbl
-            // 
-            this.Currencylbl.AutoSize = true;
-            this.Currencylbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Currencylbl.Location = new System.Drawing.Point(359, 164);
-            this.Currencylbl.Name = "Currencylbl";
-            this.Currencylbl.Size = new System.Drawing.Size(87, 24);
-            this.Currencylbl.TabIndex = 42;
-            this.Currencylbl.Text = "Currency";
             // 
             // Itemdetailslbl
             // 
@@ -537,14 +514,14 @@ namespace POIS1
             // logInvoicesToolStripMenuItem
             // 
             this.logInvoicesToolStripMenuItem.Name = "logInvoicesToolStripMenuItem";
-            this.logInvoicesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.logInvoicesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.logInvoicesToolStripMenuItem.Text = "Log Invoices";
             this.logInvoicesToolStripMenuItem.Click += new System.EventHandler(this.logInvoicesToolStripMenuItem_Click);
             // 
             // viewInvoicesToolStripMenuItem1
             // 
             this.viewInvoicesToolStripMenuItem1.Name = "viewInvoicesToolStripMenuItem1";
-            this.viewInvoicesToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.viewInvoicesToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
             this.viewInvoicesToolStripMenuItem1.Text = "View Invoices";
             this.viewInvoicesToolStripMenuItem1.Click += new System.EventHandler(this.viewInvoicesToolStripMenuItem1_Click);
             // 
@@ -582,7 +559,7 @@ namespace POIS1
             // viewReportsToolStripMenuItem1
             // 
             this.viewReportsToolStripMenuItem1.Name = "viewReportsToolStripMenuItem1";
-            this.viewReportsToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.viewReportsToolStripMenuItem1.Size = new System.Drawing.Size(179, 26);
             this.viewReportsToolStripMenuItem1.Text = "View Reports";
             this.viewReportsToolStripMenuItem1.Click += new System.EventHandler(this.viewReportsToolStripMenuItem1_Click);
             // 
@@ -607,17 +584,6 @@ namespace POIS1
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
-            // 
-            // Currencycb
-            // 
-            this.Currencycb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Currencycb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Currencycb.FormattingEnabled = true;
-            this.Currencycb.Location = new System.Drawing.Point(547, 163);
-            this.Currencycb.Name = "Currencycb";
-            this.Currencycb.Size = new System.Drawing.Size(205, 30);
-            this.Currencycb.TabIndex = 43;
-            this.Currencycb.SelectedIndexChanged += new System.EventHandler(this.Currencycb_SelectedIndexChanged);
             // 
             // ItemName1
             // 
@@ -685,9 +651,6 @@ namespace POIS1
             this.Controls.Add(this.Costlbl);
             this.Controls.Add(this.Quatitylbl);
             this.Controls.Add(this.Itemdetailslbl);
-            this.Controls.Add(this.Currencycb);
-            this.Controls.Add(this.Currencylbl);
-            this.Controls.Add(this.Selectcurrencylbl);
             this.Controls.Add(this.settingpanel1);
             this.Controls.Add(this.poislogo);
             this.Controls.Add(this.settingspanel);
@@ -722,8 +685,6 @@ namespace POIS1
         private System.Windows.Forms.Button minimisebtn;
         private System.Windows.Forms.Panel settingpanel1;
         private System.Windows.Forms.Button changethemebtn;
-        private System.Windows.Forms.Label Selectcurrencylbl;
-        private System.Windows.Forms.Label Currencylbl;
         private System.Windows.Forms.Label Itemdetailslbl;
         private System.Windows.Forms.Label Quatitylbl;
         private System.Windows.Forms.Label Costlbl;
@@ -763,7 +724,6 @@ namespace POIS1
         private System.Windows.Forms.ToolStripMenuItem viewReportsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeThemeToolStripMenuItem;
-        private System.Windows.Forms.ComboBox Currencycb;
         private System.Windows.Forms.ComboBox ItemName1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox Subtotaltb;

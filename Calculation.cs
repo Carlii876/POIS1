@@ -36,7 +36,7 @@ namespace POIS1
         {
 
             Itemscombobox();
-            addcurrency();
+      
             settingpanel1.Visible = false;
 
             LogPObtn.ForeColor = Color.White;
@@ -58,37 +58,7 @@ namespace POIS1
             
         }
 
-        public void addcurrency()
-        {
-            SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
-
-            string q = "select * from Currency";
-            SqlCommand command = new SqlCommand(q, connection);
-            //SqlDataReader datareader = command.ExecuteReader();
-            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
-
-            try
-            {
-                connection.Open();
-                SqlDataReader sqlData = command.ExecuteReader();
-
-                while (sqlData.Read())
-                {
-                    string Currency = sqlData.GetString(1);
-
-                    collection.Add(sqlData.GetString(1));
-                    Currencycb.Items.Add(Currency);
-
-                }
-            }
-            catch
-            {
-
-            }
-            connection.Close();
-
-
-        }
+       
 
 
         public void Itemscombobox()
@@ -175,13 +145,13 @@ namespace POIS1
         private void hlplbl_Click(object sender, EventArgs e)
         {
             Saveinput saveinput = new Saveinput();
-            MessageBox.Show(saveinput.help);
+            MessageBox.Show(saveinput.help3);
         }
 
         private void help_Click(object sender, EventArgs e)
         {
             Saveinput saveinput = new Saveinput();
-            MessageBox.Show(saveinput.help);
+            MessageBox.Show(saveinput.help3);
         }
 
         private void settings_Click(object sender, EventArgs e)
@@ -198,8 +168,7 @@ namespace POIS1
             if (poislogo.BackColor == Color.LightSkyBlue)
             {
 
-                Selectcurrencylbl.BackColor = Color.White;
-                Currencylbl.BackColor = Color.White;
+               
                 Itemdetailslbl.BackColor = Color.White;
                 ItemNamelbl.BackColor = Color.White;
                 Quatitylbl.BackColor = Color.White;
@@ -215,8 +184,7 @@ namespace POIS1
             else if (poislogo.BackColor == Color.White)
             {
 
-                Selectcurrencylbl.BackColor = Color.LightSkyBlue;
-                Currencylbl.BackColor = Color.LightSkyBlue;
+               
                 Itemdetailslbl.BackColor = Color.LightSkyBlue;
                 ItemNamelbl.BackColor = Color.LightSkyBlue;
                 Quatitylbl.BackColor = Color.LightSkyBlue;
@@ -237,8 +205,7 @@ namespace POIS1
             if (poislogo.BackColor == Color.LightSkyBlue)
             {
 
-                Selectcurrencylbl.BackColor = Color.White;
-                Currencylbl.BackColor = Color.White;
+                
                 Itemdetailslbl.BackColor = Color.White;
                 ItemNamelbl.BackColor = Color.White;
                 Quatitylbl.BackColor = Color.White;
@@ -254,8 +221,6 @@ namespace POIS1
             else if (poislogo.BackColor == Color.White)
             {
 
-                Selectcurrencylbl.BackColor = Color.LightSkyBlue;
-                Currencylbl.BackColor = Color.LightSkyBlue;
                 Itemdetailslbl.BackColor = Color.LightSkyBlue;
                 ItemNamelbl.BackColor = Color.LightSkyBlue;
                 Quatitylbl.BackColor = Color.LightSkyBlue;
@@ -294,7 +259,7 @@ namespace POIS1
                 double Icost = sqlData.GetDouble(4);
 
 
-                Currencycb.Text = currenc;
+               
                 costtb.Text = Convert.ToString(Icost);
 
 
@@ -513,39 +478,7 @@ namespace POIS1
             }
         }
 
-        private void Currencycb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-
-            SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
-            string q = "select * from Currency = '" + Currencycb.Text + "'";
-
-
-            SqlCommand command = new SqlCommand(q, connection);
-
-
-            //DataTable dataTable = new DataTable();
-
-            try
-            {
-                connection.Open();
-                SqlDataReader sqlData = command.ExecuteReader();
-
-                while (sqlData.Read())
-                {
-                    string currency = sqlData.GetString(1);
-
-
-
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
+        
 
         private void viewReportsToolStripMenuItem1_Click(object sender, EventArgs e)
         {

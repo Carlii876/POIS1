@@ -1001,9 +1001,8 @@ namespace POIS1
             this.invoiceerror.ForeColor = System.Drawing.Color.Red;
             this.invoiceerror.Location = new System.Drawing.Point(1084, 558);
             this.invoiceerror.Name = "invoiceerror";
-            this.invoiceerror.Size = new System.Drawing.Size(46, 17);
+            this.invoiceerror.Size = new System.Drawing.Size(0, 17);
             this.invoiceerror.TabIndex = 124;
-            this.invoiceerror.Text = "label3";
             // 
             // saveicon
             // 

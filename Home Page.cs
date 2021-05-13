@@ -195,13 +195,13 @@ namespace POIS1
         private void helplbl_Click(object sender, EventArgs e)
         {
             Saveinput saveinput = new Saveinput();
-            MessageBox.Show(saveinput.help);
+            MessageBox.Show(saveinput.help2);
         }
 
         private void helplogo_Click(object sender, EventArgs e)
         {
             Saveinput saveinput = new Saveinput();
-            MessageBox.Show(saveinput.help);
+            MessageBox.Show(saveinput.help2);
         }
 
         private void poislogo_Click(object sender, EventArgs e)

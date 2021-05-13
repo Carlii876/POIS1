@@ -478,7 +478,7 @@ namespace POIS1
 
 
             saveinput.currency = Currencycb.Text;
-            saveinput.vendorName = Vendorcb.SelectedText;
+            saveinput.vendorName = Vendorcb.Text;
             saveinput.vendorAddress = VndrAddrescb.Text;
             saveinput.itemDescription = Itemdesctb.Text;
             saveinput.itemName = ItemName1.Text;
@@ -489,12 +489,11 @@ namespace POIS1
             saveinput.totalcurrency = totalcurrencycb.Text;
 
 
-            if (saveinput.dateforpayment.Year < saveinput.approvedate.Year || saveinput.dateforpayment.Month < saveinput.approvedate.Month 
-                || saveinput.dateforpayment.Day < saveinput.approvedate.Day)
+            if (saveinput.dateforpayment < saveinput.approvedate )
             {
                 MessageBox.Show("Date for Paymnet can not be less than Date for Approval");
             }
-            if (string.IsNullOrEmpty(saveinput.vendorName))
+            if (saveinput.vendorName == "")
             {
                 isValid = false;
                 Vendornameerror.Text = "Please Enter Vender Name";
@@ -644,74 +643,83 @@ namespace POIS1
                 costerror.Text = "";
                 Numbererror.Text = "";
 
-
-
-
-
-
-
-
-                if ((MessageBox.Show("Do you want to log the Invoice?", "Are You sure", MessageBoxButtons.YesNo)) == DialogResult.Yes)
-                {
-
-
                     SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
 
                     connection.Open();
 
 
+                string s = "select * from LogPurchaseOrder where PurchaseOrderNumber = '" + POnumbercb.Text + "'";
+
+                SqlCommand command2 = new SqlCommand(s, connection);
 
 
 
+                SqlDataReader sqlData1 = command2.ExecuteReader();
+                while (sqlData1.Read())
+                {
+                    string PurchaseorderId = sqlData1[0].ToString();
+                    PurchaseOrderNumber1 = sqlData1.GetInt32(5);
 
-                    string Q = "insert into Invoices(PurchaseOrderID, ApprovalDate, DateForPayment, Vendors_id,  Invoice_description, total, Status_Id, InvoiceNumber, PurchaseOrderNumber)values('" + POnum + "', '" + ApproveDate + "','" + Paymentdate.Value + "','" + VendorID + "','" + Itemdesctb.Text + "','" + totaltb.Text + "','" + InvstatusID + "','" + Invnumbertb.Text + "','" + POnumbercb.Text + "')";
-
-                    SqlCommand command = new SqlCommand(Q, connection);
-
-                    command.ExecuteNonQuery();
-                    SqlDataReader sqlData = command.ExecuteReader();
-
-
-                    while (sqlData.Read())
-                    {
-                        InvoiceId = sqlData[0].ToString();
-                    }
-
-
-                    connection.Close();
-
-
-
-
-
-
-
-                    connection.Open();
-
-
-
-
-
-                    try
-                    {
-                        string q = "insert into InvoiceItem(Invoice_id, Item_id, Item_Provided)values('" + InvoiceId + "', '" + ItemsId + "','" + Itemname1 + "')";
-
-                        SqlCommand command1 = new SqlCommand(q, connection);
-
-                        command1.ExecuteNonQuery();
-
-
-                        connection.Close();
-                    }
-                    catch (Exception)
-                    {
-
-
-                    }
-
-
+                    //Cost1 = sqlData.GetDouble(4);
+                    //Itemdesctb.Text = ItemsId;
+                    //ItemName1.Text = status_id;
                 }
-                MessageBox.Show("Invoice Logged");
+
+
+                if (PurchaseOrderNumber1 != Convert.ToInt32(POnumbercb.Text))
+                {
+                    MessageBox.Show("purchase order does not exist");
+                }
+                else
+                {
+
+
+
+                    if ((MessageBox.Show("Do you want to log the Invoice?", "Are You sure", MessageBoxButtons.YesNo)) == DialogResult.Yes)
+                    {
+
+
+
+
+
+
+
+
+
+                        string Q = "insert into Invoices(PurchaseOrderID, ApprovalDate, DateForPayment, Vendors_id,  Invoice_description, total, Status_Id, InvoiceNumber, PurchaseOrderNumber)values('" + POnum + "', '" + ApproveDate + "','" + Paymentdate.Value + "','" + VendorID + "','" + Itemdesctb.Text + "','" + totaltb.Text + "','" + InvstatusID + "','" + Invnumbertb.Text + "','" + POnumbercb.Text + "')";
+
+                        SqlCommand command = new SqlCommand(Q, connection);
+
+                        command.ExecuteNonQuery();
+                        SqlDataReader sqlData = command.ExecuteReader();
+
+
+                        while (sqlData.Read())
+                        {
+                            InvoiceId = sqlData[0].ToString();
+                        }
+
+                        try
+                        {
+                            string q = "insert into InvoiceItem(Invoice_id, Item_id, Item_Provided)values('" + InvoiceId + "', '" + ItemsId + "','" + Itemname1 + "')";
+
+                            SqlCommand command1 = new SqlCommand(q, connection);
+
+                            command1.ExecuteNonQuery();
+
+
+                            connection.Close();
+                        }
+                        catch (Exception)
+                        {
+
+
+                        }
+
+                        MessageBox.Show("Invoice Logged");
+                    }
+                   
+                }
             }
         }
 

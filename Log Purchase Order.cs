@@ -446,7 +446,7 @@ namespace POIS1
 
 
             saveinput.currency = Currencycb.Text;
-            saveinput.vendorName = Vendorcb.SelectedText;
+            saveinput.vendorName = Vendorcb.Text;
             saveinput.vendorAddress = VndrAddrescb.Text;
             saveinput.itemDescription = Itemdesctb.Text;
             saveinput.itemName = ItemName1.Text;
