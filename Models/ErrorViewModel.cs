@@ -1,6 +1,6 @@
 using System;
 
-namespace POIS1.Models
+namespace POIS1WEB.Models
 {
     public class ErrorViewModel
     {

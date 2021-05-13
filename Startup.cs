@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -7,13 +8,16 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using POIS1.Data;
+using POIS1WEB.Contracts;
+using POIS1WEB.Data;
+using POIS1WEB.Mappings;
+using POIS1WEB.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace POIS1
+namespace POIS1WEB
 {
     public class Startup
     {
@@ -30,6 +34,14 @@ namespace POIS1
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IVendorsRepository, VendorRepostory>();
+            services.AddScoped<IPurchaseOrderRepository, PurchaseOrderRepository>();
+            services.AddScoped<I_ItemsRepository, ItemsRepositry>();
+            services.AddScoped<I_Invoice, InvoiceRepository>();
+
+            services.AddAutoMapper(typeof(Maps));
+                
+            
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)

@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using POIS1.Models;
+using POIS1WEB.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace POIS1.Controllers
+namespace POIS1WEB.Controllers
 {
     public class HomeController : Controller
     {
@@ -24,6 +24,11 @@ namespace POIS1.Controllers
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult POIS()
         {
             return View();
         }
