@@ -13,6 +13,7 @@ namespace POIS1
 {
     public partial class Log_Invoice : Form
     {
+        string PurchaseorderId;
         string InvstatusID;
         string Itemname1;
         string InvoiceId;
@@ -643,55 +644,58 @@ namespace POIS1
                 costerror.Text = "";
                 Numbererror.Text = "";
 
-                    SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
-
-                    connection.Open();
+                    
 
 
-                string s = "select * from LogPurchaseOrder where PurchaseOrderNumber = '" + POnumbercb.Text + "'";
+                
 
-                SqlCommand command2 = new SqlCommand(s, connection);
+               
+               
+               
+             
 
-
-
-                SqlDataReader sqlData1 = command2.ExecuteReader();
-                while (sqlData1.Read())
-                {
-                    string PurchaseorderId = sqlData1[0].ToString();
-                    PurchaseOrderNumber1 = sqlData1.GetInt32(5);
-
-                    //Cost1 = sqlData.GetDouble(4);
-                    //Itemdesctb.Text = ItemsId;
-                    //ItemName1.Text = status_id;
-                }
-
-
-                if (PurchaseOrderNumber1 != Convert.ToInt32(POnumbercb.Text))
-                {
-                    MessageBox.Show("purchase order does not exist");
-                }
-                else
-                {
-
-
+                    
 
                     if ((MessageBox.Show("Do you want to log the Invoice?", "Are You sure", MessageBoxButtons.YesNo)) == DialogResult.Yes)
                     {
+                        SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
+
+                        connection.Open();
+
+                        string s = "select * from LogPurchaseOrder where PurchaseOrderNumber = '" + POnumbercb.Text + "'";
+
+                        SqlCommand command2 = new SqlCommand(s, connection);
 
 
 
+                        SqlDataReader sqlData1 = command2.ExecuteReader();
+                        while (sqlData1.Read())
+                        {
+                             PurchaseorderId = sqlData1[0].ToString();
+                            PurchaseOrderNumber1 = sqlData1.GetInt32(5);
+
+                            //Cost1 = sqlData.GetDouble(4);
+                            //Itemdesctb.Text = ItemsId;
+                            //ItemName1.Text = status_id;
+                        }
+                    if (PurchaseOrderNumber1 != Convert.ToInt32(POnumbercb.Text))
+                    {
+                        MessageBox.Show("purchase order does not exist");
+                    }
+
+                    connection.Close();
 
 
+                        SqlConnection connection1 = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
 
+                        connection1.Open();
 
+                        string Q = "insert into Invoices(PurchaseOrderID, ApprovalDate, DateForPayment, Vendors_id,  Invoice_description, total, Status_Id, InvoiceNumber, PurchaseOrderNumber)values('" + PurchaseorderId + "', '" + ApproveDate + "','" + Paymentdate.Value + "','" + VendorID + "','" + Itemdesctb.Text + "','" + totaltb.Text + "','" + InvstatusID + "','" + Invnumbertb.Text + "','" + POnumbercb.Text + "')";
+                       
+                        SqlCommand command1 = new SqlCommand(Q, connection1);
 
-
-                        string Q = "insert into Invoices(PurchaseOrderID, ApprovalDate, DateForPayment, Vendors_id,  Invoice_description, total, Status_Id, InvoiceNumber, PurchaseOrderNumber)values('" + POnum + "', '" + ApproveDate + "','" + Paymentdate.Value + "','" + VendorID + "','" + Itemdesctb.Text + "','" + totaltb.Text + "','" + InvstatusID + "','" + Invnumbertb.Text + "','" + POnumbercb.Text + "')";
-
-                        SqlCommand command = new SqlCommand(Q, connection);
-
-                        command.ExecuteNonQuery();
-                        SqlDataReader sqlData = command.ExecuteReader();
+                       
+                        SqlDataReader sqlData = command1.ExecuteReader();
 
 
                         while (sqlData.Read())
@@ -703,9 +707,9 @@ namespace POIS1
                         {
                             string q = "insert into InvoiceItem(Invoice_id, Item_id, Item_Provided)values('" + InvoiceId + "', '" + ItemsId + "','" + Itemname1 + "')";
 
-                            SqlCommand command1 = new SqlCommand(q, connection);
+                            SqlCommand command3 = new SqlCommand(q, connection);
 
-                            command1.ExecuteNonQuery();
+                            command3.ExecuteNonQuery();
 
 
                             connection.Close();
@@ -719,7 +723,7 @@ namespace POIS1
                         MessageBox.Show("Invoice Logged");
                     }
                    
-                }
+                
             }
         }
 

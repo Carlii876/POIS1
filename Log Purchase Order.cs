@@ -114,14 +114,14 @@ namespace POIS1
 
             string q = "select * from Items";
 
-            SqlCommand command = new SqlCommand(q, connection);
+            SqlCommand command1 = new SqlCommand(q, connection);
             //SqlDataReader datareader = command.ExecuteReader();
             AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
 
             try
             {
                 connection.Open();
-                SqlDataReader sqlData = command.ExecuteReader();
+                SqlDataReader sqlData = command1.ExecuteReader();
 
                 while (sqlData.Read())
                 {
@@ -451,6 +451,7 @@ namespace POIS1
             saveinput.itemDescription = Itemdesctb.Text;
             saveinput.itemName = ItemName1.Text;
             saveinput.approvedate = Approvaldate.Value;
+            saveinput.purchaseOrderStatus = POstatuscb.Text;
 
 
 
@@ -525,7 +526,7 @@ namespace POIS1
             }
             try
             {
-                saveinput.vendorNumber = Convert.ToInt64(VndrNumbercb.Text);
+                long vendorNumber = Convert.ToInt64(VndrNumbercb.Text );
                 saveinput.cost = Convert.ToDouble(Costtb.Text);
 
                 saveinput.total = Convert.ToInt32(Totaltb.Text);
@@ -541,26 +542,26 @@ namespace POIS1
                 {
                     costerror.Text = "";
                 }
-                if (saveinput.vendorNumber == 0)
-                {
-                    isValid = false;
-                    Numbererror.Text = "Please Enter Vendors Telephone Number";
+                //if (string.IsNullOrEmpty(Convert.ToString(vendorNumber)))
+                //{
+                //    isValid = false;
+                //    Numbererror.Text = "Please Enter Vendors Telephone Number";
 
-                }
-                else
-                {
-                    Numbererror.Text = "";
-                }
-                if (saveinput.vendorNumber <10 || saveinput.vendorNumber > 11)
-                {
-                    isValid = false;
-                    Numbererror.Text = "Invalid Phone Number";
+                //}
+                //else
+                //{
+                //    Numbererror.Text = "";
+                //}
+                //if (saveinput.vendorNumber <10 || saveinput.vendorNumber > 11)
+                //{
+                //    isValid = false;
+                //    Numbererror.Text = "Invalid Phone Number";
 
-                }
-                else
-                {
-                    Numbererror.Text = "";
-                }
+                //}
+                //else
+                //{
+                //    Numbererror.Text = "";
+                //}
                 if (saveinput.quantity == 0)
                 {
                     isValid = false;
@@ -1105,22 +1106,23 @@ namespace POIS1
 
             else
             {
+                connection.Close();
                 if ((MessageBox.Show("Do you want to add Vendor Details?", "Vendor Details", MessageBoxButtons.YesNo)) == DialogResult.Yes)
                 {
-
+                    SqlConnection connection1 = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
+                    connection1.Open();
 
 
 
 
 
                     string q = "insert into Vendors (Vendorname,VendorAddress,VendorNumber) values  ('" + Vendorcb.Text + "', '" + VndrAddrescb.Text + "','" + VndrNumbercb.Text + "')";
-                    string I = "select Vendor_Id from Vendors where Vendorname = '" + Vendorcb.Text + "'";
+                    
+                    SqlCommand command2 = new SqlCommand(q, connection1);
+                    
 
-                    SqlCommand command = new SqlCommand(q, connection);
-                    SqlCommand command3 = new SqlCommand(I, connection);
-
-                    command.ExecuteNonQuery();
-                    SqlDataReader sqlData = command3.ExecuteReader();
+                    
+                    SqlDataReader sqlData = command2.ExecuteReader();
 
 
                     while (sqlData.Read())
@@ -1132,12 +1134,12 @@ namespace POIS1
                         //ItemName1.Text = status_id;
                     }
 
-
-
+                    connection1.Close();
+                    MessageBox.Show("Vendor Inserted");
                 }
             }
 
-                connection.Close();
+           
             
 
 

@@ -61,6 +61,7 @@ namespace POIS1
             this.usernametb.TabIndex = 9;
             this.usernametb.Text = "Enter Username";
             this.usernametb.MouseClick += new System.Windows.Forms.MouseEventHandler(this.usernametb_MouseClick);
+            this.usernametb.TextChanged += new System.EventHandler(this.usernametb_TextChanged);
             this.usernametb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.usernametb_KeyPress);
             this.usernametb.MouseLeave += new System.EventHandler(this.usernametb_MouseLeave);
             // 
@@ -74,6 +75,7 @@ namespace POIS1
             this.passwordtb.TabIndex = 10;
             this.passwordtb.Text = "Enter Password";
             this.passwordtb.MouseClick += new System.Windows.Forms.MouseEventHandler(this.passwordtb_MouseClick);
+            this.passwordtb.TextChanged += new System.EventHandler(this.passwordtb_TextChanged);
             this.passwordtb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passwordtb_KeyPress);
             this.passwordtb.MouseLeave += new System.EventHandler(this.passwordtb_MouseLeave);
             this.passwordtb.MouseHover += new System.EventHandler(this.passwordtb_MouseHover);

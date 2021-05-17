@@ -734,9 +734,9 @@ namespace POIS1
             this.panel1.Controls.Add(this.Logouticon);
             this.panel1.Controls.Add(this.Logoutlb);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1303, 28);
+            this.panel1.Location = new System.Drawing.Point(1303, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(264, 74);
+            this.panel1.Size = new System.Drawing.Size(264, 72);
             this.panel1.TabIndex = 17;
             // 
             // settingsicon
@@ -891,7 +891,7 @@ namespace POIS1
             this.logoutToolStripMenuItem});
             this.ViewsMenue.Location = new System.Drawing.Point(0, 0);
             this.ViewsMenue.Name = "ViewsMenue";
-            this.ViewsMenue.Size = new System.Drawing.Size(1567, 28);
+            this.ViewsMenue.Size = new System.Drawing.Size(1567, 30);
             this.ViewsMenue.TabIndex = 18;
             this.ViewsMenue.Text = "menuStrip1";
             // 
@@ -901,7 +901,7 @@ namespace POIS1
             this.logInvoicesToolStripMenuItem,
             this.viewInvoicesToolStripMenuItem1});
             this.viewInvoicesToolStripMenuItem.Name = "viewInvoicesToolStripMenuItem";
-            this.viewInvoicesToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
+            this.viewInvoicesToolStripMenuItem.Size = new System.Drawing.Size(76, 26);
             this.viewInvoicesToolStripMenuItem.Text = "Invoices";
             // 
             // logInvoicesToolStripMenuItem
@@ -924,7 +924,7 @@ namespace POIS1
             this.logPurchaseOrderToolStripMenuItem,
             this.viewPurchaseOrderToolStripMenuItem1});
             this.viewPurchaseOrderToolStripMenuItem.Name = "viewPurchaseOrderToolStripMenuItem";
-            this.viewPurchaseOrderToolStripMenuItem.Size = new System.Drawing.Size(123, 24);
+            this.viewPurchaseOrderToolStripMenuItem.Size = new System.Drawing.Size(123, 26);
             this.viewPurchaseOrderToolStripMenuItem.Text = "Purchase Order";
             // 
             // logPurchaseOrderToolStripMenuItem
@@ -946,7 +946,7 @@ namespace POIS1
             this.viewReportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewReportsToolStripMenuItem1});
             this.viewReportsToolStripMenuItem.Name = "viewReportsToolStripMenuItem";
-            this.viewReportsToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.viewReportsToolStripMenuItem.Size = new System.Drawing.Size(74, 26);
             this.viewReportsToolStripMenuItem.Text = "Reports";
             // 
             // viewReportsToolStripMenuItem1
@@ -961,7 +961,7 @@ namespace POIS1
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.changeThemeToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(76, 26);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // changeThemeToolStripMenuItem
@@ -974,7 +974,7 @@ namespace POIS1
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(70, 26);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 

@@ -17,7 +17,7 @@ namespace POIS1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
        
-            Application.Run(new Log_Purchase_Order());
+            Application.Run(new POIS());
         }
     }
 }

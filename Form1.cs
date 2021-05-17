@@ -59,6 +59,17 @@ namespace POIS1
             else
             {
                 usernameerror.Text = "";
+                
+            }
+            if (string.IsNullOrEmpty(Password) || Password == "Enter Password")
+            {
+                isValid = false;
+                usernameerror.Text = "Please Enter a Username";
+
+            }
+            else
+            {
+                Passworderror.Text = "";
             }
             if (Username != "Admin" || Password != "Password")
             {
@@ -117,10 +128,12 @@ namespace POIS1
                 usernametb.Text = string.Empty;
                 usernametb.ForeColor = Color.Black;
             }
-            /*else if(usernametb.Text != "Enter Username")
+            if (passwordtb.Text == "")
             {
-                usernametb.ForeColor = Color.Black;
-            }*/
+                passwordtb.Text = "Enter Password";
+                passwordtb.ForeColor = Color.LightGray;
+               
+            }
 
         }
         private void passwordtb_MouseClick(object sender, MouseEventArgs e)
@@ -134,6 +147,12 @@ namespace POIS1
                 passwordtb.ForeColor = Color.Black;
                 passwordtb.PasswordChar = '*';
             }
+            if (usernametb.Text == "")
+            {
+                usernametb.Text = "Enter Username";
+                usernametb.ForeColor = Color.LightGray;
+              
+            }
 
 
 
@@ -141,24 +160,24 @@ namespace POIS1
         }
         private void passwordtb_MouseLeave(object sender, EventArgs e)
         {
-            if (passwordtb.Text == "")
-            {
+            //if (passwordtb.Text == "")
+            //{
 
-                passwordtb.Text = "Enter Password";
-                passwordtb.ForeColor = Color.LightGray;
-                passwordtb.PasswordChar = '\0';
+            //    passwordtb.Text = "Enter Password";
+            //    passwordtb.ForeColor = Color.LightGray;
+            //    passwordtb.PasswordChar = '\0';
 
 
-            }
+            //}
 
         }
         private void usernametb_MouseLeave(object sender, EventArgs e)
         {
-            if (usernametb.Text == "")
-            {
-                usernametb.Text = "Enter Username";
-                usernametb.ForeColor = Color.LightGray;
-            }
+            //if (usernametb.Text == "")
+            //{
+            //    usernametb.Text = "Enter Username";
+            //    usernametb.ForeColor = Color.LightGray;
+            //}
 
 
 
@@ -193,6 +212,18 @@ namespace POIS1
         private void forgetPbtn_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Please Contact Admin");
+        }
+
+        private void usernametb_TextChanged(object sender, EventArgs e)
+        {
+            usernameerror.Text = "";
+           
+        }
+
+        private void passwordtb_TextChanged(object sender, EventArgs e)
+        {
+           
+            Passworderror.Text = "";
         }
     }
 }
