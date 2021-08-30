@@ -32,20 +32,18 @@ namespace POIS1
             this.Viewinvoicesbt = new System.Windows.Forms.Button();
             this.ViewPurchaserOrderbtn = new System.Windows.Forms.Button();
             this.searchtb = new System.Windows.Forms.TextBox();
-            this.Searchbtn = new System.Windows.Forms.Button();
             this.toppanel = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.reportbtn = new FontAwesome.Sharp.IconButton();
+            this.Calculationbtn = new FontAwesome.Sharp.IconButton();
+            this.LogInvbtn = new FontAwesome.Sharp.IconButton();
+            this.LogPObtn = new FontAwesome.Sharp.IconButton();
+            this.Homebtn = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.settingsicon = new System.Windows.Forms.PictureBox();
-            this.helplbl = new System.Windows.Forms.Label();
-            this.helplogo = new System.Windows.Forms.PictureBox();
-            this.Logouticon = new System.Windows.Forms.PictureBox();
-            this.Logoutlb = new System.Windows.Forms.Label();
+            this.Logoutlb = new FontAwesome.Sharp.IconButton();
+            this.helplbl = new FontAwesome.Sharp.IconButton();
             this.poispB = new System.Windows.Forms.PictureBox();
             this.homeicon = new System.Windows.Forms.PictureBox();
-            this.Homebtn = new System.Windows.Forms.Button();
-            this.LogPObtn = new System.Windows.Forms.Button();
-            this.LogInvbtn = new System.Windows.Forms.Button();
-            this.Calculationbtn = new System.Windows.Forms.Button();
             this.ViewsMenue = new System.Windows.Forms.MenuStrip();
             this.viewInvoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logInvoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,22 +56,18 @@ namespace POIS1
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.settingspanel = new System.Windows.Forms.Panel();
-            this.themebtn = new System.Windows.Forms.Button();
+            this.Searchbtn = new FontAwesome.Sharp.IconButton();
             this.middlepanel = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.poislogo = new System.Windows.Forms.PictureBox();
             this.toppanel.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.settingsicon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.helplogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Logouticon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poispB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeicon)).BeginInit();
             this.ViewsMenue.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.settingspanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poislogo)).BeginInit();
@@ -85,7 +79,7 @@ namespace POIS1
             this.Viewinvoicesbt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Viewinvoicesbt.Location = new System.Drawing.Point(275, 346);
             this.Viewinvoicesbt.Name = "Viewinvoicesbt";
-            this.Viewinvoicesbt.Size = new System.Drawing.Size(224, 91);
+            this.Viewinvoicesbt.Size = new System.Drawing.Size(292, 111);
             this.Viewinvoicesbt.TabIndex = 9;
             this.Viewinvoicesbt.Text = "View Invoices";
             this.Viewinvoicesbt.UseVisualStyleBackColor = false;
@@ -98,7 +92,7 @@ namespace POIS1
             this.ViewPurchaserOrderbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ViewPurchaserOrderbtn.Location = new System.Drawing.Point(1210, 346);
             this.ViewPurchaserOrderbtn.Name = "ViewPurchaserOrderbtn";
-            this.ViewPurchaserOrderbtn.Size = new System.Drawing.Size(225, 91);
+            this.ViewPurchaserOrderbtn.Size = new System.Drawing.Size(292, 111);
             this.ViewPurchaserOrderbtn.TabIndex = 10;
             this.ViewPurchaserOrderbtn.Text = "View Purchase Order";
             this.ViewPurchaserOrderbtn.UseVisualStyleBackColor = false;
@@ -127,30 +121,13 @@ namespace POIS1
             this.searchtb.MouseLeave += new System.EventHandler(this.searchtb_MouseLeave);
             this.searchtb.MouseHover += new System.EventHandler(this.searchtb_MouseHover);
             // 
-            // Searchbtn
-            // 
-            this.Searchbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Searchbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
-            this.Searchbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Searchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Searchbtn.Location = new System.Drawing.Point(1307, 144);
-            this.Searchbtn.Name = "Searchbtn";
-            this.Searchbtn.Size = new System.Drawing.Size(139, 31);
-            this.Searchbtn.TabIndex = 16;
-            this.Searchbtn.Text = "SEARCH";
-            this.Searchbtn.UseVisualStyleBackColor = false;
-            this.Searchbtn.Click += new System.EventHandler(this.Searchbtn_Click);
-            // 
             // toppanel
             // 
             this.toppanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
+            this.toppanel.Controls.Add(this.panel10);
             this.toppanel.Controls.Add(this.panel2);
             this.toppanel.Controls.Add(this.poispB);
             this.toppanel.Controls.Add(this.homeicon);
-            this.toppanel.Controls.Add(this.Homebtn);
-            this.toppanel.Controls.Add(this.LogPObtn);
-            this.toppanel.Controls.Add(this.LogInvbtn);
-            this.toppanel.Controls.Add(this.Calculationbtn);
             this.toppanel.Controls.Add(this.ViewsMenue);
             this.toppanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.toppanel.Location = new System.Drawing.Point(0, 0);
@@ -158,81 +135,148 @@ namespace POIS1
             this.toppanel.Size = new System.Drawing.Size(1632, 102);
             this.toppanel.TabIndex = 20;
             // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.reportbtn);
+            this.panel10.Controls.Add(this.Calculationbtn);
+            this.panel10.Controls.Add(this.LogInvbtn);
+            this.panel10.Controls.Add(this.LogPObtn);
+            this.panel10.Controls.Add(this.Homebtn);
+            this.panel10.Location = new System.Drawing.Point(1, 56);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(1044, 46);
+            this.panel10.TabIndex = 22;
+            // 
+            // reportbtn
+            // 
+            this.reportbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.reportbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reportbtn.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
+            this.reportbtn.IconColor = System.Drawing.Color.White;
+            this.reportbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.reportbtn.IconSize = 18;
+            this.reportbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.reportbtn.Location = new System.Drawing.Point(810, 0);
+            this.reportbtn.Name = "reportbtn";
+            this.reportbtn.Size = new System.Drawing.Size(175, 46);
+            this.reportbtn.TabIndex = 6;
+            this.reportbtn.Text = "Report";
+            this.reportbtn.UseVisualStyleBackColor = true;
+            this.reportbtn.Click += new System.EventHandler(this.reportbtn_Click);
+            // 
+            // Calculationbtn
+            // 
+            this.Calculationbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Calculationbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Calculationbtn.IconChar = FontAwesome.Sharp.IconChar.Calculator;
+            this.Calculationbtn.IconColor = System.Drawing.Color.White;
+            this.Calculationbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Calculationbtn.IconSize = 18;
+            this.Calculationbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Calculationbtn.Location = new System.Drawing.Point(612, 0);
+            this.Calculationbtn.Name = "Calculationbtn";
+            this.Calculationbtn.Size = new System.Drawing.Size(175, 46);
+            this.Calculationbtn.TabIndex = 3;
+            this.Calculationbtn.Text = "Calculation";
+            this.Calculationbtn.UseVisualStyleBackColor = true;
+            this.Calculationbtn.Click += new System.EventHandler(this.Calculationbtn_Click);
+            // 
+            // LogInvbtn
+            // 
+            this.LogInvbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogInvbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogInvbtn.IconChar = FontAwesome.Sharp.IconChar.ClipboardCheck;
+            this.LogInvbtn.IconColor = System.Drawing.Color.White;
+            this.LogInvbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.LogInvbtn.IconSize = 18;
+            this.LogInvbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LogInvbtn.Location = new System.Drawing.Point(411, 0);
+            this.LogInvbtn.Name = "LogInvbtn";
+            this.LogInvbtn.Size = new System.Drawing.Size(175, 46);
+            this.LogInvbtn.TabIndex = 2;
+            this.LogInvbtn.Text = "Log Invoice";
+            this.LogInvbtn.UseVisualStyleBackColor = true;
+            this.LogInvbtn.Click += new System.EventHandler(this.LogInvbtn_Click);
+            // 
+            // LogPObtn
+            // 
+            this.LogPObtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogPObtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogPObtn.IconChar = FontAwesome.Sharp.IconChar.ClipboardCheck;
+            this.LogPObtn.IconColor = System.Drawing.Color.White;
+            this.LogPObtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.LogPObtn.IconSize = 18;
+            this.LogPObtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LogPObtn.Location = new System.Drawing.Point(200, 0);
+            this.LogPObtn.Name = "LogPObtn";
+            this.LogPObtn.Size = new System.Drawing.Size(187, 46);
+            this.LogPObtn.TabIndex = 1;
+            this.LogPObtn.Text = "Purchase Order";
+            this.LogPObtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LogPObtn.UseVisualStyleBackColor = true;
+            this.LogPObtn.Click += new System.EventHandler(this.LogPObtn_Click);
+            // 
+            // Homebtn
+            // 
+            this.Homebtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Homebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Homebtn.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.Homebtn.IconColor = System.Drawing.Color.White;
+            this.Homebtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Homebtn.IconSize = 20;
+            this.Homebtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Homebtn.Location = new System.Drawing.Point(0, 1);
+            this.Homebtn.Name = "Homebtn";
+            this.Homebtn.Size = new System.Drawing.Size(175, 46);
+            this.Homebtn.TabIndex = 0;
+            this.Homebtn.Text = "Home";
+            this.Homebtn.UseVisualStyleBackColor = true;
+            this.Homebtn.Click += new System.EventHandler(this.Homebtn_Click);
+            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.settingsicon);
-            this.panel2.Controls.Add(this.helplbl);
-            this.panel2.Controls.Add(this.helplogo);
-            this.panel2.Controls.Add(this.Logouticon);
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.Logoutlb);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1368, 30);
+            this.panel2.Controls.Add(this.helplbl);
+            this.panel2.Location = new System.Drawing.Point(1365, 29);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(264, 72);
             this.panel2.TabIndex = 17;
             // 
-            // settingsicon
+            // Logoutlb
             // 
-            this.settingsicon.BackColor = System.Drawing.Color.Transparent;
-            this.settingsicon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.settingsicon.Image = global::POIS1.Properties.Resources.img_272299;
-            this.settingsicon.Location = new System.Drawing.Point(214, 41);
-            this.settingsicon.Name = "settingsicon";
-            this.settingsicon.Size = new System.Drawing.Size(38, 22);
-            this.settingsicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.settingsicon.TabIndex = 12;
-            this.settingsicon.TabStop = false;
-            this.settingsicon.Click += new System.EventHandler(this.settingsicon_Click);
+            this.Logoutlb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Logoutlb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Logoutlb.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.Logoutlb.IconColor = System.Drawing.Color.Black;
+            this.Logoutlb.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Logoutlb.IconSize = 20;
+            this.Logoutlb.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Logoutlb.Location = new System.Drawing.Point(138, 36);
+            this.Logoutlb.Name = "Logoutlb";
+            this.Logoutlb.Size = new System.Drawing.Size(123, 35);
+            this.Logoutlb.TabIndex = 24;
+            this.Logoutlb.Text = "Log Out";
+            this.Logoutlb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Logoutlb.UseVisualStyleBackColor = true;
+            this.Logoutlb.Click += new System.EventHandler(this.Logoutlb_Click);
             // 
             // helplbl
             // 
-            this.helplbl.AutoSize = true;
             this.helplbl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.helplbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.helplbl.Location = new System.Drawing.Point(3, 41);
+            this.helplbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.helplbl.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
+            this.helplbl.IconColor = System.Drawing.Color.Black;
+            this.helplbl.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.helplbl.IconSize = 20;
+            this.helplbl.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.helplbl.Location = new System.Drawing.Point(0, 37);
             this.helplbl.Name = "helplbl";
-            this.helplbl.Size = new System.Drawing.Size(35, 18);
-            this.helplbl.TabIndex = 8;
-            this.helplbl.Text = "help";
+            this.helplbl.Size = new System.Drawing.Size(113, 35);
+            this.helplbl.TabIndex = 25;
+            this.helplbl.Text = "Help";
+            this.helplbl.UseVisualStyleBackColor = true;
             this.helplbl.Click += new System.EventHandler(this.helplbl_Click);
-            // 
-            // helplogo
-            // 
-            this.helplogo.BackColor = System.Drawing.Color.Transparent;
-            this.helplogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.helplogo.Image = global::POIS1.Properties.Resources.R5b442441defbdc85231d35d7a7f7619c;
-            this.helplogo.Location = new System.Drawing.Point(48, 43);
-            this.helplogo.Name = "helplogo";
-            this.helplogo.Size = new System.Drawing.Size(19, 18);
-            this.helplogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.helplogo.TabIndex = 9;
-            this.helplogo.TabStop = false;
-            this.helplogo.Click += new System.EventHandler(this.helplogo_Click);
-            // 
-            // Logouticon
-            // 
-            this.Logouticon.BackColor = System.Drawing.Color.Transparent;
-            this.Logouticon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Logouticon.Image = global::POIS1.Properties.Resources.logout_512;
-            this.Logouticon.Location = new System.Drawing.Point(165, 41);
-            this.Logouticon.Name = "Logouticon";
-            this.Logouticon.Size = new System.Drawing.Size(38, 22);
-            this.Logouticon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Logouticon.TabIndex = 11;
-            this.Logouticon.TabStop = false;
-            this.Logouticon.Click += new System.EventHandler(this.Logouticon_Click);
-            // 
-            // Logoutlb
-            // 
-            this.Logoutlb.AutoSize = true;
-            this.Logoutlb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Logoutlb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Logoutlb.Location = new System.Drawing.Point(100, 41);
-            this.Logoutlb.Name = "Logoutlb";
-            this.Logoutlb.Size = new System.Drawing.Size(54, 18);
-            this.Logoutlb.TabIndex = 10;
-            this.Logoutlb.Text = "Logout";
-            this.Logoutlb.Click += new System.EventHandler(this.Logoutlb_Click);
             // 
             // poispB
             // 
@@ -258,60 +302,6 @@ namespace POIS1
             this.homeicon.TabStop = false;
             this.homeicon.Click += new System.EventHandler(this.homeicon_Click);
             // 
-            // Homebtn
-            // 
-            this.Homebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
-            this.Homebtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Homebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Homebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Homebtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Homebtn.Location = new System.Drawing.Point(3, 62);
-            this.Homebtn.Name = "Homebtn";
-            this.Homebtn.Size = new System.Drawing.Size(139, 46);
-            this.Homebtn.TabIndex = 6;
-            this.Homebtn.Text = "Home";
-            this.Homebtn.UseVisualStyleBackColor = false;
-            this.Homebtn.Click += new System.EventHandler(this.Homebtn_Click);
-            // 
-            // LogPObtn
-            // 
-            this.LogPObtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
-            this.LogPObtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogPObtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LogPObtn.Location = new System.Drawing.Point(209, 62);
-            this.LogPObtn.Name = "LogPObtn";
-            this.LogPObtn.Size = new System.Drawing.Size(150, 46);
-            this.LogPObtn.TabIndex = 1;
-            this.LogPObtn.Text = "Log Purchase Order";
-            this.LogPObtn.UseVisualStyleBackColor = false;
-            this.LogPObtn.Click += new System.EventHandler(this.LogPObtn_Click);
-            // 
-            // LogInvbtn
-            // 
-            this.LogInvbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
-            this.LogInvbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogInvbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LogInvbtn.Location = new System.Drawing.Point(411, 62);
-            this.LogInvbtn.Name = "LogInvbtn";
-            this.LogInvbtn.Size = new System.Drawing.Size(140, 46);
-            this.LogInvbtn.TabIndex = 2;
-            this.LogInvbtn.Text = "Log Invoice";
-            this.LogInvbtn.UseVisualStyleBackColor = false;
-            this.LogInvbtn.Click += new System.EventHandler(this.LogInvbtn_Click);
-            // 
-            // Calculationbtn
-            // 
-            this.Calculationbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
-            this.Calculationbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Calculationbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Calculationbtn.Location = new System.Drawing.Point(613, 62);
-            this.Calculationbtn.Name = "Calculationbtn";
-            this.Calculationbtn.Size = new System.Drawing.Size(139, 46);
-            this.Calculationbtn.TabIndex = 3;
-            this.Calculationbtn.Text = "Calculation";
-            this.Calculationbtn.UseVisualStyleBackColor = false;
-            this.Calculationbtn.Click += new System.EventHandler(this.Calculationbtn_Click);
-            // 
             // ViewsMenue
             // 
             this.ViewsMenue.BackColor = System.Drawing.Color.Transparent;
@@ -323,7 +313,7 @@ namespace POIS1
             this.settingsToolStripMenuItem});
             this.ViewsMenue.Location = new System.Drawing.Point(0, 0);
             this.ViewsMenue.Name = "ViewsMenue";
-            this.ViewsMenue.Size = new System.Drawing.Size(1632, 30);
+            this.ViewsMenue.Size = new System.Drawing.Size(1632, 27);
             this.ViewsMenue.TabIndex = 18;
             this.ViewsMenue.Text = "menuStrip1";
             // 
@@ -332,21 +322,22 @@ namespace POIS1
             this.viewInvoicesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logInvoicesToolStripMenuItem,
             this.viewInvoicesToolStripMenuItem1});
+            this.viewInvoicesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.viewInvoicesToolStripMenuItem.Name = "viewInvoicesToolStripMenuItem";
-            this.viewInvoicesToolStripMenuItem.Size = new System.Drawing.Size(76, 26);
+            this.viewInvoicesToolStripMenuItem.Size = new System.Drawing.Size(72, 23);
             this.viewInvoicesToolStripMenuItem.Text = "Invoices";
             // 
             // logInvoicesToolStripMenuItem
             // 
             this.logInvoicesToolStripMenuItem.Name = "logInvoicesToolStripMenuItem";
-            this.logInvoicesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.logInvoicesToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.logInvoicesToolStripMenuItem.Text = "Log Invoices";
             this.logInvoicesToolStripMenuItem.Click += new System.EventHandler(this.logInvoicesToolStripMenuItem_Click);
             // 
             // viewInvoicesToolStripMenuItem1
             // 
             this.viewInvoicesToolStripMenuItem1.Name = "viewInvoicesToolStripMenuItem1";
-            this.viewInvoicesToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.viewInvoicesToolStripMenuItem1.Size = new System.Drawing.Size(174, 26);
             this.viewInvoicesToolStripMenuItem1.Text = "View Invoices";
             this.viewInvoicesToolStripMenuItem1.Click += new System.EventHandler(this.viewInvoicesToolStripMenuItem1_Click);
             // 
@@ -355,21 +346,22 @@ namespace POIS1
             this.viewPurchaseOrderToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logPurchaseOrderToolStripMenuItem,
             this.viewPurchaseOrderToolStripMenuItem1});
+            this.viewPurchaseOrderToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.viewPurchaseOrderToolStripMenuItem.Name = "viewPurchaseOrderToolStripMenuItem";
-            this.viewPurchaseOrderToolStripMenuItem.Size = new System.Drawing.Size(123, 26);
+            this.viewPurchaseOrderToolStripMenuItem.Size = new System.Drawing.Size(118, 23);
             this.viewPurchaseOrderToolStripMenuItem.Text = "Purchase Order";
             // 
             // logPurchaseOrderToolStripMenuItem
             // 
             this.logPurchaseOrderToolStripMenuItem.Name = "logPurchaseOrderToolStripMenuItem";
-            this.logPurchaseOrderToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
+            this.logPurchaseOrderToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
             this.logPurchaseOrderToolStripMenuItem.Text = "Log Purchase Order";
             this.logPurchaseOrderToolStripMenuItem.Click += new System.EventHandler(this.logPurchaseOrderToolStripMenuItem_Click);
             // 
             // viewPurchaseOrderToolStripMenuItem1
             // 
             this.viewPurchaseOrderToolStripMenuItem1.Name = "viewPurchaseOrderToolStripMenuItem1";
-            this.viewPurchaseOrderToolStripMenuItem1.Size = new System.Drawing.Size(228, 26);
+            this.viewPurchaseOrderToolStripMenuItem1.Size = new System.Drawing.Size(220, 26);
             this.viewPurchaseOrderToolStripMenuItem1.Text = "View Purchase Order";
             this.viewPurchaseOrderToolStripMenuItem1.Click += new System.EventHandler(this.viewPurchaseOrderToolStripMenuItem1_Click);
             // 
@@ -377,14 +369,15 @@ namespace POIS1
             // 
             this.viewReportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewReportsToolStripMenuItem1});
+            this.viewReportsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.viewReportsToolStripMenuItem.Name = "viewReportsToolStripMenuItem";
-            this.viewReportsToolStripMenuItem.Size = new System.Drawing.Size(74, 26);
+            this.viewReportsToolStripMenuItem.Size = new System.Drawing.Size(70, 23);
             this.viewReportsToolStripMenuItem.Text = "Reports";
             // 
             // viewReportsToolStripMenuItem1
             // 
             this.viewReportsToolStripMenuItem1.Name = "viewReportsToolStripMenuItem1";
-            this.viewReportsToolStripMenuItem1.Size = new System.Drawing.Size(179, 26);
+            this.viewReportsToolStripMenuItem1.Size = new System.Drawing.Size(172, 26);
             this.viewReportsToolStripMenuItem1.Text = "View Reports";
             this.viewReportsToolStripMenuItem1.Click += new System.EventHandler(this.viewReportsToolStripMenuItem1_Click);
             // 
@@ -392,23 +385,23 @@ namespace POIS1
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.changeThemeToolStripMenuItem});
+            this.settingsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(76, 26);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(72, 23);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // changeThemeToolStripMenuItem
             // 
             this.changeThemeToolStripMenuItem.Name = "changeThemeToolStripMenuItem";
-            this.changeThemeToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.changeThemeToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.changeThemeToolStripMenuItem.Text = "Change Theme";
             this.changeThemeToolStripMenuItem.Click += new System.EventHandler(this.changeThemeToolStripMenuItem_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.settingspanel);
-            this.panel1.Controls.Add(this.searchtb);
             this.panel1.Controls.Add(this.Searchbtn);
+            this.panel1.Controls.Add(this.searchtb);
             this.panel1.Controls.Add(this.middlepanel);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox3);
@@ -421,30 +414,24 @@ namespace POIS1
             this.panel1.Size = new System.Drawing.Size(1632, 792);
             this.panel1.TabIndex = 0;
             // 
-            // settingspanel
+            // Searchbtn
             // 
-            this.settingspanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.settingspanel.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.settingspanel.Controls.Add(this.themebtn);
-            this.settingspanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.settingspanel.Location = new System.Drawing.Point(1508, 101);
-            this.settingspanel.Name = "settingspanel";
-            this.settingspanel.Size = new System.Drawing.Size(124, 45);
-            this.settingspanel.TabIndex = 23;
-            // 
-            // themebtn
-            // 
-            this.themebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.themebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
-            this.themebtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(170)))));
-            this.themebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.themebtn.Location = new System.Drawing.Point(0, 0);
-            this.themebtn.Name = "themebtn";
-            this.themebtn.Size = new System.Drawing.Size(124, 45);
-            this.themebtn.TabIndex = 19;
-            this.themebtn.Text = "Change Theme";
-            this.themebtn.UseVisualStyleBackColor = false;
-            this.themebtn.Click += new System.EventHandler(this.themebtn_Click);
+            this.Searchbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Searchbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
+            this.Searchbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Searchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Searchbtn.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.Searchbtn.IconColor = System.Drawing.Color.Black;
+            this.Searchbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Searchbtn.IconSize = 20;
+            this.Searchbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Searchbtn.Location = new System.Drawing.Point(1316, 144);
+            this.Searchbtn.Name = "Searchbtn";
+            this.Searchbtn.Size = new System.Drawing.Size(139, 30);
+            this.Searchbtn.TabIndex = 26;
+            this.Searchbtn.Text = "Search";
+            this.Searchbtn.UseVisualStyleBackColor = false;
+            this.Searchbtn.Click += new System.EventHandler(this.Searchbtn_Click);
             // 
             // middlepanel
             // 
@@ -459,7 +446,7 @@ namespace POIS1
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.BackColor = System.Drawing.Color.White;
             this.pictureBox4.Image = global::POIS1.Properties.Resources.Files;
-            this.pictureBox4.Location = new System.Drawing.Point(1392, 383);
+            this.pictureBox4.Location = new System.Drawing.Point(1435, 394);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(37, 19);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -470,7 +457,7 @@ namespace POIS1
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = global::POIS1.Properties.Resources.Files;
-            this.pictureBox3.Location = new System.Drawing.Point(437, 383);
+            this.pictureBox3.Location = new System.Drawing.Point(475, 395);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(37, 19);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -479,7 +466,7 @@ namespace POIS1
             // 
             // poislogo
             // 
-            this.poislogo.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.poislogo.BackColor = System.Drawing.Color.DimGray;
             this.poislogo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.poislogo.Image = global::POIS1.Properties.Resources.POIS_Final_;
             this.poislogo.Location = new System.Drawing.Point(0, 0);
@@ -506,18 +493,14 @@ namespace POIS1
             this.Load += new System.EventHandler(this.Home_Page_Load);
             this.toppanel.ResumeLayout(false);
             this.toppanel.PerformLayout();
+            this.panel10.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.settingsicon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.helplogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Logouticon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poispB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeicon)).EndInit();
             this.ViewsMenue.ResumeLayout(false);
             this.ViewsMenue.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.settingspanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poislogo)).EndInit();
@@ -531,23 +514,12 @@ namespace POIS1
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.TextBox searchtb;
-        private System.Windows.Forms.Button Searchbtn;
         private System.Windows.Forms.Panel toppanel;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label helplbl;
-        private System.Windows.Forms.PictureBox helplogo;
-        private System.Windows.Forms.PictureBox Logouticon;
-        private System.Windows.Forms.Label Logoutlb;
         private System.Windows.Forms.PictureBox poispB;
         private System.Windows.Forms.PictureBox homeicon;
-        private System.Windows.Forms.Button Homebtn;
-        private System.Windows.Forms.Button LogInvbtn;
-        private System.Windows.Forms.Button Calculationbtn;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox settingsicon;
         private System.Windows.Forms.Panel middlepanel;
-        private System.Windows.Forms.Panel settingspanel;
-        private System.Windows.Forms.Button themebtn;
         private System.Windows.Forms.MenuStrip ViewsMenue;
         private System.Windows.Forms.ToolStripMenuItem viewInvoicesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logInvoicesToolStripMenuItem;
@@ -558,8 +530,16 @@ namespace POIS1
         private System.Windows.Forms.ToolStripMenuItem viewReportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewReportsToolStripMenuItem1;
         private System.Windows.Forms.PictureBox poislogo;
-        private System.Windows.Forms.Button LogPObtn;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeThemeToolStripMenuItem;
+        private System.Windows.Forms.Panel panel10;
+        private FontAwesome.Sharp.IconButton Calculationbtn;
+        private FontAwesome.Sharp.IconButton LogInvbtn;
+        private FontAwesome.Sharp.IconButton LogPObtn;
+        private FontAwesome.Sharp.IconButton Homebtn;
+        private FontAwesome.Sharp.IconButton Logoutlb;
+        private FontAwesome.Sharp.IconButton helplbl;
+        private FontAwesome.Sharp.IconButton Searchbtn;
+        private FontAwesome.Sharp.IconButton reportbtn;
     }
 }

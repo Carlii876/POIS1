@@ -3,14 +3,14 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
-
+using static POIS1.POIS;
 
 namespace POIS1
 {
     public partial class Log_Purchase_Order : Form
     {
 
-        string VendorID;
+        int VendorID;
         string VendorName;
         string status_id;
         string ItemsId;
@@ -58,28 +58,40 @@ namespace POIS1
 
 
 
-            
-            settingspanel.Visible = false;
 
-            LogInvbtn.ForeColor = Color.White;
-            Calculationbtn.ForeColor = Color.White;
-            
-            Homebtn.ForeColor = Color.White;
 
-            LogPObtn.ForeColor = Color.Black;
+            //helplbl.ForeColor = Color.White;
+            //Logoutlb.ForeColor = Color.White;
 
-            LogInvbtn.BackColor = Color.FromArgb(0, 117, 190);
-            Calculationbtn.BackColor = Color.FromArgb(0, 117, 190);
-           
-            Homebtn.BackColor = Color.FromArgb(0, 117, 190);
+            //LogPObtn.BackColor = Color.DimGray;
 
-            LogPObtn.BackColor = Color.White;
-            homeicon.BackColor = Color.FromArgb(0, 117, 190);
-            LogPObtn.FlatStyle = FlatStyle.Standard;
+            //LogInvbtn.ForeColor = Color.White;
+            //reportbtn.ForeColor = Color.White;
+            //Calculationbtn.ForeColor = Color.White;
+            LogPObtn.IconColor = Color.FromArgb(0, 117, 190);
+            //Homebtn.ForeColor = Color.White;
+
+            //LogPObtn.ForeColor = Color.Black;
+
+            //LogInvbtn.BackColor = Color.FromArgb(0, 117, 190);
+            //Calculationbtn.BackColor = Color.FromArgb(0, 117, 190);
+
+            //Homebtn.BackColor = Color.FromArgb(0, 117, 190);
+
+            ////LogPObtn.BackColor = Color.White;
+            //homeicon.BackColor = Color.FromArgb(0, 117, 190);
+
+            LogPObtn.ForeColor = Color.White;
+            LogPObtn.IconColor = Color.White;
+
+            LogPObtn.BackColor = Color.DimGray;
+
+
+            //LogPObtn.FlatStyle = FlatStyle.Standard;
             Homebtn.FlatStyle = FlatStyle.Flat;
             LogInvbtn.FlatStyle = FlatStyle.Flat;
             Calculationbtn.FlatStyle = FlatStyle.Flat;
-            
+
         }
         public void Itemscombobox()
         {
@@ -273,14 +285,14 @@ namespace POIS1
             }
             LogInvbtn.ForeColor = Color.White;
             Calculationbtn.ForeColor = Color.White;
-           
+
             Homebtn.ForeColor = Color.White;
 
             LogPObtn.ForeColor = Color.Black;
 
             LogInvbtn.BackColor = Color.FromArgb(0, 117, 190);
             Calculationbtn.BackColor = Color.FromArgb(0, 117, 190);
-           
+
             Homebtn.BackColor = Color.FromArgb(0, 117, 190);
 
             LogPObtn.BackColor = Color.White;
@@ -289,7 +301,7 @@ namespace POIS1
             Homebtn.FlatStyle = FlatStyle.Flat;
             LogInvbtn.FlatStyle = FlatStyle.Flat;
             Calculationbtn.FlatStyle = FlatStyle.Flat;
-           
+
         }
 
         private void LogInvbtn_Click(object sender, EventArgs e)
@@ -307,7 +319,7 @@ namespace POIS1
 
         }
 
-       
+
 
         private void homeicon_Click(object sender, EventArgs e)
         {
@@ -319,7 +331,7 @@ namespace POIS1
 
         private void themebtn_Click(object sender, EventArgs e)
         {
-            settingspanel.Visible = false;
+
             if (poislogo.BackColor == Color.LightSkyBlue)
             {
                 Clearbtn.BackColor = Color.White;
@@ -339,7 +351,7 @@ namespace POIS1
                 POstatuslbl.BackColor = Color.White;
                 Totallbl.BackColor = Color.White;
                 totalcurrencylb.BackColor = Color.White;
-                saveicon.BackColor = Color.White;
+
                 totalcurrencylb.BackColor = Color.White;
 
                 poislogo.BackColor = Color.White;
@@ -365,7 +377,7 @@ namespace POIS1
                 POstatuslbl.BackColor = Color.LightSkyBlue;
                 Totallbl.BackColor = Color.LightSkyBlue;
                 totalcurrencylb.BackColor = Color.LightSkyBlue;
-                saveicon.BackColor = Color.LightSkyBlue;
+
                 totalcurrencylb.BackColor = Color.LightSkyBlue;
 
                 poislogo.BackColor = Color.LightSkyBlue;
@@ -427,7 +439,7 @@ namespace POIS1
             Numbererror.Text = "";
             Itemnameerror.Text = "";
             Descriptionerror.Text = "";
-            
+
 
 
         }
@@ -526,7 +538,7 @@ namespace POIS1
             }
             try
             {
-                long vendorNumber = Convert.ToInt64(VndrNumbercb.Text );
+                long vendorNumber = Convert.ToInt64(VndrNumbercb.Text);
                 saveinput.cost = Convert.ToDouble(Costtb.Text);
 
                 saveinput.total = Convert.ToInt32(Totaltb.Text);
@@ -598,7 +610,7 @@ namespace POIS1
 
 
 
-               
+
             }
             catch (Exception)
             {
@@ -626,9 +638,8 @@ namespace POIS1
 
 
                     connection.Open();
-                    string Q = "insert into LogPurchaseOrder(Vendor_id,Items_id,Item_amount,Status_Id,PurchaseOrderNumber,Approval_Date,CurrencyId,Total)values('" + VendorID + "', '" + ItemsId + "','" + Quantity1.Text + "','" + status_id + "','" + POnumbertb.Text + "','" + saveinput.approvedate + "','" + CurrencyId + "','" + Totaltb.Text + "')";
-                    //selectqueries 
-                    //MessageBox.Show("Inserted");
+                    string Q = "insert into LogPurchaseOrder(Vendor_id,Items_id,Item_amount,Status_Id,PurchaseOrderNumber,Approval_Date,CurrencyId,Total,Vendor, Items,Status,Currency, Quantity)values('" + VendorID + "', '" + ItemsId + "','" + Quantity1.Text + "','" + status_id + "','" + POnumbertb.Text + "','" + saveinput.approvedate + "','" + CurrencyId + "','" + Totaltb.Text + "','" + Vendorcb.Text + "','" + ItemName1.Text + "','" + POstatuscb.Text + "','" + Currencycb.Text + "','" + Quantity1.Text + "')";
+                    
 
                     SqlCommand command = new SqlCommand(Q, connection);
 
@@ -664,18 +675,7 @@ namespace POIS1
 
 
 
-        private void settings_Click(object sender, EventArgs e)
-        {
-            if (settingspanel.Visible == true)
-            {
-                settingspanel.Visible = false;
-            }
-            else if (settingspanel.Visible == false)
-            {
-                settingspanel.Visible = true;
-            }
 
-        }
 
         private void logoutlbl_Click(object sender, EventArgs e)
         {
@@ -694,7 +694,7 @@ namespace POIS1
 
             SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
 
-            string q = "select * from Vendors where VendorName='" + Vendorcb.Text + "'";
+            string q = "select * from Vendors where VendorName ='" + Vendorcb.Text + "'";
             //string V = "select  Vendor_id from Vendors where VendorName '" + Vendorcb.SelectedItem + "')";
 
             SqlCommand command = new SqlCommand(q, connection);
@@ -710,7 +710,10 @@ namespace POIS1
                 {
                     string VendorAddress = sqlData.GetString(2);
                     string VendorNumber = sqlData.GetString(3);
-                    VendorID = sqlData[0].ToString();
+                    
+                    VendorID = sqlData.GetInt32(0);
+
+
 
                     //ItemName1.Text = VendorID;
                     VndrAddrescb.Text = VendorAddress;
@@ -773,27 +776,30 @@ namespace POIS1
 
             if (poislogo.BackColor == Color.LightSkyBlue)
             {
-                Clearbtn.BackColor = Color.White;
-                VenderInformationlbl.BackColor = Color.White;
-                VenderNamelbl.BackColor = Color.White;
-                VendorAddresslbl.BackColor = Color.White;
-                VendorNumberlbl.BackColor = Color.White;
-                ItemInformationlbl.BackColor = Color.White;
-                ItemNamelbl.BackColor = Color.White;
-                ItemDescriptionlbl.BackColor = Color.White;
-                Quatitylbl.BackColor = Color.White;
-                Costlbl.BackColor = Color.White;
-                Currencylbl.BackColor = Color.White;
-                OtherInformationlbl.BackColor = Color.White;
-                ApprovalDatelbl.BackColor = Color.White;
-                POnumberlbl.BackColor = Color.White;
-                POstatuslbl.BackColor = Color.White;
-                Totallbl.BackColor = Color.White;
-                totalcurrencylb.BackColor = Color.White;
-                saveicon.BackColor = Color.White;
-                totalcurrencylb.BackColor = Color.White;
+                Clearbtn.BackColor = Color.DimGray;
+                VenderInformationlbl.BackColor = Color.DimGray;
+                VenderNamelbl.BackColor = Color.DimGray;
+                VendorAddresslbl.BackColor = Color.DimGray;
+                VendorNumberlbl.BackColor = Color.DimGray;
+                ItemInformationlbl.BackColor = Color.DimGray;
+                ItemNamelbl.BackColor = Color.DimGray;
+                ItemDescriptionlbl.BackColor = Color.DimGray;
+                Quatitylbl.BackColor = Color.DimGray;
+                Costlbl.BackColor = Color.DimGray;
+                Currencylbl.BackColor = Color.DimGray;
+                OtherInformationlbl.BackColor = Color.DimGray;
+                ApprovalDatelbl.BackColor = Color.DimGray;
+                POnumberlbl.BackColor = Color.DimGray;
+                POstatuslbl.BackColor = Color.DimGray;
+                Totallbl.BackColor = Color.DimGray;
+                totalcurrencylb.BackColor = Color.DimGray;
+                LogPObtn.BackColor = Color.DimGray;
+                totalcurrencylb.BackColor = Color.DimGray;
 
-                poislogo.BackColor = Color.White;
+                LogPObtn.ForeColor = Color.White;
+                LogPObtn.IconColor = Color.White;
+
+                poislogo.BackColor = Color.DimGray;
                 toppanel.BackColor = Color.FromArgb(0, 117, 214);
             }
 
@@ -816,11 +822,39 @@ namespace POIS1
                 POstatuslbl.BackColor = Color.LightSkyBlue;
                 Totallbl.BackColor = Color.LightSkyBlue;
                 totalcurrencylb.BackColor = Color.LightSkyBlue;
-                saveicon.BackColor = Color.LightSkyBlue;
+                LogPObtn.BackColor = Color.LightSkyBlue;
                 totalcurrencylb.BackColor = Color.LightSkyBlue;
 
                 poislogo.BackColor = Color.LightSkyBlue;
                 toppanel.BackColor = Color.FromArgb(0, 117, 190);
+            }
+            else if (poislogo.BackColor == Color.DimGray)
+            {
+                Clearbtn.BackColor = Color.White;
+                VenderInformationlbl.BackColor = Color.White;
+                VenderNamelbl.BackColor = Color.White;
+                VendorAddresslbl.BackColor = Color.White;
+                VendorNumberlbl.BackColor = Color.White;
+                ItemInformationlbl.BackColor = Color.White;
+                ItemNamelbl.BackColor = Color.White;
+                ItemDescriptionlbl.BackColor = Color.White;
+                Quatitylbl.BackColor = Color.White;
+                Costlbl.BackColor = Color.White;
+                Currencylbl.BackColor = Color.White;
+                OtherInformationlbl.BackColor = Color.White;
+                ApprovalDatelbl.BackColor = Color.White;
+                POnumberlbl.BackColor = Color.White;
+                POstatuslbl.BackColor = Color.White;
+                Totallbl.BackColor = Color.White;
+                totalcurrencylb.BackColor = Color.White;
+                LogPObtn.BackColor = Color.White;
+                totalcurrencylb.BackColor = Color.White;
+
+                LogPObtn.ForeColor = Color.Black;
+                LogPObtn.IconColor = Color.Black;
+
+                poislogo.BackColor = Color.White;
+                toppanel.BackColor = Color.FromArgb(0, 117, 214);
             }
         }
 
@@ -945,7 +979,7 @@ namespace POIS1
 
         private void Currencycb_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
             SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
             string q = "select * from Currency";
             string ICurrency = "insert into Items (Currency) values  ('" + Currencycb + "')";
@@ -1008,7 +1042,7 @@ namespace POIS1
             }
 
 
-           
+
 
 
 
@@ -1021,7 +1055,7 @@ namespace POIS1
                     if ((MessageBox.Show("Do you want to add Item Details?", "Item Details", MessageBoxButtons.YesNo)) == DialogResult.Yes)
                     {
 
-                       
+
 
                         SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
                         connection.Open();
@@ -1034,7 +1068,7 @@ namespace POIS1
                         //DataTable dataTable = new DataTable();
                         command.ExecuteNonQuery();
 
-                       
+
 
                         SqlDataReader sqlData = command1.ExecuteReader();
 
@@ -1043,7 +1077,7 @@ namespace POIS1
                         while (sqlData.Read())
                         {
                             ItemsId = sqlData[0].ToString();
-                            
+
 
                             //Cost1 = sqlData.GetDouble(4);
                             //Itemdesctb.Text = ItemsId;
@@ -1072,24 +1106,24 @@ namespace POIS1
 
         private void Vendoradd_detailsbtn(object sender, EventArgs e)
         {
-           
-                SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
-                connection.Open();
 
-                bool isValid = false;
-                if (Vendorcb.Text == "" || VndrNumbercb.Text == "" || VndrAddrescb.Text == "")
-                {
-                    isValid = false;
-                    MessageBox.Show("Vendor Details is Missing");
-                }
+            SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
+            connection.Open();
 
-                string s = "select * from Vendors where Vendorname = '" + Vendorcb.Text + "'";
-                SqlCommand command4 = new SqlCommand(s, connection);
+            bool isValid = false;
+            if (Vendorcb.Text == "" || VndrNumbercb.Text == "" || VndrAddrescb.Text == "")
+            {
+                isValid = false;
+                MessageBox.Show("Vendor Details is Missing");
+            }
 
-                SqlDataReader sqlData1 = command4.ExecuteReader();
+            string s = "select * from Vendors where Vendorname = '" + Vendorcb.Text + "'";
+            SqlCommand command4 = new SqlCommand(s, connection);
+
+            SqlDataReader sqlData1 = command4.ExecuteReader();
             while (sqlData1.Read())
             {
-                VendorID = sqlData1[0].ToString();
+                VendorID = sqlData1.GetInt32(0);
                 VendorName = sqlData1.GetString(1);
 
                 //Cost1 = sqlData.GetDouble(4);
@@ -1117,17 +1151,17 @@ namespace POIS1
 
 
                     string q = "insert into Vendors (Vendorname,VendorAddress,VendorNumber) values  ('" + Vendorcb.Text + "', '" + VndrAddrescb.Text + "','" + VndrNumbercb.Text + "')";
-                    
-                    SqlCommand command2 = new SqlCommand(q, connection1);
-                    
 
-                    
+                    SqlCommand command2 = new SqlCommand(q, connection1);
+
+
+
                     SqlDataReader sqlData = command2.ExecuteReader();
 
 
                     while (sqlData.Read())
                     {
-                        VendorID = sqlData[0].ToString();
+                        VendorID = sqlData1.GetInt32(0);
 
                         //Cost1 = sqlData.GetDouble(4);
                         //Itemdesctb.Text = ItemsId;
@@ -1139,11 +1173,11 @@ namespace POIS1
                 }
             }
 
-           
-            
 
 
-           
+
+
+
         }
 
         private void ItemsAdddetailsbtn_Click(object sender, EventArgs e)
@@ -1163,14 +1197,14 @@ namespace POIS1
             SqlDataReader sqlData1 = command4.ExecuteReader();
             while (sqlData1.Read())
             {
-                
+
                 Itemname = sqlData1.GetString(1);
 
                 //Cost1 = sqlData.GetDouble(4);
                 //Itemdesctb.Text = ItemsId;
                 //ItemName1.Text = status_id;
             }
-
+            connection.Close();
 
             if (ItemName1.Text == Itemname)
             {
@@ -1189,9 +1223,9 @@ namespace POIS1
                     if ((MessageBox.Show("Do you want to add Item Details?", "Item Details", MessageBoxButtons.YesNo)) == DialogResult.Yes)
                     {
 
-                        
 
-                       
+
+                        connection.Open();
                         string q = "insert into Items (Item_Name,Item_Description,Currency,Item_Cost) values  ('" + ItemName1.Text + "', '" + Itemdesctb.Text + "','" + Currencycb.Text + "','" + Costtb.Text + "')";
                         string I = "select Item_id from Items where Item_Name = '" + ItemName1.Text + "'";
 
@@ -1218,6 +1252,7 @@ namespace POIS1
                         }
 
                         connection.Close();
+                        MessageBox.Show("Item Added");
                     }
                 }
 
@@ -1307,10 +1342,10 @@ namespace POIS1
             if (isOpen == false)
             {
 
-                
+
 
                 view_Invoices.Show();
-                
+
             }
 
 
@@ -1342,7 +1377,149 @@ namespace POIS1
             viewreport.Show();
         }
 
-        
+        private void deletebtn_Click(object sender, EventArgs e)
+        {
+           
+                if ((MessageBox.Show("Are you sure you want to delete this item?", "Delete", MessageBoxButtons.YesNo)) == DialogResult.Yes)
+                {
+
+                    SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
+                    connection.Open();
+                    string Myquery = "delete from Vendors where Vendorname = '" + Vendorcb.Text + "'";
+                    SqlCommand command = new SqlCommand(Myquery, connection);
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("Vendor Deleted Sucessfully");
+
+
+                    connection.Close();
+                   
+                }
+
+
+          
+                
+                
+            
+        }
+
+        private void editbtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
+                connection.Open();
+                SqlCommand command = new SqlCommand("update Vendors set VendorAddress='" + VndrAddrescb.Text + "',VendorNumber='" + Convert.ToInt64(VndrNumbercb.Text) + "'where Vendorname='" + Vendorcb.Text + "'", connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("Vendor updated successfully");
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Please select a vender");
+            }
+            
+        }
+
+        private void ItemsEditdetailsbtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
+                connection.Open();
+                SqlCommand command = new SqlCommand("update Items set Item_Description='" + Itemdesctb.Text + "',Currency='" + Currencycb.Text + "',Item_Cost ='" + Convert.ToInt32(Costtb.Text) + "' where Item_Name ='" + ItemName1.Text + "'", connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("Item updated successfully");
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Please select an item");
+
+            }
+        }
+
+        private void Itemsdeletedetailsbtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if ((MessageBox.Show("Are you sure you want to delete this item?", "Delete", MessageBoxButtons.YesNo)) == DialogResult.Yes)
+                {
+
+                    SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
+                    connection.Open();
+                    string Myquery = "delete from LogPurchaseOrder where Item_Name = '" + Vendorcb.Text + "'";
+                    SqlCommand command = new SqlCommand(Myquery, connection);
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("Item Deleted Sucessfully");
+
+
+                    connection.Close();
+
+                }
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Please select an item");
+            }
+           
+
+
+           
+
+            
+        }
+
+        private void reportbtn_Click(object sender, EventArgs e)
+        {
+            Report report = new Report();
+            this.Hide();
+            report.Show();
+        }
+
+        private void searchbtn_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
+
+            string q = "select  * from  LogPurchaseOrder where PurchaseOrderNumber = '" + POnumbertb.Text + "'";
+
+
+            SqlCommand command = new SqlCommand(q, connection);
+            //DataTable dataTable = new DataTable();
+
+            try
+            {
+                connection.Open();
+                SqlDataReader sqlData = command.ExecuteReader();
+
+                while (sqlData.Read())
+                {
+
+
+                    totalcurrencycb.Text = "JMD";
+                    Vendorcb.Text = sqlData.GetString(9);
+
+                    POstatuscb.Text = sqlData.GetString(11);
+                    ItemName1.Text = sqlData.GetString(10);
+                    Approvaldate.Value = sqlData.GetDateTime(6);
+
+                    //POnumbercb.Text = sqlData.GetInt32(9).ToString();
+                    //Invstatuscb.Text = sqlData.GetString(11);
+                    Quantity1.Text = sqlData.GetInt32(3).ToString();
+                    //Quantitytb.Text = Convert.ToString(quantity);                  
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            connection.Close();
+        }
     }
 }
 

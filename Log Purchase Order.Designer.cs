@@ -84,21 +84,18 @@ namespace POIS1
             this.Itemdesctb = new System.Windows.Forms.TextBox();
             this.purchaseONerror = new System.Windows.Forms.Label();
             this.POerror = new System.Windows.Forms.Label();
-            this.settingspanel = new System.Windows.Forms.Panel();
-            this.themebtn = new System.Windows.Forms.Button();
             this.toppanel = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.reportbtn = new FontAwesome.Sharp.IconButton();
+            this.Calculationbtn = new FontAwesome.Sharp.IconButton();
+            this.LogInvbtn = new FontAwesome.Sharp.IconButton();
+            this.LogPObtn = new FontAwesome.Sharp.IconButton();
+            this.Homebtn = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.settingsicon = new System.Windows.Forms.PictureBox();
-            this.helplbl = new System.Windows.Forms.Label();
-            this.helplogo = new System.Windows.Forms.PictureBox();
-            this.Logouticon = new System.Windows.Forms.PictureBox();
-            this.Logoutlb = new System.Windows.Forms.Label();
+            this.Logoutlb = new FontAwesome.Sharp.IconButton();
+            this.helplbl = new FontAwesome.Sharp.IconButton();
             this.poispB = new System.Windows.Forms.PictureBox();
             this.homeicon = new System.Windows.Forms.PictureBox();
-            this.Homebtn = new System.Windows.Forms.Button();
-            this.LogPObtn = new System.Windows.Forms.Button();
-            this.LogInvbtn = new System.Windows.Forms.Button();
-            this.Calculationbtn = new System.Windows.Forms.Button();
             this.ViewsMenue = new System.Windows.Forms.MenuStrip();
             this.viewInvoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logInvoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -118,21 +115,28 @@ namespace POIS1
             this.currencyerr = new System.Windows.Forms.Label();
             this.VndrAddrescb = new System.Windows.Forms.ComboBox();
             this.VndrNumbercb = new System.Windows.Forms.ComboBox();
-            this.ItemsAdddetailsbtn = new System.Windows.Forms.Button();
-            this.VendorAdddetailsbtn = new System.Windows.Forms.Button();
             this.ItemName1 = new System.Windows.Forms.ComboBox();
-            this.saveicon = new System.Windows.Forms.PictureBox();
             this.poislogo = new System.Windows.Forms.PictureBox();
-            this.settingspanel.SuspendLayout();
+            this.VendorAdddetailsbtn = new FontAwesome.Sharp.IconButton();
+            this.savebtn = new FontAwesome.Sharp.IconButton();
+            this.editbtn = new FontAwesome.Sharp.IconButton();
+            this.deletebtn = new FontAwesome.Sharp.IconButton();
+            this.ItemsAdddetailsbtn = new FontAwesome.Sharp.IconButton();
+            this.ItemsEditdetailsbtn = new FontAwesome.Sharp.IconButton();
+            this.Itemsdeletedetailsbtn = new FontAwesome.Sharp.IconButton();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.searchbtn = new FontAwesome.Sharp.IconButton();
             this.toppanel.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.settingsicon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.helplogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Logouticon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poispB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeicon)).BeginInit();
             this.ViewsMenue.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.saveicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poislogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -153,7 +157,7 @@ namespace POIS1
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Location = new System.Drawing.Point(39, 156);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 279);
+            this.panel2.Size = new System.Drawing.Size(1, 336);
             this.panel2.TabIndex = 20;
             // 
             // panel4
@@ -161,7 +165,7 @@ namespace POIS1
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Location = new System.Drawing.Point(702, 156);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1, 279);
+            this.panel4.Size = new System.Drawing.Size(1, 335);
             this.panel4.TabIndex = 21;
             // 
             // panel5
@@ -175,7 +179,7 @@ namespace POIS1
             // VenderInformationlbl
             // 
             this.VenderInformationlbl.AutoSize = true;
-            this.VenderInformationlbl.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.VenderInformationlbl.BackColor = System.Drawing.Color.DimGray;
             this.VenderInformationlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VenderInformationlbl.Location = new System.Drawing.Point(126, 143);
             this.VenderInformationlbl.Name = "VenderInformationlbl";
@@ -186,7 +190,7 @@ namespace POIS1
             // VenderNamelbl
             // 
             this.VenderNamelbl.AutoSize = true;
-            this.VenderNamelbl.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.VenderNamelbl.BackColor = System.Drawing.Color.DimGray;
             this.VenderNamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VenderNamelbl.Location = new System.Drawing.Point(107, 218);
             this.VenderNamelbl.Name = "VenderNamelbl";
@@ -197,7 +201,7 @@ namespace POIS1
             // VendorNumberlbl
             // 
             this.VendorNumberlbl.AutoSize = true;
-            this.VendorNumberlbl.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.VendorNumberlbl.BackColor = System.Drawing.Color.DimGray;
             this.VendorNumberlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VendorNumberlbl.Location = new System.Drawing.Point(110, 398);
             this.VendorNumberlbl.Name = "VendorNumberlbl";
@@ -208,7 +212,7 @@ namespace POIS1
             // VendorAddresslbl
             // 
             this.VendorAddresslbl.AutoSize = true;
-            this.VendorAddresslbl.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.VendorAddresslbl.BackColor = System.Drawing.Color.DimGray;
             this.VendorAddresslbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VendorAddresslbl.Location = new System.Drawing.Point(107, 312);
             this.VendorAddresslbl.Name = "VendorAddresslbl";
@@ -219,15 +223,15 @@ namespace POIS1
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Location = new System.Drawing.Point(341, 156);
+            this.panel6.Location = new System.Drawing.Point(353, 156);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(361, 1);
+            this.panel6.Size = new System.Drawing.Size(350, 1);
             this.panel6.TabIndex = 23;
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.Location = new System.Drawing.Point(40, 434);
+            this.panel7.Location = new System.Drawing.Point(40, 491);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(663, 1);
             this.panel7.TabIndex = 22;
@@ -236,7 +240,7 @@ namespace POIS1
             // 
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.Location = new System.Drawing.Point(766, 434);
+            this.panel8.Location = new System.Drawing.Point(831, 491);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(630, 1);
             this.panel8.TabIndex = 23;
@@ -245,25 +249,25 @@ namespace POIS1
             // 
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel9.BackColor = System.Drawing.Color.White;
-            this.panel9.Location = new System.Drawing.Point(766, 156);
+            this.panel9.Location = new System.Drawing.Point(831, 156);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1, 279);
+            this.panel9.Size = new System.Drawing.Size(1, 335);
             this.panel9.TabIndex = 21;
             // 
             // panel10
             // 
             this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel10.BackColor = System.Drawing.Color.White;
-            this.panel10.Location = new System.Drawing.Point(1395, 156);
+            this.panel10.Location = new System.Drawing.Point(1460, 156);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1, 279);
+            this.panel10.Size = new System.Drawing.Size(1, 335);
             this.panel10.TabIndex = 22;
             // 
             // panel11
             // 
             this.panel11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel11.BackColor = System.Drawing.Color.White;
-            this.panel11.Location = new System.Drawing.Point(766, 156);
+            this.panel11.Location = new System.Drawing.Point(831, 156);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(80, 1);
             this.panel11.TabIndex = 23;
@@ -272,8 +276,9 @@ namespace POIS1
             // 
             this.ItemInformationlbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ItemInformationlbl.AutoSize = true;
+            this.ItemInformationlbl.BackColor = System.Drawing.Color.DimGray;
             this.ItemInformationlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ItemInformationlbl.Location = new System.Drawing.Point(852, 143);
+            this.ItemInformationlbl.Location = new System.Drawing.Point(917, 143);
             this.ItemInformationlbl.Name = "ItemInformationlbl";
             this.ItemInformationlbl.Size = new System.Drawing.Size(150, 25);
             this.ItemInformationlbl.TabIndex = 30;
@@ -283,18 +288,18 @@ namespace POIS1
             // 
             this.panel12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel12.BackColor = System.Drawing.Color.White;
-            this.panel12.Location = new System.Drawing.Point(1041, 156);
+            this.panel12.Location = new System.Drawing.Point(1116, 156);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(354, 1);
+            this.panel12.Size = new System.Drawing.Size(344, 1);
             this.panel12.TabIndex = 24;
             // 
             // ItemNamelbl
             // 
             this.ItemNamelbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ItemNamelbl.AutoSize = true;
-            this.ItemNamelbl.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.ItemNamelbl.BackColor = System.Drawing.Color.DimGray;
             this.ItemNamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ItemNamelbl.Location = new System.Drawing.Point(798, 191);
+            this.ItemNamelbl.Location = new System.Drawing.Point(863, 191);
             this.ItemNamelbl.Name = "ItemNamelbl";
             this.ItemNamelbl.Size = new System.Drawing.Size(90, 20);
             this.ItemNamelbl.TabIndex = 34;
@@ -304,9 +309,9 @@ namespace POIS1
             // 
             this.ItemDescriptionlbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ItemDescriptionlbl.AutoSize = true;
-            this.ItemDescriptionlbl.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.ItemDescriptionlbl.BackColor = System.Drawing.Color.DimGray;
             this.ItemDescriptionlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ItemDescriptionlbl.Location = new System.Drawing.Point(798, 236);
+            this.ItemDescriptionlbl.Location = new System.Drawing.Point(863, 236);
             this.ItemDescriptionlbl.Name = "ItemDescriptionlbl";
             this.ItemDescriptionlbl.Size = new System.Drawing.Size(132, 20);
             this.ItemDescriptionlbl.TabIndex = 35;
@@ -316,9 +321,9 @@ namespace POIS1
             // 
             this.Quatitylbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Quatitylbl.AutoSize = true;
-            this.Quatitylbl.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.Quatitylbl.BackColor = System.Drawing.Color.DimGray;
             this.Quatitylbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Quatitylbl.Location = new System.Drawing.Point(798, 290);
+            this.Quatitylbl.Location = new System.Drawing.Point(863, 290);
             this.Quatitylbl.Name = "Quatitylbl";
             this.Quatitylbl.Size = new System.Drawing.Size(71, 20);
             this.Quatitylbl.TabIndex = 36;
@@ -327,7 +332,7 @@ namespace POIS1
             // Costtb
             // 
             this.Costtb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Costtb.Location = new System.Drawing.Point(1048, 344);
+            this.Costtb.Location = new System.Drawing.Point(1113, 344);
             this.Costtb.Name = "Costtb";
             this.Costtb.Size = new System.Drawing.Size(120, 22);
             this.Costtb.TabIndex = 37;
@@ -337,9 +342,9 @@ namespace POIS1
             // 
             this.Costlbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Costlbl.AutoSize = true;
-            this.Costlbl.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.Costlbl.BackColor = System.Drawing.Color.DimGray;
             this.Costlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Costlbl.Location = new System.Drawing.Point(798, 346);
+            this.Costlbl.Location = new System.Drawing.Point(863, 346);
             this.Costlbl.Name = "Costlbl";
             this.Costlbl.Size = new System.Drawing.Size(44, 20);
             this.Costlbl.TabIndex = 40;
@@ -349,9 +354,9 @@ namespace POIS1
             // 
             this.Currencylbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Currencylbl.AutoSize = true;
-            this.Currencylbl.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.Currencylbl.BackColor = System.Drawing.Color.DimGray;
             this.Currencylbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Currencylbl.Location = new System.Drawing.Point(798, 401);
+            this.Currencylbl.Location = new System.Drawing.Point(863, 401);
             this.Currencylbl.Name = "Currencylbl";
             this.Currencylbl.Size = new System.Drawing.Size(77, 20);
             this.Currencylbl.TabIndex = 41;
@@ -363,7 +368,7 @@ namespace POIS1
             this.Currencycb.BackColor = System.Drawing.Color.White;
             this.Currencycb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Currencycb.FormattingEnabled = true;
-            this.Currencycb.Location = new System.Drawing.Point(1048, 397);
+            this.Currencycb.Location = new System.Drawing.Point(1113, 397);
             this.Currencycb.Name = "Currencycb";
             this.Currencycb.Size = new System.Drawing.Size(121, 24);
             this.Currencycb.TabIndex = 42;
@@ -372,26 +377,27 @@ namespace POIS1
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.White;
-            this.panel14.Location = new System.Drawing.Point(40, 550);
+            this.panel14.Location = new System.Drawing.Point(40, 566);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(619, 1);
+            this.panel14.Size = new System.Drawing.Size(663, 1);
             this.panel14.TabIndex = 23;
             // 
             // panel15
             // 
             this.panel15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel15.BackColor = System.Drawing.Color.White;
-            this.panel15.Location = new System.Drawing.Point(839, 550);
+            this.panel15.Location = new System.Drawing.Point(831, 567);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(570, 1);
+            this.panel15.Size = new System.Drawing.Size(630, 1);
             this.panel15.TabIndex = 24;
             // 
             // OtherInformationlbl
             // 
             this.OtherInformationlbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.OtherInformationlbl.AutoSize = true;
+            this.OtherInformationlbl.BackColor = System.Drawing.Color.DimGray;
             this.OtherInformationlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OtherInformationlbl.Location = new System.Drawing.Point(671, 536);
+            this.OtherInformationlbl.Location = new System.Drawing.Point(697, 526);
             this.OtherInformationlbl.Name = "OtherInformationlbl";
             this.OtherInformationlbl.Size = new System.Drawing.Size(162, 25);
             this.OtherInformationlbl.TabIndex = 43;
@@ -400,8 +406,9 @@ namespace POIS1
             // ApprovalDatelbl
             // 
             this.ApprovalDatelbl.AutoSize = true;
+            this.ApprovalDatelbl.BackColor = System.Drawing.Color.DimGray;
             this.ApprovalDatelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ApprovalDatelbl.Location = new System.Drawing.Point(109, 590);
+            this.ApprovalDatelbl.Location = new System.Drawing.Point(109, 621);
             this.ApprovalDatelbl.Name = "ApprovalDatelbl";
             this.ApprovalDatelbl.Size = new System.Drawing.Size(136, 25);
             this.ApprovalDatelbl.TabIndex = 44;
@@ -410,8 +417,9 @@ namespace POIS1
             // POstatuslbl
             // 
             this.POstatuslbl.AutoSize = true;
+            this.POstatuslbl.BackColor = System.Drawing.Color.DimGray;
             this.POstatuslbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.POstatuslbl.Location = new System.Drawing.Point(106, 639);
+            this.POstatuslbl.Location = new System.Drawing.Point(106, 685);
             this.POstatuslbl.Name = "POstatuslbl";
             this.POstatuslbl.Size = new System.Drawing.Size(211, 25);
             this.POstatuslbl.TabIndex = 45;
@@ -421,7 +429,7 @@ namespace POIS1
             // 
             this.POstatuscb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.POstatuscb.FormattingEnabled = true;
-            this.POstatuscb.Location = new System.Drawing.Point(387, 640);
+            this.POstatuscb.Location = new System.Drawing.Point(387, 686);
             this.POstatuscb.Name = "POstatuscb";
             this.POstatuscb.Size = new System.Drawing.Size(249, 24);
             this.POstatuscb.TabIndex = 48;
@@ -429,7 +437,7 @@ namespace POIS1
             // 
             // Approvaldate
             // 
-            this.Approvaldate.Location = new System.Drawing.Point(387, 590);
+            this.Approvaldate.Location = new System.Drawing.Point(387, 621);
             this.Approvaldate.Name = "Approvaldate";
             this.Approvaldate.Size = new System.Drawing.Size(249, 22);
             this.Approvaldate.TabIndex = 49;
@@ -438,8 +446,9 @@ namespace POIS1
             // 
             this.POnumberlbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.POnumberlbl.AutoSize = true;
+            this.POnumberlbl.BackColor = System.Drawing.Color.DimGray;
             this.POnumberlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.POnumberlbl.Location = new System.Drawing.Point(847, 587);
+            this.POnumberlbl.Location = new System.Drawing.Point(851, 621);
             this.POnumberlbl.Name = "POnumberlbl";
             this.POnumberlbl.Size = new System.Drawing.Size(166, 25);
             this.POnumberlbl.TabIndex = 50;
@@ -449,8 +458,9 @@ namespace POIS1
             // 
             this.Totallbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Totallbl.AutoSize = true;
+            this.Totallbl.BackColor = System.Drawing.Color.DimGray;
             this.Totallbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Totallbl.Location = new System.Drawing.Point(847, 640);
+            this.Totallbl.Location = new System.Drawing.Point(851, 686);
             this.Totallbl.Name = "Totallbl";
             this.Totallbl.Size = new System.Drawing.Size(56, 25);
             this.Totallbl.TabIndex = 51;
@@ -459,18 +469,18 @@ namespace POIS1
             // POnumbertb
             // 
             this.POnumbertb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.POnumbertb.Location = new System.Drawing.Point(1087, 587);
+            this.POnumbertb.Location = new System.Drawing.Point(1122, 621);
             this.POnumbertb.Name = "POnumbertb";
-            this.POnumbertb.Size = new System.Drawing.Size(232, 22);
+            this.POnumbertb.Size = new System.Drawing.Size(183, 22);
             this.POnumbertb.TabIndex = 52;
             // 
             // Totaltb
             // 
             this.Totaltb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Totaltb.Enabled = false;
-            this.Totaltb.Location = new System.Drawing.Point(1087, 643);
+            this.Totaltb.Location = new System.Drawing.Point(1122, 689);
             this.Totaltb.Name = "Totaltb";
-            this.Totaltb.Size = new System.Drawing.Size(232, 22);
+            this.Totaltb.Size = new System.Drawing.Size(183, 22);
             this.Totaltb.TabIndex = 53;
             // 
             // Clearbtn
@@ -479,9 +489,9 @@ namespace POIS1
             this.Clearbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
             this.Clearbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Clearbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Clearbtn.Location = new System.Drawing.Point(825, 747);
+            this.Clearbtn.Location = new System.Drawing.Point(763, 861);
             this.Clearbtn.Name = "Clearbtn";
-            this.Clearbtn.Size = new System.Drawing.Size(63, 33);
+            this.Clearbtn.Size = new System.Drawing.Size(97, 33);
             this.Clearbtn.TabIndex = 55;
             this.Clearbtn.Text = "Clear";
             this.Clearbtn.UseVisualStyleBackColor = false;
@@ -491,8 +501,9 @@ namespace POIS1
             // 
             this.totalcurrencylb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.totalcurrencylb.AutoSize = true;
+            this.totalcurrencylb.BackColor = System.Drawing.Color.DimGray;
             this.totalcurrencylb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalcurrencylb.Location = new System.Drawing.Point(846, 686);
+            this.totalcurrencylb.Location = new System.Drawing.Point(850, 746);
             this.totalcurrencylb.Name = "totalcurrencylb";
             this.totalcurrencylb.Size = new System.Drawing.Size(141, 25);
             this.totalcurrencylb.TabIndex = 56;
@@ -503,7 +514,7 @@ namespace POIS1
             this.totalcurrencycb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.totalcurrencycb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.totalcurrencycb.FormattingEnabled = true;
-            this.totalcurrencycb.Location = new System.Drawing.Point(1087, 693);
+            this.totalcurrencycb.Location = new System.Drawing.Point(1122, 753);
             this.totalcurrencycb.Name = "totalcurrencycb";
             this.totalcurrencycb.Size = new System.Drawing.Size(121, 24);
             this.totalcurrencycb.TabIndex = 57;
@@ -543,7 +554,7 @@ namespace POIS1
             this.Itemnameerror.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Itemnameerror.AutoSize = true;
             this.Itemnameerror.ForeColor = System.Drawing.Color.Red;
-            this.Itemnameerror.Location = new System.Drawing.Point(1045, 167);
+            this.Itemnameerror.Location = new System.Drawing.Point(1110, 167);
             this.Itemnameerror.Name = "Itemnameerror";
             this.Itemnameerror.Size = new System.Drawing.Size(0, 17);
             this.Itemnameerror.TabIndex = 61;
@@ -553,7 +564,7 @@ namespace POIS1
             this.Descriptionerror.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Descriptionerror.AutoSize = true;
             this.Descriptionerror.ForeColor = System.Drawing.Color.Red;
-            this.Descriptionerror.Location = new System.Drawing.Point(1045, 218);
+            this.Descriptionerror.Location = new System.Drawing.Point(1110, 218);
             this.Descriptionerror.Name = "Descriptionerror";
             this.Descriptionerror.Size = new System.Drawing.Size(0, 17);
             this.Descriptionerror.TabIndex = 62;
@@ -563,7 +574,7 @@ namespace POIS1
             this.quatityerror.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.quatityerror.AutoSize = true;
             this.quatityerror.ForeColor = System.Drawing.Color.Red;
-            this.quatityerror.Location = new System.Drawing.Point(1045, 268);
+            this.quatityerror.Location = new System.Drawing.Point(1110, 268);
             this.quatityerror.Name = "quatityerror";
             this.quatityerror.Size = new System.Drawing.Size(0, 17);
             this.quatityerror.TabIndex = 63;
@@ -574,7 +585,7 @@ namespace POIS1
             this.costerror.AutoSize = true;
             this.costerror.BackColor = System.Drawing.Color.Transparent;
             this.costerror.ForeColor = System.Drawing.Color.Red;
-            this.costerror.Location = new System.Drawing.Point(1045, 324);
+            this.costerror.Location = new System.Drawing.Point(1110, 324);
             this.costerror.Name = "costerror";
             this.costerror.Size = new System.Drawing.Size(0, 17);
             this.costerror.TabIndex = 64;
@@ -584,7 +595,7 @@ namespace POIS1
             this.currencyerror.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.currencyerror.AutoSize = true;
             this.currencyerror.ForeColor = System.Drawing.Color.Red;
-            this.currencyerror.Location = new System.Drawing.Point(1045, 377);
+            this.currencyerror.Location = new System.Drawing.Point(1110, 377);
             this.currencyerror.Name = "currencyerror";
             this.currencyerror.Size = new System.Drawing.Size(0, 17);
             this.currencyerror.TabIndex = 65;
@@ -621,7 +632,7 @@ namespace POIS1
             this.totalerror.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.totalerror.AutoSize = true;
             this.totalerror.ForeColor = System.Drawing.Color.Red;
-            this.totalerror.Location = new System.Drawing.Point(1084, 623);
+            this.totalerror.Location = new System.Drawing.Point(1149, 623);
             this.totalerror.Name = "totalerror";
             this.totalerror.Size = new System.Drawing.Size(0, 17);
             this.totalerror.TabIndex = 70;
@@ -631,7 +642,7 @@ namespace POIS1
             this.totalcurrencyerror.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.totalcurrencyerror.AutoSize = true;
             this.totalcurrencyerror.ForeColor = System.Drawing.Color.Red;
-            this.totalcurrencyerror.Location = new System.Drawing.Point(1084, 673);
+            this.totalcurrencyerror.Location = new System.Drawing.Point(1149, 673);
             this.totalcurrencyerror.Name = "totalcurrencyerror";
             this.totalcurrencyerror.Size = new System.Drawing.Size(0, 17);
             this.totalcurrencyerror.TabIndex = 71;
@@ -650,18 +661,18 @@ namespace POIS1
             // Quantity1
             // 
             this.Quantity1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Quantity1.Location = new System.Drawing.Point(1048, 287);
+            this.Quantity1.Location = new System.Drawing.Point(1113, 287);
             this.Quantity1.Name = "Quantity1";
-            this.Quantity1.Size = new System.Drawing.Size(232, 22);
+            this.Quantity1.Size = new System.Drawing.Size(183, 22);
             this.Quantity1.TabIndex = 77;
             this.Quantity1.TextChanged += new System.EventHandler(this.Quantity1_TextChanged);
             // 
             // Itemdesctb
             // 
             this.Itemdesctb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Itemdesctb.Location = new System.Drawing.Point(1048, 236);
+            this.Itemdesctb.Location = new System.Drawing.Point(1113, 236);
             this.Itemdesctb.Name = "Itemdesctb";
-            this.Itemdesctb.Size = new System.Drawing.Size(232, 22);
+            this.Itemdesctb.Size = new System.Drawing.Size(183, 22);
             this.Itemdesctb.TabIndex = 79;
             this.Itemdesctb.TextChanged += new System.EventHandler(this.Itemdesctb_TextChanged);
             // 
@@ -670,7 +681,7 @@ namespace POIS1
             this.purchaseONerror.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.purchaseONerror.AutoSize = true;
             this.purchaseONerror.ForeColor = System.Drawing.Color.Red;
-            this.purchaseONerror.Location = new System.Drawing.Point(1084, 567);
+            this.purchaseONerror.Location = new System.Drawing.Point(1149, 567);
             this.purchaseONerror.Name = "purchaseONerror";
             this.purchaseONerror.Size = new System.Drawing.Size(0, 17);
             this.purchaseONerror.TabIndex = 69;
@@ -684,129 +695,169 @@ namespace POIS1
             this.POerror.Size = new System.Drawing.Size(0, 17);
             this.POerror.TabIndex = 104;
             // 
-            // settingspanel
-            // 
-            this.settingspanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.settingspanel.BackColor = System.Drawing.Color.Transparent;
-            this.settingspanel.Controls.Add(this.themebtn);
-            this.settingspanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.settingspanel.Location = new System.Drawing.Point(1442, 101);
-            this.settingspanel.Name = "settingspanel";
-            this.settingspanel.Size = new System.Drawing.Size(124, 46);
-            this.settingspanel.TabIndex = 106;
-            // 
-            // themebtn
-            // 
-            this.themebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.themebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
-            this.themebtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(170)))));
-            this.themebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.themebtn.Location = new System.Drawing.Point(0, -2);
-            this.themebtn.Name = "themebtn";
-            this.themebtn.Size = new System.Drawing.Size(124, 45);
-            this.themebtn.TabIndex = 19;
-            this.themebtn.Text = "Change Theme";
-            this.themebtn.UseVisualStyleBackColor = false;
-            this.themebtn.Click += new System.EventHandler(this.themebtn_Click);
-            // 
             // toppanel
             // 
             this.toppanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
+            this.toppanel.Controls.Add(this.panel3);
             this.toppanel.Controls.Add(this.panel1);
             this.toppanel.Controls.Add(this.poispB);
             this.toppanel.Controls.Add(this.homeicon);
-            this.toppanel.Controls.Add(this.Homebtn);
-            this.toppanel.Controls.Add(this.LogPObtn);
-            this.toppanel.Controls.Add(this.LogInvbtn);
-            this.toppanel.Controls.Add(this.Calculationbtn);
             this.toppanel.Controls.Add(this.ViewsMenue);
             this.toppanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.toppanel.Location = new System.Drawing.Point(0, 0);
             this.toppanel.Name = "toppanel";
-            this.toppanel.Size = new System.Drawing.Size(1567, 102);
+            this.toppanel.Size = new System.Drawing.Size(1632, 102);
             this.toppanel.TabIndex = 107;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.reportbtn);
+            this.panel3.Controls.Add(this.Calculationbtn);
+            this.panel3.Controls.Add(this.LogInvbtn);
+            this.panel3.Controls.Add(this.LogPObtn);
+            this.panel3.Controls.Add(this.Homebtn);
+            this.panel3.Location = new System.Drawing.Point(1, 56);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1044, 46);
+            this.panel3.TabIndex = 19;
+            // 
+            // reportbtn
+            // 
+            this.reportbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.reportbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reportbtn.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
+            this.reportbtn.IconColor = System.Drawing.Color.White;
+            this.reportbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.reportbtn.IconSize = 18;
+            this.reportbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.reportbtn.Location = new System.Drawing.Point(836, 0);
+            this.reportbtn.Name = "reportbtn";
+            this.reportbtn.Size = new System.Drawing.Size(175, 46);
+            this.reportbtn.TabIndex = 4;
+            this.reportbtn.Text = "Report";
+            this.reportbtn.UseVisualStyleBackColor = true;
+            this.reportbtn.Click += new System.EventHandler(this.reportbtn_Click);
+            // 
+            // Calculationbtn
+            // 
+            this.Calculationbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Calculationbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Calculationbtn.IconChar = FontAwesome.Sharp.IconChar.Calculator;
+            this.Calculationbtn.IconColor = System.Drawing.Color.White;
+            this.Calculationbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Calculationbtn.IconSize = 18;
+            this.Calculationbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Calculationbtn.Location = new System.Drawing.Point(627, 0);
+            this.Calculationbtn.Name = "Calculationbtn";
+            this.Calculationbtn.Size = new System.Drawing.Size(175, 46);
+            this.Calculationbtn.TabIndex = 3;
+            this.Calculationbtn.Text = "Calculation";
+            this.Calculationbtn.UseVisualStyleBackColor = true;
+            this.Calculationbtn.Click += new System.EventHandler(this.Calculationbtn_Click);
+            // 
+            // LogInvbtn
+            // 
+            this.LogInvbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogInvbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogInvbtn.IconChar = FontAwesome.Sharp.IconChar.ClipboardCheck;
+            this.LogInvbtn.IconColor = System.Drawing.Color.White;
+            this.LogInvbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.LogInvbtn.IconSize = 18;
+            this.LogInvbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LogInvbtn.Location = new System.Drawing.Point(418, 0);
+            this.LogInvbtn.Name = "LogInvbtn";
+            this.LogInvbtn.Size = new System.Drawing.Size(175, 46);
+            this.LogInvbtn.TabIndex = 2;
+            this.LogInvbtn.Text = "Log Invoice";
+            this.LogInvbtn.UseVisualStyleBackColor = true;
+            this.LogInvbtn.Click += new System.EventHandler(this.LogInvbtn_Click);
+            // 
+            // LogPObtn
+            // 
+            this.LogPObtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogPObtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogPObtn.IconChar = FontAwesome.Sharp.IconChar.ClipboardCheck;
+            this.LogPObtn.IconColor = System.Drawing.Color.White;
+            this.LogPObtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.LogPObtn.IconSize = 18;
+            this.LogPObtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LogPObtn.Location = new System.Drawing.Point(202, 2);
+            this.LogPObtn.Name = "LogPObtn";
+            this.LogPObtn.Size = new System.Drawing.Size(187, 46);
+            this.LogPObtn.TabIndex = 1;
+            this.LogPObtn.Text = "Purchase Order";
+            this.LogPObtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LogPObtn.UseVisualStyleBackColor = true;
+            this.LogPObtn.Click += new System.EventHandler(this.LogPObtn_Click);
+            // 
+            // Homebtn
+            // 
+            this.Homebtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Homebtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Homebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Homebtn.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.Homebtn.IconColor = System.Drawing.Color.White;
+            this.Homebtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Homebtn.IconSize = 20;
+            this.Homebtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Homebtn.Location = new System.Drawing.Point(0, 0);
+            this.Homebtn.Name = "Homebtn";
+            this.Homebtn.Size = new System.Drawing.Size(175, 46);
+            this.Homebtn.TabIndex = 0;
+            this.Homebtn.Text = "Home";
+            this.Homebtn.UseVisualStyleBackColor = true;
+            this.Homebtn.Click += new System.EventHandler(this.Homebtn_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.settingsicon);
-            this.panel1.Controls.Add(this.helplbl);
-            this.panel1.Controls.Add(this.helplogo);
-            this.panel1.Controls.Add(this.Logouticon);
             this.panel1.Controls.Add(this.Logoutlb);
+            this.panel1.Controls.Add(this.helplbl);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1303, 30);
+            this.panel1.Location = new System.Drawing.Point(1368, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(264, 72);
+            this.panel1.Size = new System.Drawing.Size(264, 75);
             this.panel1.TabIndex = 17;
-            // 
-            // settingsicon
-            // 
-            this.settingsicon.BackColor = System.Drawing.Color.Transparent;
-            this.settingsicon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.settingsicon.Image = global::POIS1.Properties.Resources.img_272299;
-            this.settingsicon.Location = new System.Drawing.Point(214, 41);
-            this.settingsicon.Name = "settingsicon";
-            this.settingsicon.Size = new System.Drawing.Size(38, 22);
-            this.settingsicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.settingsicon.TabIndex = 12;
-            this.settingsicon.TabStop = false;
-            this.settingsicon.Click += new System.EventHandler(this.settings_Click);
-            // 
-            // helplbl
-            // 
-            this.helplbl.AutoSize = true;
-            this.helplbl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.helplbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.helplbl.Location = new System.Drawing.Point(3, 41);
-            this.helplbl.Name = "helplbl";
-            this.helplbl.Size = new System.Drawing.Size(35, 18);
-            this.helplbl.TabIndex = 8;
-            this.helplbl.Text = "help";
-            this.helplbl.Click += new System.EventHandler(this.hlplbl_Click);
-            // 
-            // helplogo
-            // 
-            this.helplogo.BackColor = System.Drawing.Color.Transparent;
-            this.helplogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.helplogo.Image = global::POIS1.Properties.Resources.R5b442441defbdc85231d35d7a7f7619c;
-            this.helplogo.Location = new System.Drawing.Point(48, 43);
-            this.helplogo.Name = "helplogo";
-            this.helplogo.Size = new System.Drawing.Size(19, 18);
-            this.helplogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.helplogo.TabIndex = 9;
-            this.helplogo.TabStop = false;
-            this.helplogo.Click += new System.EventHandler(this.helplogo_Click);
-            // 
-            // Logouticon
-            // 
-            this.Logouticon.BackColor = System.Drawing.Color.Transparent;
-            this.Logouticon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Logouticon.Image = global::POIS1.Properties.Resources.logout_512;
-            this.Logouticon.Location = new System.Drawing.Point(165, 41);
-            this.Logouticon.Name = "Logouticon";
-            this.Logouticon.Size = new System.Drawing.Size(38, 22);
-            this.Logouticon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Logouticon.TabIndex = 11;
-            this.Logouticon.TabStop = false;
-            this.Logouticon.Click += new System.EventHandler(this.logOicon_Click);
             // 
             // Logoutlb
             // 
-            this.Logoutlb.AutoSize = true;
             this.Logoutlb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Logoutlb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Logoutlb.Location = new System.Drawing.Point(100, 41);
+            this.Logoutlb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Logoutlb.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.Logoutlb.IconColor = System.Drawing.Color.Black;
+            this.Logoutlb.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Logoutlb.IconSize = 20;
+            this.Logoutlb.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Logoutlb.Location = new System.Drawing.Point(148, 35);
             this.Logoutlb.Name = "Logoutlb";
-            this.Logoutlb.Size = new System.Drawing.Size(54, 18);
-            this.Logoutlb.TabIndex = 10;
-            this.Logoutlb.Text = "Logout";
+            this.Logoutlb.Size = new System.Drawing.Size(113, 35);
+            this.Logoutlb.TabIndex = 21;
+            this.Logoutlb.Text = "Log Out";
+            this.Logoutlb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Logoutlb.UseVisualStyleBackColor = true;
             this.Logoutlb.Click += new System.EventHandler(this.logoutlbl_Click);
+            // 
+            // helplbl
+            // 
+            this.helplbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.helplbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.helplbl.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
+            this.helplbl.IconColor = System.Drawing.Color.Black;
+            this.helplbl.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.helplbl.IconSize = 20;
+            this.helplbl.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.helplbl.Location = new System.Drawing.Point(0, 36);
+            this.helplbl.Name = "helplbl";
+            this.helplbl.Size = new System.Drawing.Size(113, 35);
+            this.helplbl.TabIndex = 20;
+            this.helplbl.Text = "Help";
+            this.helplbl.UseVisualStyleBackColor = true;
+            this.helplbl.Click += new System.EventHandler(this.helplogo_Click);
             // 
             // poispB
             // 
             this.poispB.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.poispB.Image = global::POIS1.Properties.Resources.POIS_white_;
-            this.poispB.Location = new System.Drawing.Point(675, 1);
+            this.poispB.Location = new System.Drawing.Point(708, 1);
             this.poispB.Name = "poispB";
             this.poispB.Size = new System.Drawing.Size(138, 55);
             this.poispB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -825,60 +876,6 @@ namespace POIS1
             this.homeicon.TabIndex = 7;
             this.homeicon.TabStop = false;
             // 
-            // Homebtn
-            // 
-            this.Homebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
-            this.Homebtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Homebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Homebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Homebtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Homebtn.Location = new System.Drawing.Point(3, 62);
-            this.Homebtn.Name = "Homebtn";
-            this.Homebtn.Size = new System.Drawing.Size(139, 46);
-            this.Homebtn.TabIndex = 6;
-            this.Homebtn.Text = "Home";
-            this.Homebtn.UseVisualStyleBackColor = false;
-            this.Homebtn.Click += new System.EventHandler(this.Homebtn_Click);
-            // 
-            // LogPObtn
-            // 
-            this.LogPObtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
-            this.LogPObtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogPObtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LogPObtn.Location = new System.Drawing.Point(209, 62);
-            this.LogPObtn.Name = "LogPObtn";
-            this.LogPObtn.Size = new System.Drawing.Size(150, 46);
-            this.LogPObtn.TabIndex = 1;
-            this.LogPObtn.Text = "Log Purchase Order";
-            this.LogPObtn.UseVisualStyleBackColor = false;
-            this.LogPObtn.Click += new System.EventHandler(this.LogPObtn_Click);
-            // 
-            // LogInvbtn
-            // 
-            this.LogInvbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
-            this.LogInvbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogInvbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LogInvbtn.Location = new System.Drawing.Point(411, 62);
-            this.LogInvbtn.Name = "LogInvbtn";
-            this.LogInvbtn.Size = new System.Drawing.Size(140, 46);
-            this.LogInvbtn.TabIndex = 2;
-            this.LogInvbtn.Text = "Log Invoice";
-            this.LogInvbtn.UseVisualStyleBackColor = false;
-            this.LogInvbtn.Click += new System.EventHandler(this.LogInvbtn_Click);
-            // 
-            // Calculationbtn
-            // 
-            this.Calculationbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
-            this.Calculationbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Calculationbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Calculationbtn.Location = new System.Drawing.Point(613, 62);
-            this.Calculationbtn.Name = "Calculationbtn";
-            this.Calculationbtn.Size = new System.Drawing.Size(139, 46);
-            this.Calculationbtn.TabIndex = 3;
-            this.Calculationbtn.Text = "Calculation";
-            this.Calculationbtn.UseVisualStyleBackColor = false;
-            this.Calculationbtn.Click += new System.EventHandler(this.Calculationbtn_Click);
-            // 
             // ViewsMenue
             // 
             this.ViewsMenue.BackColor = System.Drawing.Color.Transparent;
@@ -891,7 +888,7 @@ namespace POIS1
             this.logoutToolStripMenuItem});
             this.ViewsMenue.Location = new System.Drawing.Point(0, 0);
             this.ViewsMenue.Name = "ViewsMenue";
-            this.ViewsMenue.Size = new System.Drawing.Size(1567, 30);
+            this.ViewsMenue.Size = new System.Drawing.Size(1632, 27);
             this.ViewsMenue.TabIndex = 18;
             this.ViewsMenue.Text = "menuStrip1";
             // 
@@ -900,21 +897,22 @@ namespace POIS1
             this.viewInvoicesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logInvoicesToolStripMenuItem,
             this.viewInvoicesToolStripMenuItem1});
+            this.viewInvoicesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.viewInvoicesToolStripMenuItem.Name = "viewInvoicesToolStripMenuItem";
-            this.viewInvoicesToolStripMenuItem.Size = new System.Drawing.Size(76, 26);
+            this.viewInvoicesToolStripMenuItem.Size = new System.Drawing.Size(72, 23);
             this.viewInvoicesToolStripMenuItem.Text = "Invoices";
             // 
             // logInvoicesToolStripMenuItem
             // 
             this.logInvoicesToolStripMenuItem.Name = "logInvoicesToolStripMenuItem";
-            this.logInvoicesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.logInvoicesToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.logInvoicesToolStripMenuItem.Text = "Log Invoices";
             this.logInvoicesToolStripMenuItem.Click += new System.EventHandler(this.logInvoicesToolStripMenuItem_Click);
             // 
             // viewInvoicesToolStripMenuItem1
             // 
             this.viewInvoicesToolStripMenuItem1.Name = "viewInvoicesToolStripMenuItem1";
-            this.viewInvoicesToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.viewInvoicesToolStripMenuItem1.Size = new System.Drawing.Size(174, 26);
             this.viewInvoicesToolStripMenuItem1.Text = "View Invoices";
             this.viewInvoicesToolStripMenuItem1.Click += new System.EventHandler(this.viewInvoicesToolStripMenuItem1_Click);
             // 
@@ -923,21 +921,22 @@ namespace POIS1
             this.viewPurchaseOrderToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logPurchaseOrderToolStripMenuItem,
             this.viewPurchaseOrderToolStripMenuItem1});
+            this.viewPurchaseOrderToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.viewPurchaseOrderToolStripMenuItem.Name = "viewPurchaseOrderToolStripMenuItem";
-            this.viewPurchaseOrderToolStripMenuItem.Size = new System.Drawing.Size(123, 26);
+            this.viewPurchaseOrderToolStripMenuItem.Size = new System.Drawing.Size(118, 23);
             this.viewPurchaseOrderToolStripMenuItem.Text = "Purchase Order";
             // 
             // logPurchaseOrderToolStripMenuItem
             // 
             this.logPurchaseOrderToolStripMenuItem.Name = "logPurchaseOrderToolStripMenuItem";
-            this.logPurchaseOrderToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
+            this.logPurchaseOrderToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
             this.logPurchaseOrderToolStripMenuItem.Text = "Log Purchase Order";
             this.logPurchaseOrderToolStripMenuItem.Click += new System.EventHandler(this.logPurchaseOrderToolStripMenuItem_Click);
             // 
             // viewPurchaseOrderToolStripMenuItem1
             // 
             this.viewPurchaseOrderToolStripMenuItem1.Name = "viewPurchaseOrderToolStripMenuItem1";
-            this.viewPurchaseOrderToolStripMenuItem1.Size = new System.Drawing.Size(228, 26);
+            this.viewPurchaseOrderToolStripMenuItem1.Size = new System.Drawing.Size(220, 26);
             this.viewPurchaseOrderToolStripMenuItem1.Text = "View Purchase Order";
             this.viewPurchaseOrderToolStripMenuItem1.Click += new System.EventHandler(this.viewPurchaseOrderToolStripMenuItem1_Click);
             // 
@@ -945,14 +944,15 @@ namespace POIS1
             // 
             this.viewReportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewReportsToolStripMenuItem1});
+            this.viewReportsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.viewReportsToolStripMenuItem.Name = "viewReportsToolStripMenuItem";
-            this.viewReportsToolStripMenuItem.Size = new System.Drawing.Size(74, 26);
+            this.viewReportsToolStripMenuItem.Size = new System.Drawing.Size(70, 23);
             this.viewReportsToolStripMenuItem.Text = "Reports";
             // 
             // viewReportsToolStripMenuItem1
             // 
             this.viewReportsToolStripMenuItem1.Name = "viewReportsToolStripMenuItem1";
-            this.viewReportsToolStripMenuItem1.Size = new System.Drawing.Size(179, 26);
+            this.viewReportsToolStripMenuItem1.Size = new System.Drawing.Size(172, 26);
             this.viewReportsToolStripMenuItem1.Text = "View Reports";
             this.viewReportsToolStripMenuItem1.Click += new System.EventHandler(this.viewReportsToolStripMenuItem1_Click);
             // 
@@ -960,21 +960,23 @@ namespace POIS1
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.changeThemeToolStripMenuItem});
+            this.settingsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(76, 26);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(72, 23);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // changeThemeToolStripMenuItem
             // 
             this.changeThemeToolStripMenuItem.Name = "changeThemeToolStripMenuItem";
-            this.changeThemeToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.changeThemeToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.changeThemeToolStripMenuItem.Text = "Change Theme";
             this.changeThemeToolStripMenuItem.Click += new System.EventHandler(this.changeThemeToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
+            this.logoutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(70, 26);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(67, 23);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
@@ -983,7 +985,7 @@ namespace POIS1
             this.Totalerrorlb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Totalerrorlb.AutoSize = true;
             this.Totalerrorlb.ForeColor = System.Drawing.Color.Red;
-            this.Totalerrorlb.Location = new System.Drawing.Point(1084, 623);
+            this.Totalerrorlb.Location = new System.Drawing.Point(1149, 623);
             this.Totalerrorlb.Name = "Totalerrorlb";
             this.Totalerrorlb.Size = new System.Drawing.Size(0, 17);
             this.Totalerrorlb.TabIndex = 108;
@@ -993,7 +995,7 @@ namespace POIS1
             this.Currencyerrorlbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Currencyerrorlbl.AutoSize = true;
             this.Currencyerrorlbl.ForeColor = System.Drawing.Color.Red;
-            this.Currencyerrorlbl.Location = new System.Drawing.Point(1085, 673);
+            this.Currencyerrorlbl.Location = new System.Drawing.Point(1150, 673);
             this.Currencyerrorlbl.Name = "Currencyerrorlbl";
             this.Currencyerrorlbl.Size = new System.Drawing.Size(0, 17);
             this.Currencyerrorlbl.TabIndex = 109;
@@ -1021,7 +1023,7 @@ namespace POIS1
             this.currencyerr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.currencyerr.AutoSize = true;
             this.currencyerr.ForeColor = System.Drawing.Color.Red;
-            this.currencyerr.Location = new System.Drawing.Point(1045, 377);
+            this.currencyerr.Location = new System.Drawing.Point(1110, 377);
             this.currencyerr.Name = "currencyerr";
             this.currencyerr.Size = new System.Drawing.Size(0, 17);
             this.currencyerr.TabIndex = 113;
@@ -1042,78 +1044,247 @@ namespace POIS1
             this.VndrNumbercb.Size = new System.Drawing.Size(232, 24);
             this.VndrNumbercb.TabIndex = 115;
             // 
-            // ItemsAdddetailsbtn
-            // 
-            this.ItemsAdddetailsbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemsAdddetailsbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
-            this.ItemsAdddetailsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ItemsAdddetailsbtn.Location = new System.Drawing.Point(1230, 398);
-            this.ItemsAdddetailsbtn.Name = "ItemsAdddetailsbtn";
-            this.ItemsAdddetailsbtn.Size = new System.Drawing.Size(98, 26);
-            this.ItemsAdddetailsbtn.TabIndex = 116;
-            this.ItemsAdddetailsbtn.Text = "Add Details";
-            this.ItemsAdddetailsbtn.UseVisualStyleBackColor = false;
-            this.ItemsAdddetailsbtn.Click += new System.EventHandler(this.ItemsAdddetailsbtn_Click);
-            // 
-            // VendorAdddetailsbtn
-            // 
-            this.VendorAdddetailsbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
-            this.VendorAdddetailsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.VendorAdddetailsbtn.Location = new System.Drawing.Point(579, 392);
-            this.VendorAdddetailsbtn.Name = "VendorAdddetailsbtn";
-            this.VendorAdddetailsbtn.Size = new System.Drawing.Size(98, 26);
-            this.VendorAdddetailsbtn.TabIndex = 117;
-            this.VendorAdddetailsbtn.Text = "Add Details";
-            this.VendorAdddetailsbtn.UseVisualStyleBackColor = false;
-            this.VendorAdddetailsbtn.Click += new System.EventHandler(this.Vendoradd_detailsbtn);
-            // 
             // ItemName1
             // 
             this.ItemName1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ItemName1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.ItemName1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.ItemName1.FormattingEnabled = true;
-            this.ItemName1.Location = new System.Drawing.Point(1048, 187);
+            this.ItemName1.Location = new System.Drawing.Point(1113, 187);
             this.ItemName1.Name = "ItemName1";
-            this.ItemName1.Size = new System.Drawing.Size(232, 24);
+            this.ItemName1.Size = new System.Drawing.Size(183, 24);
             this.ItemName1.TabIndex = 118;
             this.ItemName1.SelectedIndexChanged += new System.EventHandler(this.ItemName1_SelectedIndexChanged);
             // 
-            // saveicon
-            // 
-            this.saveicon.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.saveicon.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.saveicon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.saveicon.Image = global::POIS1.Properties.Resources.Save_512;
-            this.saveicon.Location = new System.Drawing.Point(718, 747);
-            this.saveicon.Name = "saveicon";
-            this.saveicon.Size = new System.Drawing.Size(49, 33);
-            this.saveicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.saveicon.TabIndex = 54;
-            this.saveicon.TabStop = false;
-            this.saveicon.Click += new System.EventHandler(this.saveicon_Click);
-            // 
             // poislogo
             // 
-            this.poislogo.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.poislogo.BackColor = System.Drawing.Color.DimGray;
             this.poislogo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.poislogo.Image = global::POIS1.Properties.Resources.POIS_Final_;
             this.poislogo.Location = new System.Drawing.Point(0, 0);
             this.poislogo.Name = "poislogo";
-            this.poislogo.Size = new System.Drawing.Size(1567, 792);
+            this.poislogo.Size = new System.Drawing.Size(1632, 903);
             this.poislogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.poislogo.TabIndex = 18;
             this.poislogo.TabStop = false;
+            // 
+            // VendorAdddetailsbtn
+            // 
+            this.VendorAdddetailsbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
+            this.VendorAdddetailsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VendorAdddetailsbtn.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.VendorAdddetailsbtn.IconColor = System.Drawing.Color.White;
+            this.VendorAdddetailsbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.VendorAdddetailsbtn.IconSize = 16;
+            this.VendorAdddetailsbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.VendorAdddetailsbtn.Location = new System.Drawing.Point(111, 450);
+            this.VendorAdddetailsbtn.Name = "VendorAdddetailsbtn";
+            this.VendorAdddetailsbtn.Size = new System.Drawing.Size(119, 35);
+            this.VendorAdddetailsbtn.TabIndex = 119;
+            this.VendorAdddetailsbtn.Text = "        Add ";
+            this.VendorAdddetailsbtn.UseVisualStyleBackColor = false;
+            this.VendorAdddetailsbtn.Click += new System.EventHandler(this.Vendoradd_detailsbtn);
+            // 
+            // savebtn
+            // 
+            this.savebtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.savebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
+            this.savebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.savebtn.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.savebtn.IconColor = System.Drawing.Color.White;
+            this.savebtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.savebtn.IconSize = 20;
+            this.savebtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.savebtn.Location = new System.Drawing.Point(614, 861);
+            this.savebtn.Name = "savebtn";
+            this.savebtn.Size = new System.Drawing.Size(97, 33);
+            this.savebtn.TabIndex = 120;
+            this.savebtn.Text = "Save";
+            this.savebtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.savebtn.UseVisualStyleBackColor = false;
+            this.savebtn.Click += new System.EventHandler(this.saveicon_Click);
+            // 
+            // editbtn
+            // 
+            this.editbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
+            this.editbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editbtn.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.editbtn.IconColor = System.Drawing.Color.White;
+            this.editbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.editbtn.IconSize = 16;
+            this.editbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.editbtn.Location = new System.Drawing.Point(322, 450);
+            this.editbtn.Name = "editbtn";
+            this.editbtn.Size = new System.Drawing.Size(119, 35);
+            this.editbtn.TabIndex = 121;
+            this.editbtn.Text = "Edit";
+            this.editbtn.UseVisualStyleBackColor = false;
+            this.editbtn.Click += new System.EventHandler(this.editbtn_Click);
+            // 
+            // deletebtn
+            // 
+            this.deletebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
+            this.deletebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deletebtn.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.deletebtn.IconColor = System.Drawing.Color.White;
+            this.deletebtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.deletebtn.IconSize = 16;
+            this.deletebtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.deletebtn.Location = new System.Drawing.Point(521, 450);
+            this.deletebtn.Name = "deletebtn";
+            this.deletebtn.Size = new System.Drawing.Size(128, 35);
+            this.deletebtn.TabIndex = 122;
+            this.deletebtn.Text = "        Delete ";
+            this.deletebtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.deletebtn.UseVisualStyleBackColor = false;
+            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
+            // 
+            // ItemsAdddetailsbtn
+            // 
+            this.ItemsAdddetailsbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemsAdddetailsbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
+            this.ItemsAdddetailsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ItemsAdddetailsbtn.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.ItemsAdddetailsbtn.IconColor = System.Drawing.Color.White;
+            this.ItemsAdddetailsbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ItemsAdddetailsbtn.IconSize = 16;
+            this.ItemsAdddetailsbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ItemsAdddetailsbtn.Location = new System.Drawing.Point(876, 450);
+            this.ItemsAdddetailsbtn.Name = "ItemsAdddetailsbtn";
+            this.ItemsAdddetailsbtn.Size = new System.Drawing.Size(119, 35);
+            this.ItemsAdddetailsbtn.TabIndex = 123;
+            this.ItemsAdddetailsbtn.Text = "        Add ";
+            this.ItemsAdddetailsbtn.UseVisualStyleBackColor = false;
+            this.ItemsAdddetailsbtn.Click += new System.EventHandler(this.ItemsAdddetailsbtn_Click);
+            // 
+            // ItemsEditdetailsbtn
+            // 
+            this.ItemsEditdetailsbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemsEditdetailsbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
+            this.ItemsEditdetailsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ItemsEditdetailsbtn.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.ItemsEditdetailsbtn.IconColor = System.Drawing.Color.White;
+            this.ItemsEditdetailsbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ItemsEditdetailsbtn.IconSize = 16;
+            this.ItemsEditdetailsbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ItemsEditdetailsbtn.Location = new System.Drawing.Point(1087, 450);
+            this.ItemsEditdetailsbtn.Name = "ItemsEditdetailsbtn";
+            this.ItemsEditdetailsbtn.Size = new System.Drawing.Size(119, 35);
+            this.ItemsEditdetailsbtn.TabIndex = 124;
+            this.ItemsEditdetailsbtn.Text = "Edit";
+            this.ItemsEditdetailsbtn.UseVisualStyleBackColor = false;
+            this.ItemsEditdetailsbtn.Click += new System.EventHandler(this.ItemsEditdetailsbtn_Click);
+            // 
+            // Itemsdeletedetailsbtn
+            // 
+            this.Itemsdeletedetailsbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Itemsdeletedetailsbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
+            this.Itemsdeletedetailsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Itemsdeletedetailsbtn.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.Itemsdeletedetailsbtn.IconColor = System.Drawing.Color.White;
+            this.Itemsdeletedetailsbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Itemsdeletedetailsbtn.IconSize = 16;
+            this.Itemsdeletedetailsbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Itemsdeletedetailsbtn.Location = new System.Drawing.Point(1298, 450);
+            this.Itemsdeletedetailsbtn.Name = "Itemsdeletedetailsbtn";
+            this.Itemsdeletedetailsbtn.Size = new System.Drawing.Size(128, 35);
+            this.Itemsdeletedetailsbtn.TabIndex = 125;
+            this.Itemsdeletedetailsbtn.Text = "        Delete ";
+            this.Itemsdeletedetailsbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Itemsdeletedetailsbtn.UseVisualStyleBackColor = false;
+            this.Itemsdeletedetailsbtn.Click += new System.EventHandler(this.Itemsdeletedetailsbtn_Click);
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.White;
+            this.panel16.Location = new System.Drawing.Point(40, 845);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(663, 1);
+            this.panel16.TabIndex = 127;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.White;
+            this.panel13.Location = new System.Drawing.Point(40, 567);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(1, 279);
+            this.panel13.TabIndex = 126;
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.White;
+            this.panel17.Location = new System.Drawing.Point(702, 566);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(1, 279);
+            this.panel17.TabIndex = 127;
+            // 
+            // panel18
+            // 
+            this.panel18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel18.BackColor = System.Drawing.Color.White;
+            this.panel18.Location = new System.Drawing.Point(1460, 567);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(1, 279);
+            this.panel18.TabIndex = 130;
+            // 
+            // panel19
+            // 
+            this.panel19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel19.BackColor = System.Drawing.Color.White;
+            this.panel19.Location = new System.Drawing.Point(831, 845);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(630, 1);
+            this.panel19.TabIndex = 129;
+            // 
+            // panel20
+            // 
+            this.panel20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel20.BackColor = System.Drawing.Color.White;
+            this.panel20.Location = new System.Drawing.Point(831, 567);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(1, 279);
+            this.panel20.TabIndex = 128;
+            // 
+            // searchbtn
+            // 
+            this.searchbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(190)))));
+            this.searchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchbtn.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.searchbtn.IconColor = System.Drawing.Color.White;
+            this.searchbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.searchbtn.IconSize = 14;
+            this.searchbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.searchbtn.Location = new System.Drawing.Point(1332, 618);
+            this.searchbtn.Name = "searchbtn";
+            this.searchbtn.Size = new System.Drawing.Size(122, 28);
+            this.searchbtn.TabIndex = 131;
+            this.searchbtn.Text = "        Search ";
+            this.searchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.searchbtn.UseVisualStyleBackColor = false;
+            this.searchbtn.Click += new System.EventHandler(this.searchbtn_Click);
             // 
             // Log_Purchase_Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(1567, 792);
-            this.Controls.Add(this.ItemName1);
-            this.Controls.Add(this.VendorAdddetailsbtn);
+            this.ClientSize = new System.Drawing.Size(1632, 903);
+            this.Controls.Add(this.searchbtn);
+            this.Controls.Add(this.panel18);
+            this.Controls.Add(this.panel19);
+            this.Controls.Add(this.panel17);
+            this.Controls.Add(this.panel20);
+            this.Controls.Add(this.panel16);
+            this.Controls.Add(this.panel13);
+            this.Controls.Add(this.Itemsdeletedetailsbtn);
+            this.Controls.Add(this.ItemsEditdetailsbtn);
             this.Controls.Add(this.ItemsAdddetailsbtn);
+            this.Controls.Add(this.deletebtn);
+            this.Controls.Add(this.editbtn);
+            this.Controls.Add(this.savebtn);
+            this.Controls.Add(this.VendorAdddetailsbtn);
+            this.Controls.Add(this.ItemName1);
             this.Controls.Add(this.VndrNumbercb);
             this.Controls.Add(this.VndrAddrescb);
             this.Controls.Add(this.currencyerr);
@@ -1122,7 +1293,6 @@ namespace POIS1
             this.Controls.Add(this.Currencyerrorlbl);
             this.Controls.Add(this.Totalerrorlb);
             this.Controls.Add(this.toppanel);
-            this.Controls.Add(this.settingspanel);
             this.Controls.Add(this.POerror);
             this.Controls.Add(this.Itemdesctb);
             this.Controls.Add(this.Quantity1);
@@ -1144,7 +1314,6 @@ namespace POIS1
             this.Controls.Add(this.totalcurrencycb);
             this.Controls.Add(this.totalcurrencylb);
             this.Controls.Add(this.Clearbtn);
-            this.Controls.Add(this.saveicon);
             this.Controls.Add(this.Totaltb);
             this.Controls.Add(this.POnumbertb);
             this.Controls.Add(this.Totallbl);
@@ -1185,19 +1354,14 @@ namespace POIS1
             this.Text = "Log_Purchase_Order";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Log_Purchase_Order_Load);
-            this.settingspanel.ResumeLayout(false);
             this.toppanel.ResumeLayout(false);
             this.toppanel.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.settingsicon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.helplogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Logouticon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poispB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeicon)).EndInit();
             this.ViewsMenue.ResumeLayout(false);
             this.ViewsMenue.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.saveicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poislogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1239,7 +1403,6 @@ namespace POIS1
         private System.Windows.Forms.Label Totallbl;
         private System.Windows.Forms.TextBox POnumbertb;
         private System.Windows.Forms.TextBox Totaltb;
-        private System.Windows.Forms.PictureBox saveicon;
         private System.Windows.Forms.Button Clearbtn;
         private System.Windows.Forms.Label totalcurrencylb;
         private System.Windows.Forms.ComboBox totalcurrencycb;
@@ -1262,21 +1425,10 @@ namespace POIS1
         private System.Windows.Forms.PictureBox poislogo;
         private System.Windows.Forms.Label purchaseONerror;
         private System.Windows.Forms.Label POerror;
-        private System.Windows.Forms.Panel settingspanel;
-        private System.Windows.Forms.Button themebtn;
         private System.Windows.Forms.Panel toppanel;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox settingsicon;
-        private System.Windows.Forms.Label helplbl;
-        private System.Windows.Forms.PictureBox helplogo;
-        private System.Windows.Forms.PictureBox Logouticon;
-        private System.Windows.Forms.Label Logoutlb;
         private System.Windows.Forms.PictureBox poispB;
         private System.Windows.Forms.PictureBox homeicon;
-        private System.Windows.Forms.Button Homebtn;
-        private System.Windows.Forms.Button LogPObtn;
-        private System.Windows.Forms.Button LogInvbtn;
-        private System.Windows.Forms.Button Calculationbtn;
         private System.Windows.Forms.MenuStrip ViewsMenue;
         private System.Windows.Forms.ToolStripMenuItem viewInvoicesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logInvoicesToolStripMenuItem;
@@ -1295,9 +1447,29 @@ namespace POIS1
         private System.Windows.Forms.ComboBox VndrNumbercb;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeThemeToolStripMenuItem;
-        private System.Windows.Forms.Button ItemsAdddetailsbtn;
-        private System.Windows.Forms.Button VendorAdddetailsbtn;
         private System.Windows.Forms.ComboBox ItemName1;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.Panel panel3;
+        private FontAwesome.Sharp.IconButton Calculationbtn;
+        private FontAwesome.Sharp.IconButton LogInvbtn;
+        private FontAwesome.Sharp.IconButton LogPObtn;
+        private FontAwesome.Sharp.IconButton Homebtn;
+        private FontAwesome.Sharp.IconButton Logoutlb;
+        private FontAwesome.Sharp.IconButton helplbl;
+        private FontAwesome.Sharp.IconButton VendorAdddetailsbtn;
+        private FontAwesome.Sharp.IconButton savebtn;
+        private FontAwesome.Sharp.IconButton editbtn;
+        private FontAwesome.Sharp.IconButton deletebtn;
+        private FontAwesome.Sharp.IconButton ItemsAdddetailsbtn;
+        private FontAwesome.Sharp.IconButton ItemsEditdetailsbtn;
+        private FontAwesome.Sharp.IconButton Itemsdeletedetailsbtn;
+        private FontAwesome.Sharp.IconButton reportbtn;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Panel panel20;
+        private FontAwesome.Sharp.IconButton searchbtn;
     }
 }

@@ -39,6 +39,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -61,6 +64,12 @@
     </Compile>
     <Compile Include="Calculation.Designer.cs">
       <DependentUpon>Calculation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Create New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Create New.Designer.cs">
+      <DependentUpon>Create New.cs</DependentUpon>
     </Compile>
     <Compile Include="Currency.cs">
       <DependentUpon>POIS.tt</DependentUpon>
@@ -126,6 +135,12 @@
     <Compile Include="PurchaseOrderStatu.cs">
       <DependentUpon>POIS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="Saveinput.cs" />
     <Compile Include="ViewReport.cs">
       <SubType>Form</SubType>
@@ -155,6 +170,9 @@
     <EmbeddedResource Include="Calculation.resx">
       <DependentUpon>Calculation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Create New.resx">
+      <DependentUpon>Create New.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +195,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View Invoices.resx">
       <DependentUpon>View Invoices.cs</DependentUpon>
     </EmbeddedResource>

@@ -24,16 +24,17 @@ namespace POIS1
         }
         public void datagrid()
         {
-
+            
 
             SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
-            string q = "SELECT LogPurchaseOrder.PurchaseOrderId as 'Purchase Order ID', LogPurchaseOrder.Vendor_id as " +
-                "'Vendor ID',LogPurchaseOrder.Items_id as 'Items id',LogPurchaseOrder.Item_amount as 'Item Amount'," +
-                "LogPurchaseOrder.Status_Id as 'Purchaser Order Status Id'," +
-                "LogPurchaseOrder.PurchaseOrderNumber as 'Purchase Order Number',LogPurchaseOrder.Approval_Date as " +
-                "'Approval Date',LogPurchaseOrder.Total,Invoices.Invoice_id as 'Invoice ID',Invoices.DateForPayment " +
-                "as 'Date For Payment', Items.Currency,Invoices.total as " +
-                "'Invoice Total',Invoices.Status_Id 'Invoice Status Id',Invoices.InvoiceNumber as 'Invoice Number'FROM " +
+            string q = "SELECT LogPurchaseOrder.Vendor as 'Vendor', LogPurchaseOrder.Items as " +
+                "'Item Name',LogPurchaseOrder.Quantity as 'Quantity',LogPurchaseOrder.PurchaseOrderNumber as 'PurchaseOrderNumber'," +
+                "LogPurchaseOrder.Approval_Date as 'Approval Date'," +
+                "LogPurchaseOrder.Status as 'Status',LogPurchaseOrder.Total as " +
+                "'Total',Invoices.VendorName as 'Vendor Name',Invoices.ItemName " +
+                "as 'Item Name', Invoices.Quantity,Invoices.PurchaseOrderNumber as " +
+                "'Purchase Order Number',Invoices.InvoiceNumber as 'Invoice Number',Invoices.ApprovalDate as 'Approval Date',Invoices.DateForPayment as 'Date For Payment'," +
+                "Invoices.Status as 'Status',Invoices.Total as 'Total'FROM " +
                 "((LogPurchaseOrder INNER JOIN Invoices ON LogPurchaseOrder.PurchaseOrderId = Invoices.PurchaseOrderID) " +
                 "INNER JOIN Items ON LogPurchaseOrder.Items_id = Items.Item_id)";
 

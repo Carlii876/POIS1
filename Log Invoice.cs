@@ -20,7 +20,7 @@ namespace POIS1
         string ApproveDate;
         string VendorAddress;
         string VendorNumber;
-        string VendorID;
+        int VendorID;
         string status_id;
         string POnum;
         public string ItemsId;
@@ -39,6 +39,7 @@ namespace POIS1
         public string totalcurrency1;
         public int PurchaseOrderNumber1;
         public int Quantity1;
+        public int InvoiceID;
         public Log_Invoice()
         {
             InitializeComponent();
@@ -117,14 +118,14 @@ namespace POIS1
 
 
         {
-
+            
 
 
 
 
             // TODO: This line of code loads data into the 'pOISDataSet.LogPurchaseOrder' table. You can move, or remove it, as needed.
 
-            settingspanel.Visible = false;
+
             // TODO: This line of code loads data into the 'pOISDataSet.Items' table. You can move, or remove it, as needed.
 
             //logPurchaseOrderdataview.Visible = false;
@@ -141,24 +142,33 @@ namespace POIS1
 
 
 
+
+
+
+            //Helplbl.ForeColor = Color.White;
+            //Logoutlb.ForeColor = Color.White;
+            //reportbtn.ForeColor = Color.White;
+            //LogPObtn.ForeColor = Color.White;
+            //Calculationbtn.ForeColor = Color.White;
+            //LogInvbtn.IconColor = Color.FromArgb(0, 117, 190);
+            //Homebtn.ForeColor = Color.White;
+
+
+            LogInvbtn.IconColor = Color.White;
+            //LogInvbtn.ForeColor = Color.White;
+
            
 
+            LogInvbtn.BackColor = Color.DimGray;
 
-
-
-            LogPObtn.ForeColor = Color.White;
-            Calculationbtn.ForeColor = Color.White;
-            
-            Homebtn.ForeColor = Color.White;
-            LogInvbtn.ForeColor = Color.Black;
 
             LogPObtn.BackColor = Color.FromArgb(0, 117, 190);
             Calculationbtn.BackColor = Color.FromArgb(0, 117, 190);
             
             Homebtn.BackColor = Color.FromArgb(0, 117, 190);
-            LogInvbtn.BackColor = Color.White;
+            //LogInvbtn.BackColor = Color.White;
             homeicon.BackColor = Color.FromArgb(0, 117, 190);
-            LogInvbtn.FlatStyle = FlatStyle.Standard;
+            LogInvbtn.FlatStyle = FlatStyle.Flat;
             Homebtn.FlatStyle = FlatStyle.Flat;
             LogPObtn.FlatStyle = FlatStyle.Flat;
             Calculationbtn.FlatStyle = FlatStyle.Flat;
@@ -360,45 +370,41 @@ namespace POIS1
             connection.Close();
 
         }
-        private void settings_Click(object sender, EventArgs e)
-        {
-            if (settingspanel.Visible == true)
-            {
-                settingspanel.Visible = false;
-            }
-            else if (settingspanel.Visible == false)
-            {
-                settingspanel.Visible = true;
-            }
-        }
+       
 
         private void themebtn_Click(object sender, EventArgs e)
         {
-            settingspanel.Visible = false;
+           
             if (poislogo.BackColor == Color.LightSkyBlue)
             {
-                Paymentlb.BackColor = Color.White;
+                Paymentlb.BackColor = Color.DimGray;
                 Clearbtn.BackColor = Color.FromArgb(0, 117, 214);
-                VenderInformationlbl.BackColor = Color.White;
+                VenderInformationlbl.BackColor = Color.DimGray;
                 VenderNamelbl.BackColor = Color.White;
-                VendorAddresslbl.BackColor = Color.White;
-                VendorNumberlbl.BackColor = Color.White;
-                ItemInformationlbl.BackColor = Color.White;
-                ItemNamelbl.BackColor = Color.White;
-                ItemDescriptionlbl.BackColor = Color.White;
-                Quatitylbl.BackColor = Color.White;
-                Costlbl.BackColor = Color.White;
-                Currencylbl.BackColor = Color.White;
-                OtherInformationlbl.BackColor = Color.White;
-                ApprovalDatelbl.BackColor = Color.White;
-                Invnumberlbl.BackColor = Color.White;
-                POstatuslbl.BackColor = Color.White;
-                POnumberlbl.BackColor = Color.White;
-                totalcurrencylb.BackColor = Color.White;
-                saveicon.BackColor = Color.White;
-                totallb.BackColor = Color.White;
+                VendorAddresslbl.BackColor = Color.DimGray;
+                VendorNumberlbl.BackColor = Color.DimGray;
+                ItemInformationlbl.BackColor = Color.DimGray;
+                ItemNamelbl.BackColor = Color.DimGray;
+                ItemDescriptionlbl.BackColor = Color.DimGray;
+                Quatitylbl.BackColor = Color.DimGray;
+                Costlbl.BackColor = Color.DimGray;
+                Currencylbl.BackColor = Color.DimGray;
+                OtherInformationlbl.BackColor = Color.DimGray;
+                ApprovalDatelbl.BackColor = Color.DimGray;
+                Invnumberlbl.BackColor = Color.DimGray;
+                POstatuslbl.BackColor = Color.DimGray;
+                POnumberlbl.BackColor = Color.DimGray;
+                totalcurrencylb.BackColor = Color.DimGray;
 
-                poislogo.BackColor = Color.White;
+
+                LogInvbtn.IconColor = Color.White;
+                LogInvbtn.ForeColor = Color.White;
+
+                LogInvbtn.BackColor = Color.DimGray;
+
+                totallb.BackColor = Color.DimGray;
+
+                poislogo.BackColor = Color.DimGray;
                 toppanel.BackColor = Color.FromArgb(0, 117, 214);
             }
 
@@ -421,15 +427,54 @@ namespace POIS1
                 Invnumberlbl.BackColor = Color.LightSkyBlue;
                 POstatuslbl.BackColor = Color.LightSkyBlue;
 
+
+                LogInvbtn.IconColor = Color.White;
+                LogInvbtn.ForeColor = Color.White;
+
+                LogInvbtn.BackColor = Color.LightSkyBlue;
+
                 Invnumberlbl.BackColor = Color.LightSkyBlue;
                 POnumberlbl.BackColor = Color.LightSkyBlue;
                 totalcurrencylb.BackColor = Color.LightSkyBlue;
-                saveicon.BackColor = Color.LightSkyBlue;
+                
                 totallb.BackColor = Color.LightSkyBlue;
 
                 poislogo.BackColor = Color.LightSkyBlue;
                 toppanel.BackColor = Color.FromArgb(0, 117, 190);
 
+            }
+
+            else if (poislogo.BackColor == Color.DimGray)
+            {
+                Paymentlb.BackColor = Color.White;
+                Clearbtn.BackColor = Color.FromArgb(0, 117, 214);
+                VenderInformationlbl.BackColor = Color.White;
+                VenderNamelbl.BackColor = Color.White;
+                VendorAddresslbl.BackColor = Color.White;
+                VendorNumberlbl.BackColor = Color.White;
+                ItemInformationlbl.BackColor = Color.White;
+                ItemNamelbl.BackColor = Color.White;
+                ItemDescriptionlbl.BackColor = Color.White;
+                Quatitylbl.BackColor = Color.White;
+                Costlbl.BackColor = Color.White;
+                Currencylbl.BackColor = Color.White;
+                OtherInformationlbl.BackColor = Color.White;
+                ApprovalDatelbl.BackColor = Color.White;
+                Invnumberlbl.BackColor = Color.White;
+                POstatuslbl.BackColor = Color.White;
+                POnumberlbl.BackColor = Color.White;
+                totalcurrencylb.BackColor = Color.White;
+
+
+                LogInvbtn.IconColor = Color.Black;
+                LogInvbtn.ForeColor = Color.Black;
+
+                LogInvbtn.BackColor = Color.White;
+
+                totallb.BackColor = Color.White;
+
+                poislogo.BackColor = Color.White;
+                toppanel.BackColor = Color.FromArgb(0, 117, 214);
             }
         }
 
@@ -690,7 +735,7 @@ namespace POIS1
 
                         connection1.Open();
 
-                        string Q = "insert into Invoices(PurchaseOrderID, ApprovalDate, DateForPayment, Vendors_id,  Invoice_description, total, Status_Id, InvoiceNumber, PurchaseOrderNumber)values('" + PurchaseorderId + "', '" + ApproveDate + "','" + Paymentdate.Value + "','" + VendorID + "','" + Itemdesctb.Text + "','" + totaltb.Text + "','" + InvstatusID + "','" + Invnumbertb.Text + "','" + POnumbercb.Text + "')";
+                        string Q = "insert into Invoices(PurchaseOrderID, ApprovalDate, DateForPayment, Vendors_id,  ItemName, total, StatusId, InvoiceNumber, PurchaseOrderNumber, VendorName, Status, Quantity)values('" + PurchaseorderId + "', '" + Approvaldate.Value + "','" + Paymentdate.Value + "','" + VendorID + "','" + ItemName1.Text + "','" + totaltb.Text + "','" + InvstatusID + "','" + Invnumbertb.Text + "','" + POnumbercb.Text + "','" + Vendorcb.Text + "','" + Invstatuscb.Text + "','" + Quantitytb.Text + "')";
                        
                         SqlCommand command1 = new SqlCommand(Q, connection1);
 
@@ -796,7 +841,7 @@ namespace POIS1
                 {
                     VendorAddress = sqlData.GetString(2);
                     VendorNumber = sqlData.GetString(3);
-                    VendorID = sqlData[0].ToString();
+                    VendorID = sqlData.GetInt32(0);
 
                     //ItemName1.Text = VendorID;
                     VndrAddrescb.Text = VendorAddress;
@@ -880,64 +925,65 @@ namespace POIS1
 
         private void Invnumbertb_TextChanged(object sender, EventArgs e)
         {
-            //SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
-            //connection.Open();
+            SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
 
-
-            //string q = "select * from Invoices where InvoiceNumber ='" + Invnumbertb.Text + "'";
+            connection.Open();
+            string q = "select * from Invoices where InvoiceNumber ='" + Invnumbertb.Text + "'";
             //string I = "select Item_id from Items where Item_Name  ('" + ItemName1.Text + "')";
 
-            //SqlCommand command = new SqlCommand(q, connection);
-            //SqlDataReader dataReader = command.ExecuteReader();
+            SqlCommand command = new SqlCommand(q, connection);
+            SqlDataReader dataReader = command.ExecuteReader();
 
-            //while (dataReader.Read())
-            //{
-            //    ItemsId = dataReader[0].ToString();
-            //}
-            ////DataTable dataTable = new DataTable();
-            //connection.Close();
+            while (dataReader.Read())
+            {
+
+                InvoiceID = dataReader.GetInt32(0);
+            }
+            
+            connection.Close();
         }
 
         private void POnumbertb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
 
-            //string q = "select  PurchaseOrderId from  LogPurchaseOrder where PurchaseOrderNumber = '" + POnumbercb.Text + "'";
+            string q = "select  * from  LogPurchaseOrder where PurchaseOrderNumber = '" + POnumbercb.Text + "'";
 
-            //SqlCommand command = new SqlCommand(q, connection);
-            ////DataTable dataTable = new DataTable();
+            SqlCommand command = new SqlCommand(q, connection);
+            //DataTable dataTable = new DataTable();
 
-            //try
-            //{
-            //    connection.Open();
-            //    SqlDataReader sqlData = command.ExecuteReader();
+            try
+            {
+                connection.Open();
+                SqlDataReader sqlData = command.ExecuteReader();
 
-            //    while (sqlData.Read())
-            //    {
+                while (sqlData.Read())
+                {
 
-            //        POnum = sqlData[0].ToString();
+                    POnum = sqlData[0].ToString();
 
-            //        //string LogPurchase = sqlData.GetString(5);
-            //        //POnumbercb.Items.Add(LogPurchase);
+                    //string LogPurchase = sqlData.GetString(5);
+                    //POnumbercb.Items.Add(LogPurchase);
+                     
+                    Vendorcb.Text = sqlData.GetString(9);
+                    //string VendorNumber = sqlData.GetString(3);
+                    //VendorID = sqlData[0].ToString();
+                    
+                    ItemName1.Text = sqlData.GetString(10);
+                    Approvaldate.Value = sqlData.GetDateTime(6);
+                    //VndrAddrescb.Text = VendorAddress;
+                    //VndrNumbercb.Text = VendorNumber;
 
-            //        //Vendorcb.Text = sqlData.GetString(1);
-            //        ////string VendorNumber = sqlData.GetString(3);
-            //        //VendorID = sqlData[0].ToString();
+                    Quantitytb.Text = sqlData.GetInt32(13).ToString();
+                   // = Convert.ToString(Quantity);
 
-            //        //ItemName1.Text = VendorID;
+                }
+            }
+            catch (Exception ex)
+            {
 
-            //        //VndrAddrescb.Text = VendorAddress;
-            //        //VndrNumbercb.Text = VendorNumber;
-
-
-
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-                
-            //}
-            //connection.Close();
+            }
+            connection.Close();
         }
 
         private void ItemName1_TextChanged(object sender, EventArgs e)
@@ -1000,7 +1046,7 @@ namespace POIS1
 
             SqlCommand command = new SqlCommand(q, connection);
             SqlCommand command1 = new SqlCommand(i, connection);
-            SqlCommand command2 = new SqlCommand(a, connection);
+           // SqlCommand command2 = new SqlCommand(a, connection);
             //DataTable dataTable = new DataTable();
 
 
@@ -1012,10 +1058,13 @@ namespace POIS1
 
                 string description = sqlData.GetString(2);
                 string currenc = sqlData.GetString(3);
+               
+
                 ItemsId = sqlData[0].ToString();
                 Itemname1 = sqlData[1].ToString();
                 double Icost = sqlData.GetDouble(4);
 
+             
 
                 Currencycb.Text = currenc;
                 Costtb.Text = Convert.ToString(Icost);
@@ -1023,61 +1072,66 @@ namespace POIS1
 
 
                 Itemdesctb.Text = description;
-                //ItemName1.Text = VendorID;
-                //VndrAddrescb.Text = VendorAddress;
-                //VndrNumbercb.Text = VendorNumber;
+                //itemname1.text = vendorid;
+                //vndraddrescb.text = vendoraddress;
+                //vndrnumbercb.text = vendornumber;
             }
             connection.Close();
 
-            connection.Open();
-            SqlDataReader sqlData1 = command1.ExecuteReader();
-            while (sqlData1.Read())
-            {
-                int PON = sqlData1.GetInt32(0);
-                int amount = sqlData1.GetInt32(1);
-                DateTime date = sqlData1.GetDateTime(2);
-
-                POnumbercb.Text = Convert.ToString(PON);
-                Quantitytb.Text = Convert.ToString(amount);
-                Approvaldate.Value = date;
+            //connection.Open();
+            //SqlDataReader sqlData1 = command1.ExecuteReader();
+            //while (sqlData1.Read())
+            //{
+            //    int PON = sqlData1.GetInt32(0);
+            //    int amount = sqlData1.GetInt32(1);
+            //    DateTime date = sqlData1.GetDateTime(2);
 
 
-            }
-
-            connection.Close();
-
-            connection.Open();
-            SqlDataReader sqlData2 = command2.ExecuteReader();
-
-            while (sqlData2.Read())
-            {
-                bool gotData = true;
-                string VendorName = sqlData2.GetString(0);
-                string Address = sqlData2.GetString(1);
-
-                //int number = sqlData2.GetInt32(2);
-
-
-                Vendorcb.Text = VendorName;
-                //VndrAddrescb.Text = Address;
-                //VndrNumbercb.Text = Convert.ToString(number);
-                int newIndex = ItemName1.SelectedIndex;
-
-                if (gotData == false)
-                {
-                    MessageBox.Show("Vendor Doesn't Exist");
-                }
+               
 
 
 
-            }
-            if (POnumbercb.Text == "")
-            {
-                MessageBox.Show("There's no purchase Order For this Item");
-            }
+            //    //POnumbercb.Text = Convert.ToString(PON);
+            //    //Quantitytb.Text = Convert.ToString(amount);
+            //    Approvaldate.Value = date;
 
 
-            connection.Close();
+            //}
+
+            //connection.Close();
+
+            //connection.Open();
+            //SqlDataReader sqlData2 = command2.ExecuteReader();
+
+            //while (sqlData2.Read())
+            //{
+            //    bool gotData = true;
+            //    string VendorName = sqlData2.GetString(0);
+            //    string Address = sqlData2.GetString(1);
+
+            //    //int number = sqlData2.GetInt32(2);
+
+
+            //    Vendorcb.Text = VendorName;
+            //    //VndrAddrescb.Text = Address;
+            //    //VndrNumbercb.Text = Convert.ToString(number);
+            //    int newIndex = ItemName1.SelectedIndex;
+
+            //    if (gotData == false)
+            //    {
+            //        MessageBox.Show("Vendor Doesn't Exist");
+            //    }
+
+
+
+            //}
+            //if (POnumbercb.Text == "")
+            //{
+            //    MessageBox.Show("There's no purchase Order For this Item");
+            //}
+
+
+            //connection.Close();
 
 
 
@@ -1174,6 +1228,99 @@ namespace POIS1
         {
             ViewReport viewreport = new ViewReport();
             viewreport.Show();
+        }
+
+        private void Editbtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
+                connection.Open();
+                SqlCommand command = new SqlCommand("update Invoices set ApprovalDate='" + Approvaldate.Text + "', DateForPayment='" + Paymentdate.Text + "', Vendors_id ='" + VendorID + "', ItemName ='" + ItemName1.Text + "', total ='" + totaltb.Text + "', StatusId ='" + status_id + "', InvoiceNumber ='" + Invnumbertb.Text + "', PurchaseOrderNumber ='" + POnumbercb.Text + "', VendorName ='" + Vendorcb.Text + "', Status ='" + Invstatuscb.Text + "', Quantity ='" + Quantitytb.Text + "' where Invoice_id ='" + InvoiceID + "'", connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("Stock updated successfully");
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error");
+
+            }
+        }
+
+        private void deletebtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if ((MessageBox.Show("Are you sure you want to delete this item?", "Delete", MessageBoxButtons.YesNo)) == DialogResult.Yes)
+                {
+
+                    SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
+                    connection.Open();
+                    string Myquery = "delete from Invoices where InvoiceNumber = '" + Invnumbertb.Text + "'";
+                    SqlCommand command = new SqlCommand(Myquery, connection);
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("Item Deleted Sucessfully");
+
+
+                    connection.Close();
+
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void reportbtn_Click(object sender, EventArgs e)
+        {
+            Report report = new Report();
+            this.Hide();
+            report.Show();
+        }
+
+        private void searchbtn_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
+
+            string q = "select  * from  Invoices where InvoiceNumber = '" + Invnumbertb.Text + "'";
+           
+
+            SqlCommand command = new SqlCommand(q, connection);
+            //DataTable dataTable = new DataTable();
+
+            try
+            {
+                connection.Open();
+                SqlDataReader sqlData = command.ExecuteReader();
+
+                while (sqlData.Read())
+                {
+
+
+                    totalcurrencycb.Text = "JMD";
+                    Vendorcb.Text = sqlData.GetString(10);
+                    
+
+                    ItemName1.Text = sqlData.GetString(5);
+                    Approvaldate.Value = sqlData.GetDateTime(2);
+                   
+                    POnumbercb.Text = sqlData.GetInt32(9).ToString();
+                    Invstatuscb.Text = sqlData.GetString(11);
+                    int quantity = sqlData.GetInt32(12);
+                    Quantitytb.Text = sqlData.GetInt32(13).ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            connection.Close();
         }
     }
 }

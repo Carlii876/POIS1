@@ -75,31 +75,41 @@ namespace POIS1
 
         private void Home_Page_Load(object sender, EventArgs e)
         {
+
+            //Homebtn.IconColor = Color.FromArgb(0, 117, 190);
             //userlbl.Text = POIS.welcomeuser;
             //this.Text = "Home Page: " + POIS.welcomeuser;
 
+            Homebtn.ForeColor = Color.White;
+            Homebtn.IconColor = Color.White;
+
+            //poislogo.BackColor = Color.White;
+            //toppanel.BackColor = Color.FromArgb(0, 117, 214);
+            Homebtn.BackColor = Color.DimGray;
 
 
 
-            settingspanel.Visible = false;
+            //helplbl.ForeColor = Color.White;
+            //Logoutlb.ForeColor = Color.White;
+            //reportbtn.ForeColor = Color.White;
 
-            LogPObtn.ForeColor = Color.White;
-            LogInvbtn.ForeColor = Color.White;
-            Calculationbtn.ForeColor = Color.White;
-            
-            Homebtn.ForeColor = Color.Black;
+            //LogPObtn.ForeColor = Color.White;
+            //LogInvbtn.ForeColor = Color.White;
+            //Calculationbtn.ForeColor = Color.White;
 
-            LogPObtn.BackColor = Color.FromArgb(0, 117, 190);
-            LogInvbtn.BackColor = Color.FromArgb(0, 117, 190);
-            Calculationbtn.BackColor = Color.FromArgb(0, 117, 190);
-           
-            Homebtn.BackColor = Color.White;
-            homeicon.BackColor = Color.White;
-            Homebtn.FlatStyle = FlatStyle.Standard;
-            LogPObtn.FlatStyle = FlatStyle.Flat;
-            LogInvbtn.FlatStyle = FlatStyle.Flat;
-            Calculationbtn.FlatStyle = FlatStyle.Flat;
-            
+            //Homebtn.ForeColor = Color.Black;
+
+            //LogPObtn.BackColor = Color.FromArgb(0, 117, 190);
+            //LogInvbtn.BackColor = Color.FromArgb(0, 117, 190);
+            //Calculationbtn.BackColor = Color.FromArgb(0, 117, 190);
+
+            //Homebtn.BackColor = Color.DimGray;
+            //homeicon.BackColor = Color.White;
+            //Homebtn.FlatStyle = FlatStyle.Flat;
+            //LogPObtn.FlatStyle = FlatStyle.Flat;
+            //LogInvbtn.FlatStyle = FlatStyle.Flat;
+            //Calculationbtn.FlatStyle = FlatStyle.Flat;
+
         }
 
         private void searchtb_MouseClick(object sender, MouseEventArgs e)
@@ -209,17 +219,11 @@ namespace POIS1
 
         }
 
-        private void settingsicon_Click(object sender, EventArgs e)
-        {
-            if (settingspanel.Visible == false)
-                settingspanel.Visible = true;
-            else if (settingspanel.Visible == true)
-                settingspanel.Visible = false;
-        }
+       
 
         private void themebtn_Click(object sender, EventArgs e)
         {
-            settingspanel.Visible = false;
+           
             if (poislogo.BackColor == Color.LightSkyBlue)
             {
                 poislogo.BackColor = Color.White;
@@ -288,16 +292,34 @@ namespace POIS1
         private void changeThemeToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            if (poislogo.BackColor == Color.LightSkyBlue)
+            if (poislogo.BackColor == Color.DimGray)
             {
                 poislogo.BackColor = Color.White;
                 toppanel.BackColor = Color.FromArgb(0, 117, 214);
+                Homebtn.BackColor = Color.White;
+
+                Homebtn.ForeColor = Color.Black;
+                Homebtn.IconColor = Color.Black;
             }
 
             else if (poislogo.BackColor == Color.White)
             {
                 poislogo.BackColor = Color.LightSkyBlue;
                 toppanel.BackColor = Color.FromArgb(0, 117, 190);
+                Homebtn.BackColor = Color.LightSkyBlue;
+
+                Homebtn.ForeColor = Color.White;
+                Homebtn.IconColor = Color.White;
+
+            } 
+            else if (poislogo.BackColor == Color.LightSkyBlue)
+            {
+                poislogo.BackColor = Color.DimGray;
+                toppanel.BackColor = Color.FromArgb(0, 117, 190);
+                Homebtn.BackColor = Color.DimGray;
+
+
+
             }
         }
 
@@ -396,6 +418,13 @@ namespace POIS1
             {
                 MessageBox.Show("Please Enter Name of Form");
             }
+        }
+
+        private void reportbtn_Click(object sender, EventArgs e)
+        {
+            Report report = new Report();
+            this.Hide();
+            report.Show();
         }
     }
 }

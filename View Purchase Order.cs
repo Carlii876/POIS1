@@ -29,7 +29,7 @@ namespace POIS1
 
 
             SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
-            string q = "select * from LogPurchaseOrder";
+            string q = "select Vendor, Items, Quantity, PurchaseOrderNumber, Approval_Date, Status, Total from LogPurchaseOrder";
             connection.Open();
             SqlCommand command = new SqlCommand(q, connection);
             command.ExecuteNonQuery();

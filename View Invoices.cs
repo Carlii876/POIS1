@@ -31,7 +31,7 @@ namespace POIS1
            
 
             SqlConnection connection = new SqlConnection(@"Data Source=.;Initial Catalog=POIS;Integrated Security=True");
-            string q = "select * from Invoices";
+            string q = "select VendorName, ItemName, Quantity, PurchaseOrderNumber, InvoiceNumber, ApprovalDate, DateForPayment, Status, Total from Invoices";
             connection.Open();
             SqlCommand command = new SqlCommand(q, connection);
              command.ExecuteNonQuery();

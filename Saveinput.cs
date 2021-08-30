@@ -11,7 +11,7 @@ namespace POIS1
     {
         bool isValid = true;
 
-        public readonly string help1 = "Select an Item to auto generate from Purchase Order";
+        public readonly string help1 = "Select a purchase Order Number to generate data from Purchase Order";
         public readonly string help = "Select an Item or Vendor details to auto generate options";
         public readonly string help2 = "Select an option";
         public readonly string help3 = "Select an Item Name";

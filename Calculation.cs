@@ -34,24 +34,45 @@ namespace POIS1
 
         private void Calculation_Load(object sender, EventArgs e)
         {
+            Calculate calculate = new Calculate();
+            try
+            {
+                taxtb.Text = calculate.Tax(Convert.ToDouble(taxtb.Text)).ToString();
+            }
+            catch (Exception)
+            {
 
-            Itemscombobox();
-      
-            settingpanel1.Visible = false;
 
-            LogPObtn.ForeColor = Color.White;
-            LogInvbtn.ForeColor = Color.White;
+            }
+
+
+
             
-            Homebtn.ForeColor = Color.White;
-            Calculationbtn.ForeColor = Color.Black;
+            Itemscombobox();
+
+            //helplbl.ForeColor = Color.White;
+            //Logoutlb.ForeColor = Color.White;
+            //reportbtn.ForeColor = Color.White;
+
+            //LogPObtn.ForeColor = Color.White;
+            //LogInvbtn.ForeColor = Color.White;
+
+            
+            
+
+           // Homebtn.ForeColor = Color.White;
+
+
+            Calculationbtn.ForeColor = Color.White;
+            Calculationbtn.IconColor = Color.White;
 
             LogPObtn.BackColor = Color.FromArgb(0, 117, 190);
             LogInvbtn.BackColor = Color.FromArgb(0, 117, 190);
             
             Homebtn.BackColor = Color.FromArgb(0, 117, 190);
-            Calculationbtn.BackColor = Color.White;
+            Calculationbtn.BackColor = Color.DimGray;
             homeicon.BackColor = Color.FromArgb(0, 117, 190);
-            Calculationbtn.FlatStyle = FlatStyle.Standard;
+            //Calculationbtn.FlatStyle = FlatStyle.Standard;
             Homebtn.FlatStyle = FlatStyle.Flat;
             LogPObtn.FlatStyle = FlatStyle.Flat;
             LogInvbtn.FlatStyle = FlatStyle.Flat;
@@ -154,13 +175,7 @@ namespace POIS1
             MessageBox.Show(saveinput.help3);
         }
 
-        private void settings_Click(object sender, EventArgs e)
-        {
-            if (settingpanel1.Visible == false)
-                settingpanel1.Visible = true;
-            else if (settingspanel.Visible == true)
-                settingpanel1.Visible = false;
-        }
+       
 
         private void changethemebtn_Click(object sender, EventArgs e)
         {
@@ -179,6 +194,11 @@ namespace POIS1
                 Discountpercentlbl.BackColor = Color.White;
                 poislogo.BackColor = Color.White;
                 toppanel.BackColor = Color.FromArgb(0, 117, 214);
+
+                Calculationbtn.ForeColor = Color.Black;
+                
+                Calculationbtn.IconColor = Color.Black;
+
             }
 
             else if (poislogo.BackColor == Color.White)
@@ -195,6 +215,11 @@ namespace POIS1
                 Discountpercentlbl.BackColor = Color.LightSkyBlue;
                 poislogo.BackColor = Color.LightSkyBlue;
                 toppanel.BackColor = Color.FromArgb(0, 117, 190);
+
+                Calculationbtn.ForeColor = Color.White;
+
+                Calculationbtn.IconColor = Color.White;
+
             }
         }
 
@@ -205,22 +230,29 @@ namespace POIS1
             if (poislogo.BackColor == Color.LightSkyBlue)
             {
 
-                
-                Itemdetailslbl.BackColor = Color.White;
-                ItemNamelbl.BackColor = Color.White;
-                Quatitylbl.BackColor = Color.White;
-                Costlbl.BackColor = Color.White;
-                Taxlbl.BackColor = Color.White;
+                Subtotallb.BackColor = Color.DimGray;
+                Itemdetailslbl.BackColor = Color.DimGray;
+                ItemNamelbl.BackColor = Color.DimGray;
+                Quatitylbl.BackColor = Color.DimGray;
+                Costlbl.BackColor = Color.DimGray;
+                Taxlbl.BackColor = Color.DimGray;
                 Totallbl.BackColor = Color.White;
-                Discountvaluelbl.BackColor = Color.White;
-                Discountpercentlbl.BackColor = Color.White;
-                poislogo.BackColor = Color.White;
+                Discountvaluelbl.BackColor = Color.DimGray;
+                Discountpercentlbl.BackColor = Color.DimGray;
+                poislogo.BackColor = Color.DimGray;
                 toppanel.BackColor = Color.FromArgb(0, 117, 214);
+                Calculationbtn.BackColor = Color.White;
+
+
+                Calculationbtn.ForeColor = Color.Black;
+                Calculationbtn.BackColor = Color.DimGray;
+                Calculationbtn.IconColor = Color.Black;
+
             }
 
             else if (poislogo.BackColor == Color.White)
             {
-
+                Subtotallb.BackColor = Color.LightSkyBlue;
                 Itemdetailslbl.BackColor = Color.LightSkyBlue;
                 ItemNamelbl.BackColor = Color.LightSkyBlue;
                 Quatitylbl.BackColor = Color.LightSkyBlue;
@@ -231,6 +263,30 @@ namespace POIS1
                 Discountpercentlbl.BackColor = Color.LightSkyBlue;
                 poislogo.BackColor = Color.LightSkyBlue;
                 toppanel.BackColor = Color.FromArgb(0, 117, 190);
+                Calculationbtn.BackColor = Color.LightSkyBlue;
+
+                Calculationbtn.ForeColor = Color.White;
+                Calculationbtn.IconColor = Color.White;
+            }
+
+            else if (poislogo.BackColor == Color.DimGray)
+            {
+
+                Subtotallb.BackColor = Color.White;
+                Itemdetailslbl.BackColor = Color.White;
+                ItemNamelbl.BackColor = Color.White;
+                Quatitylbl.BackColor = Color.White;
+                Costlbl.BackColor = Color.White;
+                Taxlbl.BackColor = Color.White;
+                Totallbl.BackColor = Color.White;
+                Discountvaluelbl.BackColor = Color.White;
+                Discountpercentlbl.BackColor = Color.White;
+                poislogo.BackColor = Color.White;
+                toppanel.BackColor = Color.FromArgb(0, 117, 214);
+                Calculationbtn.BackColor = Color.White;
+
+                Calculationbtn.ForeColor = Color.Black;
+                Calculationbtn.IconColor = Color.Black;
             }
         }
 
@@ -327,17 +383,7 @@ namespace POIS1
 
         private void taxtb_TextChanged(object sender, EventArgs e)
         {
-            Calculate calculate = new Calculate();
-            try
-            {
-                taxtb.Text = calculate.Tax(Convert.ToDouble(taxtb.Text)).ToString();
-            }
-            catch (Exception)
-            {
-
-
-            }
-
+           
 
 
         }
@@ -386,7 +432,7 @@ namespace POIS1
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+               
             }
         }
 
@@ -484,6 +530,25 @@ namespace POIS1
         {
             ViewReport viewreport = new ViewReport();
             viewreport.Show();
+        }
+
+        private void Clearbtn_Click(object sender, EventArgs e)
+        {
+            ItemName1.Text = "";
+            quantitytb.Text = "";
+            costtb.Text = "";
+            taxtb.Text = "";
+            dispercentagetb.Text = "";
+            disvaluetb.Text = "";
+            totaltb.Text = "";
+            Subtotaltb.Text = "";
+        }
+
+        private void reportbtn_Click(object sender, EventArgs e)
+        {
+            Report report = new Report();
+            this.Hide();
+            report.Show();
         }
     }
 }
